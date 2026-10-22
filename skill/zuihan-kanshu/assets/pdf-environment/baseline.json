@@ -1,0 +1,133 @@
+{
+  "schema": "pdf-environment-baseline/v1",
+  "python_min": [
+    3,
+    11,
+    8
+  ],
+  "python_packages": {
+    "yaml": "PyYAML==6.0.3",
+    "PIL": "Pillow==13.0.0",
+    "pypdf": "pypdf==6.21.1"
+  },
+  "fonts": {
+    "latin_main": "Latin Modern Roman",
+    "cjk_main": "Noto Serif CJK SC",
+    "math_main": "Latin Modern Math",
+    "cjk_sans": "Noto Sans CJK SC",
+    "cjk_mono": "Noto Sans Mono CJK SC"
+  },
+  "tex_files": {
+    "xelatex.fmt": null,
+    "xeCJK.sty": "xecjk",
+    "fontspec.sty": "fontspec",
+    "unicode-math.sty": "unicode-math",
+    "amsmath.sty": "amsmath",
+    "amsfonts.sty": "amsfonts",
+    "msbm10.tfm": "amsfonts",
+    "geometry.sty": "geometry",
+    "hyperref.sty": "hyperref",
+    "bookmark.sty": "bookmark",
+    "xurl.sty": "xurl",
+    "longtable.sty": "tools",
+    "booktabs.sty": "booktabs",
+    "fancyvrb.sty": "fancyvrb",
+    "caption.sty": "caption",
+    "xcolor.sty": "xcolor",
+    "iftex.sty": "iftex",
+    "babel.sty": "babel",
+    "graphicx.sty": "graphics",
+    "etoolbox.sty": "etoolbox",
+    "parskip.sty": "parskip",
+    "lmodern.sty": "lm",
+    "ctexhook.sty": "ctex",
+    "zhnumber.sty": "zhnumber"
+  },
+  "tex_packages": [
+    "xetex",
+    "latexmk",
+    "xecjk",
+    "amsmath",
+    "amsfonts",
+    "fontspec",
+    "unicode-math",
+    "lm",
+    "lm-math",
+    "geometry",
+    "hyperref",
+    "bookmark",
+    "xurl",
+    "tools",
+    "booktabs",
+    "fancyvrb",
+    "fvextra",
+    "upquote",
+    "microtype",
+    "caption",
+    "xcolor",
+    "iftex",
+    "babel",
+    "graphics",
+    "etoolbox",
+    "parskip",
+    "ctex",
+    "zhnumber"
+  ],
+  "pandoc": {
+    "Windows-x86_64": "https://github.com/jgm/pandoc/releases/download/3.12.1/pandoc-3.12.1-windows-x86_64.zip",
+    "Linux-x86_64": "https://github.com/jgm/pandoc/releases/download/3.12.1/pandoc-3.12.1-linux-amd64.tar.gz",
+    "Linux-aarch64": "https://github.com/jgm/pandoc/releases/download/3.12.1/pandoc-3.12.1-linux-arm64.tar.gz"
+  },
+  "tinytex": {
+    "Windows-x86_64": "https://github.com/rstudio/tinytex-releases/releases/download/v2026.10/TinyTeX-1-windows-v2026.10.exe",
+    "Linux-x86_64": "https://github.com/rstudio/tinytex-releases/releases/download/v2026.10/TinyTeX-1-linux-x86_64-v2026.10.tar.xz",
+    "Linux-aarch64": "https://github.com/rstudio/tinytex-releases/releases/download/v2026.10/TinyTeX-1-linux-arm64-v2026.10.tar.xz"
+  },
+  "windows_poppler": "https://github.com/oschwartz10612/poppler-windows/releases/download/v26.09.0-0/Release-26.09.0-0.zip",
+  "tex_repository": "https://mirror.ctan.org/systems/texlive/tlnet",
+  "texlive_year": 2026,
+  "tex_repository_fallbacks": [
+    "https://ctan.math.illinois.edu/systems/texlive/tlnet"
+  ],
+  "tex_historic_repositories": [
+    "https://ftp.math.utah.edu/pub/tex/historic/systems/texlive/{year}/tlnet-final",
+    "https://ftp.tu-chemnitz.de/pub/tug/historic/systems/texlive/{year}/tlnet-final"
+  ],
+  "cjk_fonts": {
+    "cjk_main": {
+      "candidates": [
+        "Noto Serif CJK SC",
+        "Source Han Serif SC",
+        "Noto Sans CJK SC",
+        "FandolSong"
+      ],
+      "urls": [
+        "https://raw.githubusercontent.com/notofonts/noto-cjk/Serif2.003/Serif/OTF/SimplifiedChinese/NotoSerifCJKsc-Regular.otf",
+        "https://raw.githubusercontent.com/notofonts/noto-cjk/Serif2.003/Serif/OTF/SimplifiedChinese/NotoSerifCJKsc-Bold.otf",
+        "https://raw.githubusercontent.com/notofonts/noto-cjk/Serif2.003/Serif/LICENSE"
+      ]
+    },
+    "cjk_sans": {
+      "candidates": [
+        "Noto Sans CJK SC",
+        "Source Han Sans SC",
+        "FandolHei"
+      ],
+      "urls": [
+        "https://raw.githubusercontent.com/notofonts/noto-cjk/Sans2.004/Sans/OTF/SimplifiedChinese/NotoSansCJKsc-Regular.otf",
+        "https://raw.githubusercontent.com/notofonts/noto-cjk/Sans2.004/Sans/OTF/SimplifiedChinese/NotoSansCJKsc-Bold.otf",
+        "https://raw.githubusercontent.com/notofonts/noto-cjk/Sans2.004/LICENSE"
+      ]
+    },
+    "cjk_mono": {
+      "candidates": [
+        "Noto Sans Mono CJK SC"
+      ],
+      "urls": [
+        "https://raw.githubusercontent.com/notofonts/noto-cjk/Sans2.004/Sans/Mono/NotoSansMonoCJKsc-Regular.otf",
+        "https://raw.githubusercontent.com/notofonts/noto-cjk/Sans2.004/Sans/Mono/NotoSansMonoCJKsc-Bold.otf",
+        "https://raw.githubusercontent.com/notofonts/noto-cjk/Sans2.004/LICENSE"
+      ]
+    }
+  }
+}

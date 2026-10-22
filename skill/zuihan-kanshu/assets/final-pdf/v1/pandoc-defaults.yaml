@@ -1,0 +1,2 @@
+from: markdown+tex_math_dollars+tex_math_single_backslash+raw_tex+fenced_divs
+standalone: true

@@ -1,0 +1,47 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "zuihan-kanshu",
+  "version": "@VERSION@",
+  "description": "Answer mathematical questions, conduct sustained research, and plan or write mathematical documents, with Chinese terminology, style, and Markdown, TeX, and PDF support.",
+  "author": {
+    "name": "Adjoint Functor"
+  },
+  "homepage": "https://github.com/adjoint-functor/zuihan-kanshu",
+  "repository": "https://github.com/adjoint-functor/zuihan-kanshu",
+  "license": "MIT",
+  "keywords": ["mathematics", "research", "writing", "chinese", "latex", "agent-skills"],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "瑞般观珠",
+        "shortDescription": "Math Q&A, research & writing",
+        "longDescription": "Zuihan Kanshu (瑞般观珠) supports mathematical questions, sustained research, and mathematical writing. Work through a question with derivations, proofs, and relevant literature; explore a research goal and keep records for continuing it; or plan, draft, review, and revise a mathematical document.\n\nThe bundled mathematical research mini-agents provide task-based collaboration when the host supports delegation. Chinese translation and terminology, prose editing, and Markdown, TeX, and PDF preparation are available as needed. Model choices, delegation, retrieval, compilation, and storage follow the current user's instructions and the host's available tools.\n\nFor a new research or writing task in a host with cloud Library access, specify a destination or simply ask to save in the cloud. If no directory is specified, the skill creates a topic-named subfolder at the Library root. Existing tasks keep their directory. In other environments it uses the available destination and reports where files were actually saved.\n\nThe name comes from the Japanese mathematical term 随伴関手 (ずいはんかんしゅ, adjoint functor), echoed in the characters 瑞般観珠 and written 瑞般观珠 in Chinese.",
+        "developerName": "Adjoint Functor",
+        "category": "Education & Research",
+        "websiteURL": "https://github.com/adjoint-functor/zuihan-kanshu",
+        "supportURL": "https://github.com/adjoint-functor/zuihan-kanshu/issues",
+        "capabilities": ["数学问答", "数学研究", "数学写作"],
+        "defaultPrompt": [
+          "使用瑞般观珠解答以下数学问题，并按需要给出推导、证明或文献依据。问题：……。",
+          "使用瑞般观珠，围绕以下目标开展数学研究，将研究记录与阶段成果保存在云端。研究目标：……。",
+          "使用瑞般观珠，根据以下要求制定数学文稿的写作计划，并保存在云端。写作要求：……。"
+        ],
+        "composerIcon": "./assets/icon-256.png",
+        "composerIconDark": "./assets/icon-dark-256.png",
+        "logo": "./assets/icon-1024.png",
+        "logoDark": "./assets/icon-dark-1024.png",
+        "brandColor": "#087F79",
+        "brandColorDark": "#64D5C7"
+      },
+      "publication": {
+        "release_notes": "Initial public-source edition: unified zuihan-kanshu naming, portable execution and storage guidance, public documentation, and preserved mathematical workflows and approved artwork.",
+        "translations": {
+          "zh-CN": {
+            "subtitle": "数学问答、研究与写作",
+            "description": "瑞般观珠支持数学问题解答、持续研究与数学写作。针对具体问题提供解答、推导与必要的文献依据；围绕研究目标梳理文献、探索思路与证明，记录进展并接续已有工作；根据写作要求制定计划，并支持后续的文稿撰写、审阅、修订与成品制作。\n\n内置数学研究迷你智能体、中文翻译与术语支持、文风整理，以及 Markdown、TeX 与 PDF 制作支持，按任务需要调用。模型、委派、检索、编译和保存方式遵循当前用户指示及宿主实际能力。\n\n在支持云端库的环境中新建研究或文稿时，可以指定保存目录；未指定目录或仅要求保存在云端时，将在云端库根目录下自动建立以任务主题命名的子目录。接续已有任务沿用原目录；其他环境按实际可用目的地保存，并如实说明保存位置。\n\n名称取意于数学术语「随伴関手」（ずいはんかんしゅ，Adjoint Functor），以其日语读音谐作「瑞般観珠」，中文写作「瑞般观珠」。"
+          }
+        }
+      }
+    }
+  }
+}

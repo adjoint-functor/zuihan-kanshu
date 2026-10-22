@@ -1,0 +1,67 @@
+name: Validate skill
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.11"
+      - name: Install Python test dependencies
+        timeout-minutes: 3
+        run: >-
+          python3 -m pip install --disable-pip-version-check
+          --no-input --timeout 30 --retries 2 PyYAML pypdf==6.10.0
+      - name: Update system package index
+        timeout-minutes: 5
+        run: >-
+          sudo apt-get
+          -o Acquire::Retries=2
+          -o Acquire::http::Timeout=30
+          -o Acquire::https::Timeout=30
+          update
+      - name: Install system test dependencies
+        timeout-minutes: 5
+        run: >-
+          sudo env DEBIAN_FRONTEND=noninteractive apt-get
+          -o Acquire::Retries=2
+          -o Acquire::http::Timeout=30
+          -o Acquire::https::Timeout=30
+          install -y pandoc fontconfig fonts-dejavu-core fonts-lmodern
+      - name: Validate repository boundary
+        run: python3 tools/validate_repo.py
+      - name: Validate release boundary
+        run: |
+          python3 tools/build_release.py --check
+          python3 tools/build_release.py --format plugin --check
+          release_root="$RUNNER_TEMP/skill-releases"
+          python3 tools/build_release.py --output-dir "$release_root"
+          python3 tools/build_release.py --format plugin --zip --output-dir "$release_root"
+      - name: Run skill tests
+        env:
+          PYTHONDONTWRITEBYTECODE: "1"
+        run: >-
+          python3 -m unittest discover
+          -s tests
+          -p 'test_*.py'
+          -v
+      - name: Confirm clean worktree
+        run: git diff --exit-code
+      - name: Preserve the candidate plugin ZIP
+        uses: actions/upload-artifact@v7
+        with:
+          name: zuihan-kanshu-plugin
+          retention-days: 14
+          if-no-files-found: error
+          path: ${{ runner.temp }}/skill-releases/plugin/zuihan-kanshu-v*.zip

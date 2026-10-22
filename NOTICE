@@ -1,0 +1,293 @@
+# 瑞般观珠：来源与许可
+
+Copyright (c) 2026 Adjoint Functor
+
+本项目原创代码、技能说明与文档，以及项目作者能够授权的图标构图、合成与排布，按随附 LICENSE 中的 MIT 许可提供。第三方字体软件、字形数据与上游资料保留各自许可，不因本项目的 MIT 许可而改授许可。
+
+## 图标与实际分发材料
+
+原始珠心、青绿双叶和材质由 OpenAI ImageGen 根据用户指导生成。精确数学公式随后叠加为独立路径；批准母图包含 22 条公式、88 个实例及原始嵌入 PNG。源码仓库保存复合 SVG 母图和公式清单；运行包只携带四张正式透明 PNG 及许可声明。项目名称和图标用于标识本项目；提及 OpenAI、工具与参考项目不表示其作者为本项目背书。
+
+原公式制作者确认使用以下模板与工具链：
+
+    \documentclass[12pt,border=0.7pt]{standalone}
+    \usepackage{amsmath,amssymb}
+    \begin{document}
+    $\displaystyle <formula>$
+    \end{document}
+
+先以 pdflatex（-no-shell-escape -interaction=nonstopmode -halt-on-error）生成 PDF，再以 pdftocairo -svg 转为 SVG，展开 use 元素为路径后进行合成。模板没有载入 lmodern、fontspec、unicode-math 或 MathJax。
+
+依据这一未显式切换字体的模板，可推定字形使用默认 Computer Modern／AMS 数学字体体系；这是基于模板的来源判断，原环境未记录具体字体版本和逐个字体文件清单，不能视为逐字形认证。AMSFonts 官方分发说明确认，其 canonical Computer Modern Type 1 字体及 AMS 数学符号字体使用 SIL Open Font License 1.1：
+https://ctan.org/pkg/amsfonts
+https://ctan.org/tex-archive/fonts/amsfonts
+https://ctan.math.illinois.edu/fonts/amsfonts/doc/OFL.txt
+
+图标是静态公式排版及图形合成结果，没有附带可安装字体文件。OFL 允许使用字形制作图形与标识，图形作品本身可采用不同许可；字体软件及从中提取、另作字体软件分发的字形仍保留原许可。相关说明：
+https://openfontlicense.org/ofl-faq/ （1.1、1.1.1、1.13、1.14）
+
+为保留字形来源，文末附 AMSFonts 官方字体版权与完整 OFL 声明；其中保留字体名集合来自原分发声明，不表示本图标使用了集合中的全部字体。
+
+## 外部制作与安装依赖
+
+现有 PNG 的导出记录为 Node.js 24.19.0、Sharp 0.35.5、libvips 8.18.7。Sharp 程序按 Apache 2.0 分发；实际使用的 @img/sharp-win32-x64 0.35.5 原生分发包声明为 Apache-2.0 AND LGPL-3.0-or-later。Sharp、原生库、TeX、Poppler 与它们的源代码或二进制均未随本仓库或运行包附带。工具许可与第三方声明属于相应工具的分发范围：
+https://github.com/lovell/sharp/blob/v0.35.5/LICENSE
+https://github.com/libvips/libvips/blob/v8.18.7/LICENSE
+https://github.com/lovell/sharp-libvips/blob/main/THIRD-PARTY-NOTICES.md
+
+PDF 环境配方引用 Noto Serif CJK SC Serif2.003、Noto Sans CJK SC 与 Noto Sans Mono CJK SC Sans2.004 的官方下载地址，没有内置字体二进制。需要下载时，配方同时保存相应的 OFL 1.1 许可文件：
+https://github.com/notofonts/noto-cjk/blob/Serif2.003/Serif/LICENSE
+https://github.com/notofonts/noto-cjk/blob/Sans2.004/LICENSE
+这些字体的许可不因下载配方或本项目的 MIT 许可而改变。
+
+## 公开设计参考
+
+以下为设计与方法参考，并非随包组件清单。所列上游许可描述的是已核读版本，不表示把上游整个项目纳入本项目，也不改变上游材料的许可。核读日期：2026-10-22。
+
+- Danus：数学研究职责、证明依赖与核验反馈的参考。固定提交 6d92e8d415933ca2ef52fd1a4da73fdfcd418f1c；上游 LICENSE 为 Apache 2.0，Copyright 2026 FrenzyMath。
+  https://github.com/frenzymath/Danus/tree/6d92e8d415933ca2ef52fd1a4da73fdfcd418f1c
+  https://github.com/frenzymath/Danus/blob/6d92e8d415933ca2ef52fd1a4da73fdfcd418f1c/LICENSE
+- Rethlas：失败综合、新路线与实际证明核验的参考。固定提交 e7e48a6d30e7f0ddf0ed1909a594a1f0cfe2c2b7；上游 LICENSE 为 Apache 2.0。
+  https://github.com/frenzymath/Rethlas/tree/e7e48a6d30e7f0ddf0ed1909a594a1f0cfe2c2b7
+  https://github.com/frenzymath/Rethlas/blob/e7e48a6d30e7f0ddf0ed1909a594a1f0cfe2c2b7/LICENSE
+- Bolzano（problem-solver）：目标整理、失败记录与局部编辑的参考。固定提交 ccc0f7185ef6a72b3b8f519b8efab3f386cf597f 的完整文件树及 README 未发现许可证声明；公开可读不等于获得任意复制授权。
+  https://github.com/vaclavrozhon/problem-solver/tree/ccc0f7185ef6a72b3b8f519b8efab3f386cf597f
+- Matlas：官方 API 文档是检索接口的依据；hrjtju/matlas-search 是接口使用与候选阅读的公开参考。该参考技能在所核读文件树与 README 中未发现许可证声明，不将其视为 MIT 或其他开源许可的随包组件。
+  https://matlas.ai/docs
+  https://matlas.ai/openapi.json
+  https://github.com/hrjtju/matlas-search
+- Calix LaTeX skills：环境检查、配置分离与可恢复安装的参考。所核读 awesome-latex-skills 的 LICENSE 为 MIT，Copyright (c) 2026 awesome-latex-skills contributors。
+  https://github.com/Calix-L/awesome-latex-skills
+  https://github.com/Calix-L/awesome-latex-skills/blob/main/LICENSE
+
+写作、上下文与 PDF 工程的其他公开依据列于源码仓库 docs/design-principles.md 的“公开参考”。本项目的具体协议和适用范围以本项目文档为准；引用不构成上游作者的背书。
+
+## AMSFonts 字体来源声明（原文）
+
+下文保留 AMSFonts 官方分发的字体版权、保留字体名和 OFL 1.1 文本。
+
+Copyright (c) 1997, 2009, American Mathematical Society (http://www.ams.org).
+All Rights Reserved.
+"cmb10" is a Reserved Font Name for this Font Software.
+"cmbsy10" is a Reserved Font Name for this Font Software.
+"cmbsy5" is a Reserved Font Name for this Font Software.
+"cmbsy6" is a Reserved Font Name for this Font Software.
+"cmbsy7" is a Reserved Font Name for this Font Software.
+"cmbsy8" is a Reserved Font Name for this Font Software.
+"cmbsy9" is a Reserved Font Name for this Font Software.
+"cmbx10" is a Reserved Font Name for this Font Software.
+"cmbx12" is a Reserved Font Name for this Font Software.
+"cmbx5" is a Reserved Font Name for this Font Software.
+"cmbx6" is a Reserved Font Name for this Font Software.
+"cmbx7" is a Reserved Font Name for this Font Software.
+"cmbx8" is a Reserved Font Name for this Font Software.
+"cmbx9" is a Reserved Font Name for this Font Software.
+"cmbxsl10" is a Reserved Font Name for this Font Software.
+"cmbxti10" is a Reserved Font Name for this Font Software.
+"cmcsc10" is a Reserved Font Name for this Font Software.
+"cmcsc8" is a Reserved Font Name for this Font Software.
+"cmcsc9" is a Reserved Font Name for this Font Software.
+"cmdunh10" is a Reserved Font Name for this Font Software.
+"cmex10" is a Reserved Font Name for this Font Software.
+"cmex7" is a Reserved Font Name for this Font Software.
+"cmex8" is a Reserved Font Name for this Font Software.
+"cmex9" is a Reserved Font Name for this Font Software.
+"cmff10" is a Reserved Font Name for this Font Software.
+"cmfi10" is a Reserved Font Name for this Font Software.
+"cmfib8" is a Reserved Font Name for this Font Software.
+"cminch" is a Reserved Font Name for this Font Software.
+"cmitt10" is a Reserved Font Name for this Font Software.
+"cmmi10" is a Reserved Font Name for this Font Software.
+"cmmi12" is a Reserved Font Name for this Font Software.
+"cmmi5" is a Reserved Font Name for this Font Software.
+"cmmi6" is a Reserved Font Name for this Font Software.
+"cmmi7" is a Reserved Font Name for this Font Software.
+"cmmi8" is a Reserved Font Name for this Font Software.
+"cmmi9" is a Reserved Font Name for this Font Software.
+"cmmib10" is a Reserved Font Name for this Font Software.
+"cmmib5" is a Reserved Font Name for this Font Software.
+"cmmib6" is a Reserved Font Name for this Font Software.
+"cmmib7" is a Reserved Font Name for this Font Software.
+"cmmib8" is a Reserved Font Name for this Font Software.
+"cmmib9" is a Reserved Font Name for this Font Software.
+"cmr10" is a Reserved Font Name for this Font Software.
+"cmr12" is a Reserved Font Name for this Font Software.
+"cmr17" is a Reserved Font Name for this Font Software.
+"cmr5" is a Reserved Font Name for this Font Software.
+"cmr6" is a Reserved Font Name for this Font Software.
+"cmr7" is a Reserved Font Name for this Font Software.
+"cmr8" is a Reserved Font Name for this Font Software.
+"cmr9" is a Reserved Font Name for this Font Software.
+"cmsl10" is a Reserved Font Name for this Font Software.
+"cmsl12" is a Reserved Font Name for this Font Software.
+"cmsl8" is a Reserved Font Name for this Font Software.
+"cmsl9" is a Reserved Font Name for this Font Software.
+"cmsltt10" is a Reserved Font Name for this Font Software.
+"cmss10" is a Reserved Font Name for this Font Software.
+"cmss12" is a Reserved Font Name for this Font Software.
+"cmss17" is a Reserved Font Name for this Font Software.
+"cmss8" is a Reserved Font Name for this Font Software.
+"cmss9" is a Reserved Font Name for this Font Software.
+"cmssbx10" is a Reserved Font Name for this Font Software.
+"cmssdc10" is a Reserved Font Name for this Font Software.
+"cmssi10" is a Reserved Font Name for this Font Software.
+"cmssi12" is a Reserved Font Name for this Font Software.
+"cmssi17" is a Reserved Font Name for this Font Software.
+"cmssi8" is a Reserved Font Name for this Font Software.
+"cmssi9" is a Reserved Font Name for this Font Software.
+"cmssq8" is a Reserved Font Name for this Font Software.
+"cmssqi8" is a Reserved Font Name for this Font Software.
+"cmsy10" is a Reserved Font Name for this Font Software.
+"cmsy5" is a Reserved Font Name for this Font Software.
+"cmsy6" is a Reserved Font Name for this Font Software.
+"cmsy7" is a Reserved Font Name for this Font Software.
+"cmsy8" is a Reserved Font Name for this Font Software.
+"cmsy9" is a Reserved Font Name for this Font Software.
+"cmtcsc10" is a Reserved Font Name for this Font Software.
+"cmtex10" is a Reserved Font Name for this Font Software.
+"cmtex8" is a Reserved Font Name for this Font Software.
+"cmtex9" is a Reserved Font Name for this Font Software.
+"cmti10" is a Reserved Font Name for this Font Software.
+"cmti12" is a Reserved Font Name for this Font Software.
+"cmti7" is a Reserved Font Name for this Font Software.
+"cmti8" is a Reserved Font Name for this Font Software.
+"cmti9" is a Reserved Font Name for this Font Software.
+"cmtt10" is a Reserved Font Name for this Font Software.
+"cmtt12" is a Reserved Font Name for this Font Software.
+"cmtt8" is a Reserved Font Name for this Font Software.
+"cmtt9" is a Reserved Font Name for this Font Software.
+"cmu10" is a Reserved Font Name for this Font Software.
+"cmvtt10" is a Reserved Font Name for this Font Software.
+"euex10" is a Reserved Font Name for this Font Software.
+"euex7" is a Reserved Font Name for this Font Software.
+"euex8" is a Reserved Font Name for this Font Software.
+"euex9" is a Reserved Font Name for this Font Software.
+"eufb10" is a Reserved Font Name for this Font Software.
+"eufb5" is a Reserved Font Name for this Font Software.
+"eufb7" is a Reserved Font Name for this Font Software.
+"eufm10" is a Reserved Font Name for this Font Software.
+"eufm5" is a Reserved Font Name for this Font Software.
+"eufm7" is a Reserved Font Name for this Font Software.
+"eurb10" is a Reserved Font Name for this Font Software.
+"eurb5" is a Reserved Font Name for this Font Software.
+"eurb7" is a Reserved Font Name for this Font Software.
+"eurm10" is a Reserved Font Name for this Font Software.
+"eurm5" is a Reserved Font Name for this Font Software.
+"eurm7" is a Reserved Font Name for this Font Software.
+"eusb10" is a Reserved Font Name for this Font Software.
+"eusb5" is a Reserved Font Name for this Font Software.
+"eusb7" is a Reserved Font Name for this Font Software.
+"eusm10" is a Reserved Font Name for this Font Software.
+"eusm5" is a Reserved Font Name for this Font Software.
+"eusm7" is a Reserved Font Name for this Font Software.
+"lasy10" is a Reserved Font Name for this Font Software.
+"lasy5" is a Reserved Font Name for this Font Software.
+"lasy6" is a Reserved Font Name for this Font Software.
+"lasy7" is a Reserved Font Name for this Font Software.
+"lasy8" is a Reserved Font Name for this Font Software.
+"lasy9" is a Reserved Font Name for this Font Software.
+"lasyb10" is a Reserved Font Name for this Font Software.
+"lcircle1" is a Reserved Font Name for this Font Software.
+"lcirclew" is a Reserved Font Name for this Font Software.
+"lcmss8" is a Reserved Font Name for this Font Software.
+"lcmssb8" is a Reserved Font Name for this Font Software.
+"lcmssi8" is a Reserved Font Name for this Font Software.
+"line10" is a Reserved Font Name for this Font Software.
+"linew10" is a Reserved Font Name for this Font Software.
+"msam10" is a Reserved Font Name for this Font Software.
+"msam5" is a Reserved Font Name for this Font Software.
+"msam6" is a Reserved Font Name for this Font Software.
+"msam7" is a Reserved Font Name for this Font Software.
+"msam8" is a Reserved Font Name for this Font Software.
+"msam9" is a Reserved Font Name for this Font Software.
+"msbm10" is a Reserved Font Name for this Font Software.
+"msbm5" is a Reserved Font Name for this Font Software.
+"msbm6" is a Reserved Font Name for this Font Software.
+"msbm7" is a Reserved Font Name for this Font Software.
+"msbm8" is a Reserved Font Name for this Font Software.
+"msbm9" is a Reserved Font Name for this Font Software.
+"wncyb10" is a Reserved Font Name for this Font Software.
+"wncyi10" is a Reserved Font Name for this Font Software.
+"wncyr10" is a Reserved Font Name for this Font Software.
+"wncysc10" is a Reserved Font Name for this Font Software.
+"wncyss10" is a Reserved Font Name for this Font Software.
+This Font Software is licensed under the SIL Open Font License, Version 1.1.
+This license is copied below, and is also available with a FAQ at:
+http://scripts.sil.org/OFL
+
+-----------------------------------------------------------
+SIL OPEN FONT LICENSE Version 1.1 - 26 February 2007
+-----------------------------------------------------------
+PREAMBLE
+The goals of the Open Font License (OFL) are to stimulate worldwide
+development of collaborative font projects, to support the font creation
+efforts of academic and linguistic communities, and to provide a free and
+open framework in which fonts may be shared and improved in partnership
+with others.
+The OFL allows the licensed fonts to be used, studied, modified and
+redistributed freely as long as they are not sold by themselves. The
+fonts, including any derivative works, can be bundled, embedded,
+redistributed and/or sold with any software provided that any reserved
+names are not used by derivative works. The fonts and derivatives,
+however, cannot be released under any other type of license. The
+requirement for fonts to remain under this license does not apply
+to any document created using the fonts or their derivatives.
+DEFINITIONS
+"Font Software" refers to the set of files released by the Copyright
+Holder(s) under this license and clearly marked as such. This may
+include source files, build scripts and documentation.
+
+"Reserved Font Name" refers to any names specified as such after the
+copyright statement(s).
+
+"Original Version" refers to the collection of Font Software components as
+distributed by the Copyright Holder(s).
+"Modified Version" refers to any derivative made by adding to, deleting,
+or substituting -- in part or in whole -- any of the components of the
+Original Version, by changing formats or by porting the Font Software to a
+new environment.
+
+"Author" refers to any designer, engineer, programmer, technical
+writer or other person who contributed to the Font Software.
+PERMISSION & CONDITIONS
+Permission is hereby granted, free of charge, to any person obtaining
+a copy of the Font Software, to use, study, copy, merge, embed, modify,
+redistribute, and sell modified and unmodified copies of the Font
+Software, subject to the following conditions:
+
+1) Neither the Font Software nor any of its individual components,
+in Original or Modified Versions, may be sold by itself.
+2) Original or Modified Versions of the Font Software may be bundled,
+redistributed and/or sold with any software, provided that each copy
+contains the above copyright notice and this license. These can be
+included either as stand-alone text files, human-readable headers or
+in the appropriate machine-readable metadata fields within text or
+binary files as long as those fields can be easily viewed by the user.
+3) No Modified Version of the Font Software may use the Reserved Font
+Name(s) unless explicit written permission is granted by the corresponding
+Copyright Holder. This restriction only applies to the primary font name as
+presented to the users.
+4) The name(s) of the Copyright Holder(s) or the Author(s) of the Font
+Software shall not be used to promote, endorse or advertise any
+Modified Version, except to acknowledge the contribution(s) of the
+Copyright Holder(s) and the Author(s) or with their explicit written
+permission.
+5) The Font Software, modified or unmodified, in part or in whole,
+must be distributed entirely under this license, and must not be
+distributed under any other license. The requirement for fonts to
+remain under this license does not apply to any document created
+using the Font Software.
+
+TERMINATION
+This license becomes null and void if any of the above conditions are
+not met.
+DISCLAIMER
+THE FONT SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO ANY WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT
+OF COPYRIGHT, PATENT, TRADEMARK, OR OTHER RIGHT. IN NO EVENT SHALL THE
+COPYRIGHT HOLDER BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+INCLUDING ANY GENERAL, SPECIAL, INDIRECT, INCIDENTAL, OR CONSEQUENTIAL
+DAMAGES, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF THE USE OR INABILITY TO USE THE FONT SOFTWARE OR FROM
+OTHER DEALINGS IN THE FONT SOFTWARE.

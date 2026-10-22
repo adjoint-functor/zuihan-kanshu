@@ -1,0 +1,135 @@
+name: Full validation with PDF environment
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/pdf-environment.yml'
+      - 'skill/**'
+      - 'tests/**'
+      - 'tools/**'
+      - 'VERSION'
+  pull_request:
+    paths:
+      - '.github/workflows/pdf-environment.yml'
+      - 'skill/**'
+      - 'tests/**'
+      - 'tools/**'
+      - 'VERSION'
+
+permissions:
+  contents: read
+
+jobs:
+  linux-recovery:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+      - name: Prepare native PDF utilities
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends perl fontconfig poppler-utils poppler-data fonts-dejavu-core
+      - name: Restore private toolchain from the shipped recipe
+        run: |
+          set -o pipefail
+          python skill/zuihan-kanshu/scripts/pdf-environment.py restore \
+            --prefix "$RUNNER_TEMP/math-pdf-env" --baseline-tools 2>&1 | tee restore.txt
+      - name: Validate repository and materialize the release
+        run: |
+          python tools/validate_repo.py
+          python tools/build_release.py --check
+          python tools/build_release.py --output-dir "$RUNNER_TEMP/skill-release"
+      - name: Run all tests with real TeX and require no skips
+        run: |
+          set -o pipefail
+          python skill/zuihan-kanshu/scripts/pdf-environment.py run \
+            --config "$RUNNER_TEMP/math-pdf-env/environment.json" -- \
+            python tools/run_tests.py --require-no-skips --report full-tests.json 2>&1 | tee full-tests.txt
+      - name: Build and inspect Chinese mathematics sample
+        run: |
+          python skill/zuihan-kanshu/scripts/pdf-environment.py smoke \
+            --config "$RUNNER_TEMP/math-pdf-env/environment.json" --output pdf-env-sample
+      - name: Preserve sample and diagnostics
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: linux-pdf-environment-evidence
+          retention-days: 14
+          path: |
+            restore.txt
+            full-tests.json
+            full-tests.txt
+            pdf-env-sample/
+            ${{ runner.temp }}/math-pdf-env/check.json
+            ${{ runner.temp }}/math-pdf-env/environment.json
+            ${{ runner.temp }}/math-pdf-env/tex-packages.txt
+            ${{ runner.temp }}/math-pdf-env/failure.txt
+
+  linux-host-tex:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+      - name: Prepare a distribution toolchain without Chinese TeX packages
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends pandoc texlive-xetex texlive-latex-extra texlive-fonts-recommended latexmk fontconfig poppler-utils poppler-data fonts-noto-cjk fonts-dejavu-core
+          python -m pip install --disable-pip-version-check PyYAML==6.0.3 Pillow==12.3.0 pypdf==6.10.0
+      - name: Record the existing toolchain and missing macro
+        run: |
+          python skill/zuihan-kanshu/scripts/pdf-environment.py check --report host-before.json || test "$?" -eq 1
+          python - <<'PY'
+          import json
+          r = json.load(open('host-before.json'))
+          assert r['tools']['xelatex']['works']
+          assert r['tools']['pandoc']['works']
+          assert not r['tex_files']['xeCJK.sty'], 'This fixture must exercise a real missing macro'
+          PY
+      - name: Restore only missing components
+        run: |
+          set -o pipefail
+          python skill/zuihan-kanshu/scripts/pdf-environment.py restore --prefix "$RUNNER_TEMP/native-env" 2>&1 | tee native-restore.txt
+          python tools/verify_host_reuse.py host-before.json "$RUNNER_TEMP/native-env"
+          python skill/zuihan-kanshu/scripts/pdf-environment.py restore --prefix "$RUNNER_TEMP/native-env"
+      - name: Run PDF tests with the retained distribution versions
+        run: |
+          set -o pipefail
+          python skill/zuihan-kanshu/scripts/pdf-environment.py run --config "$RUNNER_TEMP/native-env/environment.json" -- python -m unittest discover -s tests -p 'test_*pdf*.py' -v 2>&1 | tee native-tests.txt
+      - name: Build and inspect the Chinese sample
+        run: |
+          python skill/zuihan-kanshu/scripts/pdf-environment.py smoke --config "$RUNNER_TEMP/native-env/environment.json" --output native-sample
+      - name: Recover after this job's extension directory becomes unavailable
+        run: |
+          mv "$RUNNER_TEMP/native-env" "$RUNNER_TEMP/native-env.unavailable"
+          python skill/zuihan-kanshu/scripts/pdf-environment.py restore --prefix "$RUNNER_TEMP/native-env-new"
+          python tools/verify_host_reuse.py host-before.json "$RUNNER_TEMP/native-env-new"
+          python skill/zuihan-kanshu/scripts/pdf-environment.py smoke --config "$RUNNER_TEMP/native-env-new/environment.json" --output native-recovered-sample
+      - name: Preserve native reuse evidence
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: linux-native-pdf-evidence
+          retention-days: 14
+          path: |
+            host-before.json
+            native-restore.txt
+            native-tests.txt
+            native-sample/
+            native-recovered-sample/
+            ${{ runner.temp }}/native-env*/environment.json
+            ${{ runner.temp }}/native-env*/check.json
+            ${{ runner.temp }}/native-env*/tex-install.txt
+            ${{ runner.temp }}/native-env*/tex-repository-probes.txt
+            ${{ runner.temp }}/native-env*/failure.txt
