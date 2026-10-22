@@ -38,7 +38,7 @@ Other hosts use their available workspace, local storage, or file delivery and r
 
 ## Obtain and install
 
-**v8.3.0 is the public source starting point.** Prebuilt plugin ZIPs have not yet been published, and no plugin directory listing is available. When published, plugin ZIPs will be available through this repository's [GitHub Releases](https://github.com/adjoint-functor/zuihan-kanshu/releases). Building from source is currently available.
+The current source version is **v8.3.1**; v8.3.0 is the public source starting point. Check this repository's [GitHub Releases](https://github.com/adjoint-functor/zuihan-kanshu/releases) for published prebuilt plugin ZIPs. No plugin directory listing is available yet. The steps below build from source.
 
 From the repository root, use an available Python 3 interpreter (`python3` may be the command on your system):
 
@@ -48,7 +48,7 @@ python tools/build_release.py --format plugin --check
 python tools/build_release.py --format plugin --zip --output-dir dist
 ```
 
-This creates `dist/plugin/zuihan-kanshu-v8.3.0/` and `dist/plugin/zuihan-kanshu-v8.3.0.zip`. The plugin ZIP contains `plugin.json`, icons, and `skills/zuihan-kanshu/` at its root. Import it through a host that supports the format. GitHub's **Download ZIP contains source code**, which must be built first. Building does not install the plugin.
+This creates `dist/plugin/zuihan-kanshu-v8.3.1/` and `dist/plugin/zuihan-kanshu-v8.3.1.zip`. The plugin ZIP contains `plugin.json`, icons, and `skills/zuihan-kanshu/` at its root. Import it through a host that supports the format. GitHub's **Download ZIP contains source code**, which must be built first. Building does not install the plugin.
 
 Prefer the plugin in a host that supports it. The plugin already includes the skill; avoid installing both in the same host. For hosts using only a standalone skill directory:
 
@@ -56,7 +56,7 @@ Prefer the plugin in a host that supports it. The plugin already includes the sk
 python tools/build_release.py --format skill --output-dir dist
 ```
 
-The output is `dist/skill/zuihan-kanshu-v8.3.0/`, with `SKILL.md` at its root. Follow the target host's installation instructions and install its contents in a skill directory named `zuihan-kanshu`; the build directory's version suffix is not part of the installed name. Both formats use one runtime source; existing output directories are not overwritten, so use another empty output location when rebuilding.
+The output is `dist/skill/zuihan-kanshu-v8.3.1/`, with `SKILL.md` at its root. Follow the target host's installation instructions and install its contents in a skill directory named `zuihan-kanshu`; the build directory's version suffix is not part of the installed name. Both formats use one runtime source; existing output directories are not overwritten, so use another empty output location when rebuilding.
 
 Metadata targets `CHAT` / `CODEX`. Import support, search, delegation, model parameters, cloud files, and compilation tools depend on the host. The skill does not supply those host capabilities.
 
@@ -70,6 +70,12 @@ python tools/run_tests.py
 ```
 
 Full PDF checks need TeX, fonts, and PDF tools. Read skips in the context of the available environment; structural validation does not prove mathematical correctness. See [contributing](CONTRIBUTING.md) for change-specific verification.
+
+## Acknowledgments
+
+Thanks to [Danus](https://github.com/frenzymath/Danus/tree/6d92e8d415933ca2ef52fd1a4da73fdfcd418f1c), [Rethlas](https://github.com/frenzymath/Rethlas/tree/e7e48a6d30e7f0ddf0ed1909a594a1f0cfe2c2b7), and [Bolzano (problem-solver)](https://github.com/vaclavrozhon/problem-solver/tree/ccc0f7185ef6a72b3b8f519b8efab3f386cf597f) for design references on research collaboration, proof verification, and failure feedback. [Matlas](https://matlas.ai/docs) provides mathematical search services and APIs; [hrjtju/matlas-search](https://github.com/hrjtju/matlas-search) provided references for API use and reading candidate literature.
+
+These acknowledgments identify references, not the inclusion of entire upstream projects or their authors' endorsement. See [NOTICE](NOTICE) for provenance, licenses, and usage boundaries.
 
 ## Name, icons, and help
 

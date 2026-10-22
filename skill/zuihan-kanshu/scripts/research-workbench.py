@@ -15,7 +15,7 @@ from pathlib import Path
 from typing import Iterable, NamedTuple, Sequence
 
 
-VERSION = "8.3.0"
+VERSION = "8.3.1"
 INITIAL_PROJECT_VERSION = "1.0.0"
 ASSET_DIR = Path(__file__).resolve().parents[1] / "assets" / "research-project"
 

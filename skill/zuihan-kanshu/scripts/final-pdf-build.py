@@ -16,7 +16,7 @@ from pathlib import Path
 from typing import Any
 
 
-VERSION = "8.3.0"
+VERSION = "8.3.1"
 PROFILE_BEGIN = "<!-- BEGIN:BUILD_PROFILE -->"
 PROFILE_END = "<!-- END:BUILD_PROFILE -->"
 PROFILE_SCHEMA = "final-pdf-build/v1"

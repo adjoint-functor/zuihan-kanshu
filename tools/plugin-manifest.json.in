@@ -33,8 +33,13 @@
         "brandColor": "#087F79",
         "brandColorDark": "#64D5C7"
       },
+      "review": {
+        "commerce": false,
+        "commerce_description": "The plugin itself is offered without a fee and has no purchases or payment processing. Host platforms and third-party services set their own access requirements and pricing."
+      },
       "publication": {
-        "release_notes": "Initial public-source edition: unified zuihan-kanshu naming, portable execution and storage guidance, public documentation, and preserved mathematical workflows and approved artwork.",
+        "countries": [],
+        "release_notes": "v8.3.1 adds bilingual acknowledgments, clarifies source ZIP and installable plugin ZIP instructions, and declares availability in all platform-supported countries and regions with no plugin charge or purchases. Mathematical workflows and approved artwork are unchanged.",
         "translations": {
           "zh-CN": {
             "subtitle": "数学问答、研究与写作",

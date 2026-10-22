@@ -2,7 +2,7 @@
 
 先从 [README](README.md) 选择问题、研究或写作入口。安装与打包问题可运行其中的检查命令；研究工作台可参考[初始化示例](docs/examples/research-initialization.md)。
 
-公开仓库启用后，使用 [GitHub Issues](https://github.com/adjoint-functor/zuihan-kanshu/issues) 提交使用问题、缺陷或建议。请附上：
+使用 [GitHub Issues](https://github.com/adjoint-functor/zuihan-kanshu/issues) 提交使用问题、缺陷或建议。请附上：
 
 - 源码或插件版本，以及使用的宿主与可用能力；
 - 实际操作、预期结果和收到的错误；

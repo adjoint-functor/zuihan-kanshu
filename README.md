@@ -41,7 +41,7 @@
 
 ## 取得与安装
 
-当前源码版本为 **v8.3.0**，这是整理后的公开源码起点。预构建插件 ZIP 尚未发布，插件目录条目也尚未上架。发布后可从本仓库的 [GitHub Releases](https://github.com/adjoint-functor/zuihan-kanshu/releases) 下载插件 ZIP；目前可从源码构建。
+当前源码版本为 **v8.3.1**；v8.3.0 是整理后的公开源码起点。预构建插件 ZIP 的发布状态以本仓库的 [GitHub Releases](https://github.com/adjoint-functor/zuihan-kanshu/releases) 为准，插件目录条目尚未上架。以下提供从源码构建的步骤。
 
 在取得源码后，从仓库根目录运行以下命令。需要可用的 Python 3；若本机命令名为 `python3`，相应替换 `python`。
 
@@ -53,8 +53,8 @@ python tools/build_release.py --format plugin --zip --output-dir dist
 
 插件输出为：
 
-- 目录：`dist/plugin/zuihan-kanshu-v8.3.0/`
-- ZIP：`dist/plugin/zuihan-kanshu-v8.3.0.zip`
+- 目录：`dist/plugin/zuihan-kanshu-v8.3.1/`
+- ZIP：`dist/plugin/zuihan-kanshu-v8.3.1.zip`
 
 插件 ZIP 根层含 `plugin.json`、图标和 `skills/zuihan-kanshu/`，可交给支持该格式的宿主导入。GitHub 的 **Download ZIP 是源码 ZIP**，需要先执行构建命令，不能直接当作插件 ZIP 使用。构建不会自动安装；在宿主提供的导入或安装入口完成操作。
 
@@ -64,7 +64,7 @@ python tools/build_release.py --format plugin --zip --output-dir dist
 python tools/build_release.py --format skill --output-dir dist
 ```
 
-输出为 `dist/skill/zuihan-kanshu-v8.3.0/`，其根层包含 `SKILL.md`。按目标宿主的技能安装方式，将其内容安装到名为 `zuihan-kanshu` 的技能目录；构建产物目录上的版本后缀不属于最终安装名。两种目标来自同一份运行时源码，已有输出目录会拒绝覆盖；重复构建可另选空输出目录。
+输出为 `dist/skill/zuihan-kanshu-v8.3.1/`，其根层包含 `SKILL.md`。按目标宿主的技能安装方式，将其内容安装到名为 `zuihan-kanshu` 的技能目录；构建产物目录上的版本后缀不属于最终安装名。两种目标来自同一份运行时源码，已有输出目录会拒绝覆盖；重复构建可另选空输出目录。
 
 插件元数据面向 `CHAT` / `CODEX`。各宿主是否提供插件导入、外部检索、子智能体、模型参数、云端文件和编译工具，以实际环境为准；安装技能本身不会添加这些能力。
 
@@ -85,6 +85,12 @@ python tools/run_tests.py
 ```
 
 涉及 PDF 的完整验收需要 TeX、字体及 PDF 工具。测试报告中的跳过项应按实际环境理解；结构检查通过不等于数学证明正确。贡献时按改动范围选择验证，见 [CONTRIBUTING.md](CONTRIBUTING.md)。
+
+## 致谢
+
+感谢 [Danus](https://github.com/frenzymath/Danus/tree/6d92e8d415933ca2ef52fd1a4da73fdfcd418f1c)、[Rethlas](https://github.com/frenzymath/Rethlas/tree/e7e48a6d30e7f0ddf0ed1909a594a1f0cfe2c2b7) 与 [Bolzano（problem-solver）](https://github.com/vaclavrozhon/problem-solver/tree/ccc0f7185ef6a72b3b8f519b8efab3f386cf597f)，它们为研究协作、证明核验和失败反馈提供了设计参考。[Matlas](https://matlas.ai/docs) 提供数学检索服务与 API；[hrjtju/matlas-search](https://github.com/hrjtju/matlas-search) 为接口使用与候选文献阅读提供了参考。
+
+这些致谢说明参考来源，不表示将上游项目整体纳入本插件，也不表示上游作者为本项目背书。具体来源、许可与使用边界见 [NOTICE](NOTICE)。
 
 ## 名称与图标
 
