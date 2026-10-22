@@ -7,7 +7,22 @@
 
 **瑞般观珠**是面向 ChatGPT 与 Codex 的数学问题解答、持续研究与写作插件。
 
-[English](README.en.md) · [可复现示例](docs/examples/research-initialization.md) · [设计原则](docs/design-principles.md) · [版本与迁移](docs/history-and-migration.md)
+[English](README.en.md) · [安装说明](INSTALL.md) · [可复现示例](docs/examples/research-initialization.md) · [设计原则](docs/design-principles.md) · [版本与迁移](docs/history-and-migration.md)
+
+## 安装
+
+本项目通过 GitHub 提供第三方插件。当前正式版为 **v8.3.1**：[下载插件 ZIP](https://github.com/adjoint-functor/zuihan-kanshu/releases/download/v8.3.1/zuihan-kanshu-v8.3.1.zip)，普通使用者无需从源码编译。
+
+1. 在提供 **Plugin Creator**、允许创建和使用插件的 ChatGPT Work 中新建对话，输入 `@` 并选择 **Plugin Creator**。
+2. 发送下面的提示词，让它取得正式插件 ZIP，将完整插件保存为你自己的私人副本。
+3. 保存后，按宿主提示完成**安装／启用**；再新建对话，用 `@` 选择**瑞般观珠**并提出一个数学问题。
+
+```text
+请帮我安装第三方插件“瑞般观珠”：https://github.com/adjoint-functor/zuihan-kanshu
+请先读根目录 INSTALL.md，使用正式 Release 插件 ZIP，原样导入完整插件并保留名称、版本、技能和资源，保存为我自己的私人副本。不要重新设计或改写插件；按当前宿主能力完成安装／启用，并说明实际完成到哪一步。
+```
+
+[完整安装说明（含给 GPT 的步骤）](INSTALL.md)提供手动下载后备、已有副本更新、Codex 本地安装与源码构建方法。GitHub 的 **Code → Download ZIP** 和 Release 的 **Source code** 都是源码包，不能直接当作插件 ZIP。
 
 ## 问题 → 研究 → 写作
 
@@ -38,35 +53,6 @@
 在具备云端文件能力的宿主中，新建研究或文稿优先采用指定目录；仅要求“保存在云端”或未指定目录时，自动在云端库根目录下建立以主题命名的子目录，无需仅为目录命名再次询问。接续工作沿用已有目录。
 
 其他宿主按实际可用的本地、工作区或文件交付能力保存，并说明实际保存位置；没有持久保存能力时，说明限制并在对话中提供可用内容。脚本在本地成功不代表已经保存到云端。研究工作台的五文件协议与保存步骤见[研究工作台](skill/zuihan-kanshu/references/research-workbench.md)。
-
-## 取得与安装
-
-当前源码版本为 **v8.3.1**；v8.3.0 是整理后的公开源码起点。预构建插件 ZIP 的发布状态以本仓库的 [GitHub Releases](https://github.com/adjoint-functor/zuihan-kanshu/releases) 为准，插件目录条目尚未上架。以下提供从源码构建的步骤。
-
-在取得源码后，从仓库根目录运行以下命令。需要可用的 Python 3；若本机命令名为 `python3`，相应替换 `python`。
-
-```sh
-python tools/build_release.py --check
-python tools/build_release.py --format plugin --check
-python tools/build_release.py --format plugin --zip --output-dir dist
-```
-
-插件输出为：
-
-- 目录：`dist/plugin/zuihan-kanshu-v8.3.1/`
-- ZIP：`dist/plugin/zuihan-kanshu-v8.3.1.zip`
-
-插件 ZIP 根层含 `plugin.json`、图标和 `skills/zuihan-kanshu/`，可交给支持该格式的宿主导入。GitHub 的 **Download ZIP 是源码 ZIP**，需要先执行构建命令，不能直接当作插件 ZIP 使用。构建不会自动安装；在宿主提供的导入或安装入口完成操作。
-
-同一宿主优先安装插件；插件已经包含技能，请勿再重复安装独立技能。若宿主只使用独立技能目录，可构建纯技能：
-
-```sh
-python tools/build_release.py --format skill --output-dir dist
-```
-
-输出为 `dist/skill/zuihan-kanshu-v8.3.1/`，其根层包含 `SKILL.md`。按目标宿主的技能安装方式，将其内容安装到名为 `zuihan-kanshu` 的技能目录；构建产物目录上的版本后缀不属于最终安装名。两种目标来自同一份运行时源码，已有输出目录会拒绝覆盖；重复构建可另选空输出目录。
-
-插件元数据面向 `CHAT` / `CODEX`。各宿主是否提供插件导入、外部检索、子智能体、模型参数、云端文件和编译工具，以实际环境为准；安装技能本身不会添加这些能力。
 
 ## 仓库与检查
 
@@ -104,3 +90,4 @@ python tools/run_tests.py
 | 1024 × 1024 | [icon-1024.png](skill/zuihan-kanshu/assets/icon-1024.png) | [icon-dark-1024.png](skill/zuihan-kanshu/assets/icon-dark-1024.png) |
 
 许可与来源说明见 [LICENSE](LICENSE) 和 [NOTICE](NOTICE)。使用问题与建议见 [SUPPORT.md](SUPPORT.md)，安全与外部数据交互说明见 [SECURITY.md](SECURITY.md)。
+
