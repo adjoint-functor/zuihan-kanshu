@@ -8,16 +8,24 @@
 
 This third-party plugin is distributed through GitHub. The current release is **v8.3.1**: [download the plugin ZIP](https://github.com/adjoint-functor/zuihan-kanshu/releases/download/v8.3.1/zuihan-kanshu-v8.3.1.zip). You do not need to build from source.
 
-1. In ChatGPT Work with **Plugin Creator** and permission to create and use plugins, start a conversation, type `@`, and select **Plugin Creator**.
-2. Send the prompt below to obtain the release ZIP and save the complete plugin as your own private copy.
-3. After saving, follow the host's **install/enable** prompts. Start another conversation, select **瑞般观珠** with `@`, and ask a mathematical question.
+### First installation (recommended: upload the complete ZIP)
+
+1. [Download the release plugin ZIP](https://github.com/adjoint-functor/zuihan-kanshu/releases/download/v8.3.1/zuihan-kanshu-v8.3.1.zip) and keep the complete `.zip` without extracting it.
+2. Open ChatGPT's **Plugins** page, choose **Add → Upload plugin archive**, upload this ZIP, and follow the page's import/save prompts.
+3. Complete **installation/enabling**, then start a new conversation, select **瑞般观珠** with `@`, and ask a mathematical question.
+
+Users have reported successful first-time installation via archive upload. Controls and permissions may differ by account or client.
+
+### Ask GPT to help install (optional)
+
+In ChatGPT Chat or Work with **Plugin Creator** and permission to create and use plugins, start a conversation, type `@`, select **Plugin Creator**, and send the prompt below. After the private copy is saved, complete installation/enabling and verify it in a new conversation.
 
 ```text
 Help me install the third-party plugin Zuihan Kanshu (瑞般观珠): https://github.com/adjoint-functor/zuihan-kanshu
 Read the root INSTALL.md first. Use the published release plugin ZIP and import the complete package unchanged, preserving its name, version, skill, and assets, as my own private copy. Do not redesign or rewrite the plugin. Complete installation/enabling using this host's available capabilities, and report the stage actually reached.
 ```
 
-The [full installation guide, including instructions for GPT](INSTALL.md#english), covers manual download, updates, local Codex installation, and source builds. GitHub's **Code → Download ZIP** and a release's **Source code** archives contain source code, not the installable plugin.
+The [full installation guide, including instructions for GPT](INSTALL.md#english), covers Plugins page upload, GPT tool availability troubleshooting, updates, local Codex installation, and source builds. GitHub's **Code → Download ZIP** and a release's **Source code** archives contain source code, not the installable plugin.
 
 ## Questions → research → writing
 
