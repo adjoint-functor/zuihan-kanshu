@@ -1,8 +1,23 @@
 # zuihan-kanshu
 
-**Zuihan Kanshu (瑞般观珠)** is a plugin for mathematical questions, sustained research, and mathematical writing in ChatGPT and Codex.
+**Zuihan Kanshu (瑞般观珠)** is a plugin primarily for ChatGPT **Chat and Work**, supporting mathematical questions, sustained research, and mathematical writing.
 
-[中文](README.md) · [Reproducible example](docs/examples/research-initialization.md) · [Design principles](docs/design-principles.md) · [History and migration](docs/history-and-migration.md)
+[中文](README.md) · [Installation](INSTALL.md#english) · [Reproducible example](docs/examples/research-initialization.md) · [Design principles](docs/design-principles.md) · [History and migration](docs/history-and-migration.md)
+
+## Install
+
+This third-party plugin is distributed through GitHub. The current release is **v8.3.1**: [download the plugin ZIP](https://github.com/adjoint-functor/zuihan-kanshu/releases/download/v8.3.1/zuihan-kanshu-v8.3.1.zip). You do not need to build from source.
+
+1. In ChatGPT Work with **Plugin Creator** and permission to create and use plugins, start a conversation, type `@`, and select **Plugin Creator**.
+2. Send the prompt below to obtain the release ZIP and save the complete plugin as your own private copy.
+3. After saving, follow the host's **install/enable** prompts. Start another conversation, select **瑞般观珠** with `@`, and ask a mathematical question.
+
+```text
+Help me install the third-party plugin Zuihan Kanshu (瑞般观珠): https://github.com/adjoint-functor/zuihan-kanshu
+Read the root INSTALL.md first. Use the published release plugin ZIP and import the complete package unchanged, preserving its name, version, skill, and assets, as my own private copy. Do not redesign or rewrite the plugin. Complete installation/enabling using this host's available capabilities, and report the stage actually reached.
+```
+
+The [full installation guide, including instructions for GPT](INSTALL.md#english), covers manual download, updates, local Codex installation, and source builds. GitHub's **Code → Download ZIP** and a release's **Source code** archives contain source code, not the installable plugin.
 
 ## Questions → research → writing
 
@@ -36,30 +51,6 @@ They request an answer, a cloud-saved research project, or a cloud-saved writing
 
 Other hosts use their available workspace, local storage, or file delivery and report the actual location. Without persistent storage, they should explain the limitation and provide usable content in the conversation. A successful local command does not establish a cloud save. The [workbench](skill/zuihan-kanshu/references/research-workbench.md) describes its five versioned files and persistence protocol.
 
-## Obtain and install
-
-The current source version is **v8.3.1**; v8.3.0 is the public source starting point. Check this repository's [GitHub Releases](https://github.com/adjoint-functor/zuihan-kanshu/releases) for published prebuilt plugin ZIPs. No plugin directory listing is available yet. The steps below build from source.
-
-From the repository root, use an available Python 3 interpreter (`python3` may be the command on your system):
-
-```sh
-python tools/build_release.py --check
-python tools/build_release.py --format plugin --check
-python tools/build_release.py --format plugin --zip --output-dir dist
-```
-
-This creates `dist/plugin/zuihan-kanshu-v8.3.1/` and `dist/plugin/zuihan-kanshu-v8.3.1.zip`. The plugin ZIP contains `plugin.json`, icons, and `skills/zuihan-kanshu/` at its root. Import it through a host that supports the format. GitHub's **Download ZIP contains source code**, which must be built first. Building does not install the plugin.
-
-Prefer the plugin in a host that supports it. The plugin already includes the skill; avoid installing both in the same host. For hosts using only a standalone skill directory:
-
-```sh
-python tools/build_release.py --format skill --output-dir dist
-```
-
-The output is `dist/skill/zuihan-kanshu-v8.3.1/`, with `SKILL.md` at its root. Follow the target host's installation instructions and install its contents in a skill directory named `zuihan-kanshu`; the build directory's version suffix is not part of the installed name. Both formats use one runtime source; existing output directories are not overwritten, so use another empty output location when rebuilding.
-
-Metadata targets `CHAT` / `CODEX`. Import support, search, delegation, model parameters, cloud files, and compilation tools depend on the host. The skill does not supply those host capabilities.
-
 ## Source and checks
 
 The runtime consists of on-demand skill instructions, reference modules, and Python utilities in `skill/zuihan-kanshu/`. `tools/runtime-files.txt` is its explicit file manifest. Repository checks and packaging live in `tools/`, tests in `tests/`, and public explanations and examples in `docs/`.
@@ -84,3 +75,4 @@ The name is a phonetic wordplay on Japanese 「随伴関手」 (ずいはんか�
 The [icon catalogue](docs/design/zuihan-icon/formula-catalogue.md) records the exact **22 formulas**, their conditions, sources, and mathematical status. See the [design notes](docs/design/zuihan-icon/README.md) for reproducible exports. Transparent PNGs: [light 256](skill/zuihan-kanshu/assets/icon-256.png), [dark 256](skill/zuihan-kanshu/assets/icon-dark-256.png), [light 1024](skill/zuihan-kanshu/assets/icon-1024.png), [dark 1024](skill/zuihan-kanshu/assets/icon-dark-1024.png).
 
 See [LICENSE](LICENSE), [NOTICE](NOTICE), [support](SUPPORT.md), and [security and external data interactions](SECURITY.md).
+

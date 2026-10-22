@@ -1,5 +1,8 @@
 # Repository maintenance
 
+For end-user installation, use [INSTALL.md](INSTALL.md). An installation-only task
+does not require this repository maintenance workflow or the runtime skill instructions.
+
 This file guides agents maintaining the repository. The product's runtime entry is
 `skill/zuihan-kanshu/SKILL.md`; its mathematical roles live in that skill's references.
 
@@ -44,3 +47,4 @@ Keep generated caches, build output, and temporary evidence out of commits.
 Repository publication, package submission, merging, and installed-plugin updates are
 separate actions. Carry out the actions authorized in the current task; preparation or
 a successful build alone does not establish authorization for another action.
+
