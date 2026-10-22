@@ -13,7 +13,7 @@
 
 本项目通过 GitHub 提供第三方插件。当前正式版为 **v8.3.1**：[下载插件 ZIP](https://github.com/adjoint-functor/zuihan-kanshu/releases/download/v8.3.1/zuihan-kanshu-v8.3.1.zip)，普通使用者无需从源码编译。
 
-1. 在提供 **Plugin Creator**、允许创建和使用插件的 ChatGPT Work 中新建对话，输入 `@` 并选择 **Plugin Creator**。
+1. 在提供 **Plugin Creator**、允许创建和使用插件的 ChatGPT Chat 或 Work 中新建对话，输入 `@` 并选择 **Plugin Creator**。
 2. 发送下面的提示词，让它取得正式插件 ZIP，将完整插件保存为你自己的私人副本。
 3. 保存后，按宿主提示完成**安装／启用**；再新建对话，用 `@` 选择**瑞般观珠**并提出一个数学问题。
 
@@ -22,7 +22,7 @@
 请先读根目录 INSTALL.md，使用正式 Release 插件 ZIP，原样导入完整插件并保留名称、版本、技能和资源，保存为我自己的私人副本。不要重新设计或改写插件；按当前宿主能力完成安装／启用，并说明实际完成到哪一步。
 ```
 
-[完整安装说明（含给 GPT 的步骤）](INSTALL.md)提供手动下载后备、已有副本更新、Codex 本地安装与源码构建方法。GitHub 的 **Code → Download ZIP** 和 Release 的 **Source code** 都是源码包，不能直接当作插件 ZIP。
+[完整安装说明（含给 GPT 的步骤）](INSTALL.md)提供工具能力排查、手动下载与插件页导入后备、已有副本更新、Codex 本地安装与源码构建方法。GitHub 的 **Code → Download ZIP** 和 Release 的 **Source code** 都是源码包，不能直接当作插件 ZIP。
 
 ## 问题 → 研究 → 写作
 
