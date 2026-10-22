@@ -1,6 +1,6 @@
 # zuihan-kanshu
 
-**Zuihan Kanshu (瑞般观珠)** is a plugin for mathematical questions, sustained research, and mathematical writing in ChatGPT and Codex.
+**Zuihan Kanshu (瑞般观珠)** is a plugin primarily for ChatGPT **Chat and Work**, supporting mathematical questions, sustained research, and mathematical writing.
 
 [中文](README.md) · [Installation](INSTALL.md#english) · [Reproducible example](docs/examples/research-initialization.md) · [Design principles](docs/design-principles.md) · [History and migration](docs/history-and-migration.md)
 

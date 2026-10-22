@@ -5,7 +5,7 @@
   <img src="skill/zuihan-kanshu/assets/icon-1024.png" width="256" height="256" alt="瑞般观珠：以数学微雕公式环绕的双叶图标">
 </picture>
 
-**瑞般观珠**是面向 ChatGPT 与 Codex 的数学问题解答、持续研究与写作插件。
+**瑞般观珠**是主要面向 ChatGPT **Chat 与 Work** 的数学问题解答、持续研究与写作插件。
 
 [English](README.en.md) · [安装说明](INSTALL.md) · [可复现示例](docs/examples/research-initialization.md) · [设计原则](docs/design-principles.md) · [版本与迁移](docs/history-and-migration.md)
 
