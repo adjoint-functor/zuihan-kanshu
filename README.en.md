@@ -10,6 +10,12 @@ Zuihan Kanshu supports mathematical questions, research, and writing in the clou
 
 If Codex seems a little too enthusiastic about working continuously, and you worry that Goal Mode might exhaust your allowance before your conjecture is settled, Work may offer just the right pace. Advance one round at a time, pause at useful points, review the progress, ask questions, and help choose what comes next. Human participation remains part of the specification.
 
+When you need to step away, put **Dot on the editorial night shift**: whenever it sees that the current round's task is complete, have it send `根据 @瑞般观珠 规范，按指定计划，进行下一轮。` to the specified **Work conversation**, and let Work moonlight as Codex. This requests the next round under the plugin's guidelines and the specified plan. You can also ask Dot to read and follow the plan or limit how many rounds it advances.
+
+[Official Dot tasks and memory documentation](https://learn.chatgpt.com/docs/dots/tasks-and-memory) · [Controls](https://learn.chatgpt.com/docs/dots/controls)
+
+First confirm that Dot can access and continue the specified task; capabilities depend on the official documentation and what is actually available. A user reports completing a **200-page set of lecture notes** by starting the work in one step and letting it advance through the plan this way. **Continuous work can still exhaust your allowance, especially on open-ended research; agree on a round limit and stopping conditions first.**
+
 ## Advanced usage guide
 
 **[Read the full advanced usage guide](skill/zuihan-kanshu/references/usage-guide.md)** for starting and continuing research, asking about details, and planning mathematical writing. The guide is written in Chinese; you can ask the plugin to explain it in English.
@@ -32,7 +38,7 @@ How can I use this plugin more effectively?
 
 ## Environment and models
 
-Compatibility with Codex has not been tested.
+Use in Codex is not currently recommended. A Codex-compatible branch is planned for the future.
 
 **Recommended main agent:** choose **GPT-6 Astra with Max** when your budget allows; **GPT-6.1 Sol with Max** is the minimum recommended choice for this plugin. Built-in sub-agent assignments already cover exploration, proof, and verification in the research module. Max is normally sufficient; **Ultra is not recommended by default**.
 

@@ -21,7 +21,7 @@
 
 ### 在 ChatGPT 的 Chat 或 Work 中安装
 
-请在 **Work** 中使用，在云端启动、查看和接续数学工作，无需自行准备远程主机或维护服务器。与 Codex 的适配尚未检验；下方本地安装步骤不等于适配实测。使用方法见[进阶使用指南](skill/zuihan-kanshu/references/usage-guide.md)；指南问答自 v8.4.0 提供，当前源码指南包含待发布的对话与中文参考规则。
+请在 **Work** 中使用，在云端启动、查看和接续数学工作，无需自行准备远程主机或维护服务器。目前不推荐在 Codex 中使用，未来拟推出适配 Codex 的分支版本。下方本地安装步骤仅说明技术操作，不构成适配保证。使用方法见[进阶使用指南](skill/zuihan-kanshu/references/usage-guide.md)；指南问答自 v8.4.0 提供，当前源码指南包含待发布的对话与中文参考规则。
 
 #### 首次安装（推荐：上传完整 ZIP）
 
@@ -60,6 +60,8 @@ GitHub 发布与已经导入的私人副本**不会自动同步**。需要更新
 
 ### Codex 本地插件与其他宿主
 
+以下保留本地安装技术步骤；目前不推荐在 Codex 中使用，安装成功不代表适配保证。
+
 支持本地插件 marketplace 的 Codex／ChatGPT 桌面环境，可使用同一份 Release ZIP：将**完整内容**解压到本地插件目录，再按 OpenAI 的[本地插件安装说明](https://developers.openai.com/plugins/build/plugins#install-a-local-plugin-manually)建立 repo 或 personal marketplace，并在宿主中安装／启用。比如插件放在 marketplace 根目录下的 `plugins/zuihan-kanshu/` 时，入口是 `plugins/zuihan-kanshu/plugin.json`，目录条目的 `source.path` 为 `./plugins/zuihan-kanshu`；路径相对于 marketplace 根目录。
 
 本仓库目前是源码仓库，没有可供直接注册的 marketplace 目录，也没有根层已构建的插件。不能直接把本仓库 URL 当作 marketplace 源安装。请按目标宿主的实际文档操作；插件已包含技能，同一宿主不要再重复安装独立技能。
@@ -94,7 +96,7 @@ python tools/build_release.py --format skill --output-dir dist
 
 ### Install in ChatGPT Chat or Work
 
-**Use Work** to start, check, and continue mathematics in the cloud without maintaining a remote machine or server of your own. Compatibility with Codex has not been tested; the local installation steps below do not establish tested compatibility. See the [advanced usage guide](skill/zuihan-kanshu/references/usage-guide.md). Built-in guide responses have been available since v8.4.0; the current source guide includes the unreleased conversation and shared Chinese reference rules.
+**Use Work** to start, check, and continue mathematics in the cloud without maintaining a remote machine or server of your own. Use in Codex is not currently recommended. A Codex-compatible branch is planned for the future. The local installation steps below are technical instructions, not a guarantee of compatibility. See the [advanced usage guide](skill/zuihan-kanshu/references/usage-guide.md). Built-in guide responses have been available since v8.4.0; the current source guide includes the unreleased conversation and shared Chinese reference rules.
 
 #### First installation (recommended: upload the complete ZIP)
 
@@ -132,6 +134,8 @@ The guide's URL is <https://github.com/adjoint-functor/zuihan-kanshu/blob/main/I
 Imported private copies **do not automatically sync with GitHub**. To update, get a newer plugin ZIP from [Releases](https://github.com/adjoint-functor/zuihan-kanshu/releases), confirm the source and target copy, and use the host's update feature on that copy. Compare any personal modifications before replacing them. Complete any required enabling and new-conversation verification again.
 
 ### Local Codex plugins and other hosts
+
+The local steps below remain as technical reference. Codex use is currently not recommended, and installation alone does not establish compatibility.
 
 For Codex or ChatGPT desktop environments supporting local plugin marketplaces, extract the **complete release ZIP** into a plugin directory and follow OpenAI's [local plugin installation instructions](https://developers.openai.com/plugins/build/plugins#install-a-local-plugin-manually). For example, a plugin at `<marketplace-root>/plugins/zuihan-kanshu/` has its manifest at `plugins/zuihan-kanshu/plugin.json` and a catalog `source.path` of `./plugins/zuihan-kanshu`, relative to the marketplace root. Complete installation/enabling in the host.
 
