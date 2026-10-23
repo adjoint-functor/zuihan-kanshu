@@ -28,6 +28,7 @@ CORE_FILES = {
 }
 TEMPLATE_FILES = {"main.md.tmpl", "scratch.md.tmpl", "log.md.tmpl", "entry.md.tmpl", "ledger.md.tmpl"}
 CURRENT_REFERENCES = {
+    "usage-guide.md",
     "mathematical-inquiry.md",
     "mathematical-judgment.md",
     "document-roles.md",

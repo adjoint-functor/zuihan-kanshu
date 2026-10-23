@@ -29,6 +29,7 @@ references/research-roles.md
 references/research-workbench.md
 references/theorem-search.md
 references/translation-glossary-en-zh.md
+references/usage-guide.md
 references/working-draft.md
 references/writing-style.md
 scripts/derive-clean-reader-view.py
