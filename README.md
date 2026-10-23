@@ -33,7 +33,7 @@
 @瑞般观珠，告诉我怎么用得更有效率。
 ```
 
-**自 v8.4.0 起已内置指南问答**；也可以通过上方链接直接阅读完整指南。本页和指南说明 **v8.7.0 待发布源码**，新增模式检查和文稿后处理入口；正式下载版本见下方安装一节。
+**自 v8.4.0 起已内置指南问答**；也可以通过上方链接直接阅读完整指南。当前正式版 **v8.7.0** 已包含模式检查和文稿后处理入口，下载见下方安装一节。
 
 | 使用场景 | 进阶用法 |
 | --- | --- |
@@ -58,7 +58,7 @@
 
 无论用户简短地说“继续”，还是由 Dot 辅助接续，助手都有可核对的任务状态，并应根据最新进展判断计划是否仍适用。这有助于减少遗忘约定、重复劳动和机械追逐旧待办。**持久化计划是本插件的重要设计之一，也是一种通用方法；本分支围绕 Work 组织的具体执行节奏与 Codex 兼容性需分别看待。** 详见[设计原则](docs/design-principles.md)。
 
-这里区分的是**当前对话模式**：从 Codex 客户端启动或打开的 Work 仍按 Work 处理。当前源码在明确识别为 Codex 对话时默认停止任务并提醒用户；客户端名称、模型自称或底层运行时的 Codex 字样都不能单独作为拦截依据。这是技能中的执行约定，不是平台强制禁用开关。
+这里区分的是**当前对话模式**：从 Codex 客户端启动或打开的 Work 仍按 Work 处理。插件在明确识别为 Codex 对话时默认停止任务并提醒用户；客户端名称、模型自称或底层运行时的 Codex 字样都不能单独作为拦截依据。这是技能中的执行约定，不是平台强制禁用开关。
 
 **主智能体建议：**预算充足时选 **GPT-6 Astra／Max**，最低建议 **GPT-6.1 Sol／Max**。插件已内置子智能体分配方案，数学研究模组有专门的探索、证明与核验安排；通常使用 Max 即可，**默认不建议 Ultra**。
 
@@ -66,11 +66,11 @@
 
 ## 安装
 
-本项目通过 GitHub 提供第三方插件。当前正式版为 **v8.6.0**：[下载插件 ZIP](https://github.com/adjoint-functor/zuihan-kanshu/releases/download/v8.6.0/zuihan-kanshu-v8.6.0.zip) · [SHA256SUMS](https://github.com/adjoint-functor/zuihan-kanshu/releases/download/v8.6.0/SHA256SUMS)。普通使用者无需从源码编译。
+本项目通过 GitHub 提供第三方插件。当前正式版为 **v8.7.0**：[下载插件 ZIP](https://github.com/adjoint-functor/zuihan-kanshu/releases/download/v8.7.0/zuihan-kanshu-v8.7.0.zip) · [SHA256SUMS](https://github.com/adjoint-functor/zuihan-kanshu/releases/download/v8.7.0/SHA256SUMS)。普通使用者无需从源码编译。
 
 ### 首次安装（推荐：上传完整 ZIP）
 
-1. [下载正式插件 ZIP](https://github.com/adjoint-functor/zuihan-kanshu/releases/download/v8.6.0/zuihan-kanshu-v8.6.0.zip)，保留完整 `.zip`，无需解压。
+1. [下载正式插件 ZIP](https://github.com/adjoint-functor/zuihan-kanshu/releases/download/v8.7.0/zuihan-kanshu-v8.7.0.zip)，保留完整 `.zip`，无需解压。
 2. 打开 ChatGPT 的**插件**页面，选择 **添加 → 上传插件压缩包**，上传这个 ZIP，按页面提示完成导入／保存。
 3. 按提示完成**安装／启用**；再新建 Work 对话，用 `@` 选择**瑞般观珠**，例如：“@瑞般观珠 数学问答：请证明素数有无穷多个。”
 

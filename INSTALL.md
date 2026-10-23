@@ -7,27 +7,25 @@
 | 项目 / Item | 当前发布 / Current release |
 | --- | --- |
 | 名称 / Name | 瑞般观珠 / Zuihan Kanshu (`zuihan-kanshu`) |
-| 版本 / Version | **v8.6.0** |
-| 插件 ZIP / Plugin ZIP | [zuihan-kanshu-v8.6.0.zip](https://github.com/adjoint-functor/zuihan-kanshu/releases/download/v8.6.0/zuihan-kanshu-v8.6.0.zip) |
-| 发布页 / Release page | [v8.6.0](https://github.com/adjoint-functor/zuihan-kanshu/releases/tag/v8.6.0) |
-| 校验文件 / Checksums | [SHA256SUMS](https://github.com/adjoint-functor/zuihan-kanshu/releases/download/v8.6.0/SHA256SUMS) |
-| ZIP SHA-256 | `9bcb1041a50421698d5fef6334039f5b1fa299bd9c919f03189209839020b7fc` |
+| 版本 / Version | **v8.7.0** |
+| 插件 ZIP / Plugin ZIP | [zuihan-kanshu-v8.7.0.zip](https://github.com/adjoint-functor/zuihan-kanshu/releases/download/v8.7.0/zuihan-kanshu-v8.7.0.zip) |
+| 发布页 / Release page | [v8.7.0](https://github.com/adjoint-functor/zuihan-kanshu/releases/tag/v8.7.0) |
+| 校验文件 / Checksums | [SHA256SUMS](https://github.com/adjoint-functor/zuihan-kanshu/releases/download/v8.7.0/SHA256SUMS) |
+| ZIP SHA-256 | `476042ac469b9b7b997e3aef221cc01bf93d1e8ffed714efdfe394d25a0f90a7` |
 
-当前正式版为 v8.6.0，包含原 v8.5.0 的写作升级；v8.5.0 未独立公开发布。 / The current release is v8.6.0 and includes the writing upgrade developed as v8.5.0, which was not published separately.
+当前正式版为 **v8.7.0**，新增按实际对话模式判断的默认停止规则和文稿后处理入口，并保留此前的质量优先写作与语言表达指导。上表提供含全部技能和资源的完整安装包，可用于首次安装或更新既有副本。 / The current release is **v8.7.0**, adding a conversation-mode check and a manuscript-refinement entry while retaining quality-first writing and language guidance. The table provides the complete plugin package, including all skill files and assets, for first-time installation or updating an existing copy.
 
-当前源码为 **v8.7.0 待发布版本**，新增按实际对话模式判断的默认停止规则和文稿后处理入口。上表仍是已发布包，不包含这些新增规则；源码合并与发布下载是不同步骤。 / The current source is **unreleased v8.7.0**, adding a conversation-mode check and a manuscript-refinement entry. The published package above does not contain these additions; merging source and publishing a download are separate steps.
-
-当前源码中，未指定目的地的新任务默认保存在 Library 根目录 `瑞般观珠/` 下的项目子目录，用户明确项目名优先；首次保存确认实际目录，已有项目不自动迁移。共享中文参考与项目子目录并列。 / In the current source, new saved tasks without an explicit destination use a project folder under `瑞般观珠/` at the Library root, preferring an explicit project name and confirming the actual folder on the first save. Existing projects are not migrated; the shared Chinese reference sits alongside project folders.
+未指定目的地的新任务默认保存在 Library 根目录 `瑞般观珠/` 下的项目子目录，用户明确项目名优先；首次保存确认实际目录，已有项目不自动迁移。共享中文参考与项目子目录并列。 / New saved tasks without an explicit destination use a project folder under `瑞般观珠/` at the Library root, preferring an explicit project name and confirming the actual folder on the first save. Existing projects are not migrated; the shared Chinese reference sits alongside project folders.
 
 ## 中文
 
 ### 在 ChatGPT 的 Chat 或 Work 中安装
 
-请在 **Work** 中使用，在云端启动、查看和接续数学工作，无需自行准备远程主机或维护服务器。本分支除了智能体分工，还有适配 Work 的轮次与串行处理规则，目前不推荐在真正的 Codex 对话中运行，未来拟提供专用分支。从 Codex 客户端启动或打开的 Work 仍按 Work 处理。v8.7.0 源码只在明确识别为 Codex 对话时默认停止并提醒，不以客户端名称或底层运行时名称判断。下方本地安装步骤仅说明技术操作。使用方法见[进阶使用指南](skill/zuihan-kanshu/references/usage-guide.md)；指南问答自 v8.4.0 提供，链接指向当前源码的指南。
+请在 **Work** 中使用，在云端启动、查看和接续数学工作，无需自行准备远程主机或维护服务器。本分支除了智能体分工，还有适配 Work 的轮次与串行处理规则，目前不推荐在真正的 Codex 对话中运行，未来拟提供专用分支。从 Codex 客户端启动或打开的 Work 仍按 Work 处理。v8.7.0 只在明确识别为 Codex 对话时默认停止并提醒，不以客户端名称或底层运行时名称判断。下方本地安装步骤仅说明技术操作。使用方法见[进阶使用指南](skill/zuihan-kanshu/references/usage-guide.md)；指南问答自 v8.4.0 提供，链接指向当前源码的指南。
 
 #### 首次安装（推荐：上传完整 ZIP）
 
-1. [下载正式插件 ZIP](https://github.com/adjoint-functor/zuihan-kanshu/releases/download/v8.6.0/zuihan-kanshu-v8.6.0.zip)，保留完整 `.zip`，无需解压。
+1. [下载正式插件 ZIP](https://github.com/adjoint-functor/zuihan-kanshu/releases/download/v8.7.0/zuihan-kanshu-v8.7.0.zip)，保留完整 `.zip`，无需解压。
 2. 打开 ChatGPT 的**插件**页面，选择 **添加 → 上传插件压缩包**，上传这个 ZIP，按页面提示完成完整插件的导入／保存。
 3. **导入／保存**与**安装／启用**是不同步骤。保存成功后，按宿主实际提供的提示完成安装／启用。
 4. 再新建 Work 对话，输入 `@` 并选择**瑞般观珠**，试问：“@瑞般观珠 数学问答：请证明素数有无穷多个。”确认能选中插件并使用其技能；回答了一道数学题本身不能证明插件已安装。每次发起或接续数学任务建议选中插件并说明任务类别，关键词辅助表达，不是固定口令。
@@ -98,11 +96,11 @@ python tools/build_release.py --format skill --output-dir dist
 
 ### Install in ChatGPT Chat or Work
 
-**Use Work** to start, check, and continue mathematics in the cloud without maintaining a remote machine or server of your own. Besides agent assignments, this branch includes rounds and sequential steps designed for Work. Actual Codex conversations are not currently recommended; a dedicated branch is planned. Work started or opened from a Codex client is still Work. The v8.7.0 source defaults to stopping and warning only when the current conversation is clearly identified as Codex, not from a client or runtime name. The local steps below describe installation mechanics. See the [advanced usage guide](skill/zuihan-kanshu/references/usage-guide.md), which follows the current source. Built-in guide responses have been available since v8.4.0.
+**Use Work** to start, check, and continue mathematics in the cloud without maintaining a remote machine or server of your own. Besides agent assignments, this branch includes rounds and sequential steps designed for Work. Actual Codex conversations are not currently recommended; a dedicated branch is planned. Work started or opened from a Codex client is still Work. Version v8.7.0 defaults to stopping and warning only when the current conversation is clearly identified as Codex, not from a client or runtime name. The local steps below describe installation mechanics. See the [advanced usage guide](skill/zuihan-kanshu/references/usage-guide.md), which follows the current source. Built-in guide responses have been available since v8.4.0.
 
 #### First installation (recommended: upload the complete ZIP)
 
-1. [Download the release plugin ZIP](https://github.com/adjoint-functor/zuihan-kanshu/releases/download/v8.6.0/zuihan-kanshu-v8.6.0.zip) and keep the complete `.zip` without extracting it.
+1. [Download the release plugin ZIP](https://github.com/adjoint-functor/zuihan-kanshu/releases/download/v8.7.0/zuihan-kanshu-v8.7.0.zip) and keep the complete `.zip` without extracting it.
 2. Open ChatGPT's **Plugins** page, choose **Add → Upload plugin archive**, upload this ZIP, and follow the page's prompts to import/save the complete plugin.
 3. **Importing/saving** and **installing/enabling** are separate stages. After saving, complete the host's installation/enabling prompts.
 4. Start a new Work conversation, select **瑞般观珠** with `@`, and ask: “@瑞般观珠 Mathematical Q&A: Prove that there are infinitely many primes.” Check that the plugin can be selected and its skill used; a mathematical answer alone is not proof of installation. Select it and state the task category whenever starting or continuing mathematical work; the labels clarify intent rather than acting as required commands.

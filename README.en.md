@@ -28,7 +28,7 @@ First confirm that Dot can access and continue the specified task; capabilities 
 @瑞般观珠 How can I use this plugin more effectively?
 ```
 
-**Built-in guide responses have been available since v8.4.0.** This page and the guide describe the **unreleased v8.7.0 source**, including its mode check and manuscript-refinement entry. See the installation section for the published download.
+**Built-in guide responses have been available since v8.4.0.** The current release, **v8.7.0**, includes the conversation-mode check and manuscript-refinement entry. See the installation section for the download.
 
 | Scenario | Suggested approach |
 | --- | --- |
@@ -53,7 +53,7 @@ Requests to polish, refine, organize, or postprocess are interpreted in context.
 
 Whether you simply say “continue” or use Dot to coordinate further rounds, the assistant has a record to consult and should reassess the plan against current progress. This helps reduce forgotten agreements, duplicated work, and mechanical pursuit of stale tasks. **Persistent planning is an important part of this plugin's design and a general method. This branch's Work-oriented execution rhythm and its Codex compatibility are separate considerations.** See the [design principles](docs/design-principles.md).
 
-The distinction is the **current conversation mode**. A Work conversation started or opened from a Codex client is still Work. The current source defaults to stopping and warning when the conversation is clearly identified as Codex. A client name, a model's generic identity, or a Codex runtime label alone is insufficient. This is a skill-level execution rule, not a platform-enforced disable switch.
+The distinction is the **current conversation mode**. A Work conversation started or opened from a Codex client is still Work. The plugin defaults to stopping and warning when the conversation is clearly identified as Codex. A client name, a model's generic identity, or a Codex runtime label alone is insufficient. This is a skill-level execution rule, not a platform-enforced disable switch.
 
 **Recommended main agent:** choose **GPT-6 Astra with Max** when your budget allows; **GPT-6.1 Sol with Max** is the minimum recommended choice for this plugin. Built-in sub-agent assignments already cover exploration, proof, and verification in the research module. Max is normally sufficient; **Ultra is not recommended by default**.
 
@@ -61,11 +61,11 @@ In preliminary rough tests, the consumption ratio of GPT-6 Astra to GPT-6.1 Sol 
 
 ## Install
 
-This third-party plugin is distributed through GitHub. The current release is **v8.6.0**: [download the plugin ZIP](https://github.com/adjoint-functor/zuihan-kanshu/releases/download/v8.6.0/zuihan-kanshu-v8.6.0.zip) · [SHA256SUMS](https://github.com/adjoint-functor/zuihan-kanshu/releases/download/v8.6.0/SHA256SUMS). You do not need to build from source.
+This third-party plugin is distributed through GitHub. The current release is **v8.7.0**: [download the plugin ZIP](https://github.com/adjoint-functor/zuihan-kanshu/releases/download/v8.7.0/zuihan-kanshu-v8.7.0.zip) · [SHA256SUMS](https://github.com/adjoint-functor/zuihan-kanshu/releases/download/v8.7.0/SHA256SUMS). You do not need to build from source.
 
 ### First installation (recommended: upload the complete ZIP)
 
-1. [Download the release plugin ZIP](https://github.com/adjoint-functor/zuihan-kanshu/releases/download/v8.6.0/zuihan-kanshu-v8.6.0.zip) and keep the complete `.zip` without extracting it.
+1. [Download the release plugin ZIP](https://github.com/adjoint-functor/zuihan-kanshu/releases/download/v8.7.0/zuihan-kanshu-v8.7.0.zip) and keep the complete `.zip` without extracting it.
 2. Open ChatGPT's **Plugins** page, choose **Add → Upload plugin archive**, upload this ZIP, and follow the page's import/save prompts.
 3. Complete **installation/enabling**, then start a new Work conversation, select **瑞般观珠** with `@`, and ask, for example: “@瑞般观珠 Mathematical Q&A: Prove that there are infinitely many primes.”
 
