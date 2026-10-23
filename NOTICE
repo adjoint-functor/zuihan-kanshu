@@ -108,6 +108,10 @@ https://github.com/notofonts/noto-cjk/blob/Sans2.004/LICENSE
 - OpenAI, Plugin architecture、Use ChatGPT：区分当前 Work／Codex 对话模式与客户端、共享运行时的参考。默认停止由本插件的技能说明约定，不宣称平台硬拦截或可靠自动识别所有宿主。
   https://developers.openai.com/plugins/concepts/plugins
   https://learn.chatgpt.com/docs/use-chatgpt
+- OpenAI, Plugins、Subagents、Get started with ChatGPT Work：插件在 Chat／Work 中的可用性、官方列明的子智能体支持范围，以及轻量对话与持续任务分工的依据；2026-10-24 核读。Chat 的子智能体限制是据当前公布范围整理的使用说明，不等于逐一实测所有账户，也不把插件安装当作新增宿主能力。
+  https://learn.chatgpt.com/docs/plugins
+  https://learn.chatgpt.com/docs/agent-configuration/subagents
+  https://learn.chatgpt.com/docs/get-started-with-work
 - OpenAI, Plugin submission errors：技能元数据 `policy.products` 与隐式调用字段的格式依据；`CHAT`、`CODEX` 枚举本身不足以证明在所有 Work 入口中的映射，保留现有配置以避免未经验证地排除 Work。
   https://developers.openai.com/plugins/deploy/submission-errors
 - OpenAI, Rethinking skills and prompts for GPT-6 Astra：简洁入口、按需加载、目标和完成尺度的参考。

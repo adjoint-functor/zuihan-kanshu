@@ -21,7 +21,9 @@
 
 ### 在 ChatGPT 的 Chat 或 Work 中安装
 
-请在 **Work** 中使用，在云端启动、查看和接续数学工作，无需自行准备远程主机或维护服务器。本分支除了智能体分工，还有适配 Work 的轮次与串行处理规则，目前不推荐在真正的 Codex 对话中运行，未来拟提供专用分支。从 Codex 客户端启动或打开的 Work 仍按 Work 处理。v8.7.0 只在明确识别为 Codex 对话时默认停止并提醒，不以客户端名称或底层运行时名称判断。下方本地安装步骤仅说明技术操作。使用方法见[进阶使用指南](skill/zuihan-kanshu/references/usage-guide.md)；指南问答自 v8.4.0 提供，链接指向当前源码的指南。
+推荐在 **Work** 中使用，在云端启动、查看和接续数学工作，无需自行准备远程主机或维护服务器。本分支除了智能体分工，还有适配 Work 的轮次与串行处理规则，目前不推荐在真正的 Codex 对话中运行，未来拟提供专用分支。从 Codex 客户端启动或打开的 Work 仍按 Work 处理。v8.7.0 只在明确识别为 Codex 对话时默认停止并提醒，不以客户端名称或底层运行时名称判断。下方本地安装步骤仅说明技术操作。使用方法见[进阶使用指南](skill/zuihan-kanshu/references/usage-guide.md)；指南问答自 v8.4.0 提供，链接指向当前源码的指南。
+
+**Chat 也可使用部分功能**：数学问答、概念讨论、简短文本润色及使用指南问答。按当前官方公布的支持范围，普通 Chat 暂不能使用本插件的子智能体分工；持续研究、长篇写作和多智能体核验仍推荐 Work。依据与说明见主页[使用环境与模型](README.md#使用环境与模型)。
 
 #### 首次安装（推荐：上传完整 ZIP）
 
@@ -99,7 +101,9 @@ python tools/build_release.py --format skill --output-dir dist
 
 ### Install in ChatGPT Chat or Work
 
-**Use Work** to start, check, and continue mathematics in the cloud without maintaining a remote machine or server of your own. Besides agent assignments, this branch includes rounds and sequential steps designed for Work. Actual Codex conversations are not currently recommended; a dedicated branch is planned. Work started or opened from a Codex client is still Work. Version v8.7.0 defaults to stopping and warning only when the current conversation is clearly identified as Codex, not from a client or runtime name. The local steps below describe installation mechanics. See the [advanced usage guide](skill/zuihan-kanshu/references/usage-guide.md), which follows the current source. Built-in guide responses have been available since v8.4.0.
+**Work is recommended** to start, check, and continue mathematics in the cloud without maintaining a remote machine or server of your own. Besides agent assignments, this branch includes rounds and sequential steps designed for Work. Actual Codex conversations are not currently recommended; a dedicated branch is planned. Work started or opened from a Codex client is still Work. Version v8.7.0 defaults to stopping and warning only when the current conversation is clearly identified as Codex, not from a client or runtime name. The local steps below describe installation mechanics. See the [advanced usage guide](skill/zuihan-kanshu/references/usage-guide.md), which follows the current source. Built-in guide responses have been available since v8.4.0.
+
+**Chat also supports some features:** mathematical questions, conceptual discussions, short text revisions, and usage guidance. Based on the currently documented support, ordinary Chat cannot run this plugin's subagent assignments. Work remains recommended for sustained research, long manuscripts, and verification by multiple agents. See [Environment and models](README.en.md#environment-and-models) for the sources and explanation.
 
 #### First installation (recommended: upload the complete ZIP)
 
