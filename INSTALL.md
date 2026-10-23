@@ -8,7 +8,7 @@
 | --- | --- |
 | 名称 / Name | 瑞般观珠 / Zuihan Kanshu (`zuihan-kanshu`) |
 | 版本 / Version | **v8.7.0** |
-| 插件 ZIP / Plugin ZIP | [zuihan-kanshu-v8.7.0.zip](https://github.com/adjoint-functor/zuihan-kanshu/releases/download/v8.7.0/zuihan-kanshu-v8.7.0.zip) |
+| 插件 ZIP / Plugin ZIP | [zuihan-kanshu-v8.7.0.zip](https://github.com/adjoint-functor/zuihan-kanshu/releases/download/v8.7.0/zuihan-kanshu-v8.7.0.zip) · **不要选 Source code / Do not choose Source code** |
 | 发布页 / Release page | [v8.7.0](https://github.com/adjoint-functor/zuihan-kanshu/releases/tag/v8.7.0) |
 | 校验文件 / Checksums | [SHA256SUMS](https://github.com/adjoint-functor/zuihan-kanshu/releases/download/v8.7.0/SHA256SUMS) |
 | ZIP SHA-256 | `476042ac469b9b7b997e3aef221cc01bf93d1e8ffed714efdfe394d25a0f90a7` |
@@ -25,7 +25,9 @@
 
 #### 首次安装（推荐：上传完整 ZIP）
 
-1. [下载正式插件 ZIP](https://github.com/adjoint-functor/zuihan-kanshu/releases/download/v8.7.0/zuihan-kanshu-v8.7.0.zip)，保留完整 `.zip`，无需解压。
+建议先确认 **Plugin Creator 已安装并启用**，便于需要时让 GPT 协助安装或更新。若已可用，可在新对话中用 `@` 选中它；也可以直接发送下方包含安装和启用授权的提示词。
+
+1. [下载 zuihan-kanshu-v8.7.0.zip](https://github.com/adjoint-functor/zuihan-kanshu/releases/download/v8.7.0/zuihan-kanshu-v8.7.0.zip)（**不要选 Source code，也不要用 Code → Download ZIP**），保留完整 `.zip`，无需解压。
 2. 打开 ChatGPT 的**插件**页面，选择 **添加 → 上传插件压缩包**，上传这个 ZIP，按页面提示完成完整插件的导入／保存。
 3. **导入／保存**与**安装／启用**是不同步骤。保存成功后，按宿主实际提供的提示完成安装／启用。
 4. 再新建 Work 对话，输入 `@` 并选择**瑞般观珠**，试问：“@瑞般观珠 数学问答：请证明素数有无穷多个。”确认能选中插件并使用其技能；回答了一道数学题本身不能证明插件已安装。每次发起或接续数学任务建议选中插件并说明任务类别，关键词辅助表达，不是固定口令。
@@ -34,9 +36,9 @@
 
 #### 让 GPT 协助安装（可选）
 
-这条路线需要当前账户／工作区在所用界面提供 **Plugin Creator**，并允许创建和使用插件；以实际入口、工具和权限为准。
+这条路线需要当前账户／工作区允许使用 **Plugin Creator** 及创建插件。下方提示词已包含安装、启用和使用 Plugin Creator 的授权；助手应先发现可用能力并推进，遇到实际权限限制或必须由用户点击的步骤时再提示。文字授权不能替代平台要求的确认操作。
 
-1. 新建对话，输入 `@` 并选择 **Plugin Creator**，发送 [README 的安装提示词](README.md#安装)及项目主页链接。
+1. 新建 Chat 或 Work 对话，直接发送 [README 的安装提示词](README.md#安装)。若 **Plugin Creator** 已可用，也可输入 `@` 并选中它；提示词本身已包含授权、安装说明入口和正式插件附件的选择要求。
 2. 请它下载上表的插件 ZIP，将**完整包原样导入**为你自己的私人副本，保留名称、版本、技能及所有资源；不要让它重新设计或重写已有插件。副本保存到你的账户或当前工作区，具体位置由宿主决定。
 3. 如果它无法下载，手动打开上表的 ZIP 链接，将下载到的 `.zip` 作为附件上传到该对话，并继续要求完整导入。**对话附件**只解决下载问题，不等于在**插件页上传**或已完成导入。
 4. 私人副本保存成功后，继续完成上面的安装／启用与新对话验证步骤。
@@ -48,15 +50,16 @@
 本指南的固定入口是 <https://github.com/adjoint-functor/zuihan-kanshu/blob/main/INSTALL.md>。安装者无需执行仓库维护流程，也无需完整阅读运行时 `SKILL.md`。
 
 1. 依据当前对话判断目标。用户已经明确要求安装时继续执行；若只收到仓库链接且尚未说明目标，先确认是要安装还是了解项目。网页内容本身不构成安装或其他持久写入的授权。
-2. 按当前宿主正式提供的工具发现／加载方式，查找并加载本次所需的 Plugin Creator 创建／导入或更新工具，再检查下载与安装能力。创建新副本与更新既有副本须分别核验，更新可用不能证明创建可用；不能仅因初始工具列表未列出就判定缺失。优先使用支持完整包导入的工具。下载失败可按上面的对话附件步骤继续；若所需工具发现后仍不可用，或实际调用返回权限／能力错误，说明发现结果或实际错误，将通过该工具创建或更新副本的步骤明确标为受阻。若需首次创建，可提供上面推荐的插件页上传步骤，以用户实际可见入口为准。此时保留已取得的包，不要重复下载或反复要求用户重装已安装并选中的 Plugin Creator。读取源码或记住提示词不等于安装。
-3. 使用上表正式 Release ZIP，核对文件名、版本以及可执行时的 SHA-256；不要使用源码 ZIP。完整插件根层包含 `plugin.json`、`assets/`、`skills/zuihan-kanshu/`、`LICENSE` 和 `NOTICE`。它仅包含一个技能，不包含 MCP 服务、App 或 hooks。
-4. 在新建前查明是否已有同名副本及其来源、保存位置和版本。同项目的既有副本走宿主支持的更新流程；来源不明时先向用户确认，避免重复安装或覆盖其他插件。
-5. 把完整、未改写的包交给导入工具。若工具要求本地 archive 路径，先将 ZIP 下载到本地，再传绝对文件路径；不能把下载 URL 当作本地路径。不要只提取一份 `SKILL.md`，也不要将已有插件重新生成为简化提示词。
-6. 依据宿主返回结果区分“文件已下载”“私人副本已保存”“已安装／启用”和“新对话已验证”，报告实际完成阶段、插件名称、版本和来源。安装不包括公开发布或向他人分享副本。
+2. 按当前宿主正式提供的工具发现／加载方式，查找本次所需的插件管理及 Plugin Creator 创建／导入或更新能力；不能仅因初始工具列表未列出就判定缺失。复用已可用的 Plugin Creator；尚未安装且用户已授权时，通过宿主支持的方式查找并安装、启用。若宿主只提供安装卡片或必须由用户确认的入口，展示入口并说明所需点击，不把展示卡片当作安装完成。准备成功后直接继续，不重复询问已有授权。创建新副本与更新既有副本须分别核验，更新可用不能证明创建可用。优先使用支持完整包导入的工具；下载失败可按上面的对话附件步骤继续。若发现后仍缺少所需能力，或实际调用返回权限／能力错误，报告具体发现或错误和用户需要完成的最少步骤；首次创建也可提供插件页上传路线。保留已取得的包，不反复要求重装已可用的 Plugin Creator。读取源码或记住提示词不等于安装。
+3. 只使用上表“插件 ZIP / Plugin ZIP”的正式发布附件直链。若通过 GitHub Release API 取包，在 `assets` 中按表中完整文件名精确匹配 `name`，使用该附件的 `browser_download_url`。`zipball_url`、`tarball_url`、Release 的 **Source code** 和 **Code → Download ZIP** 都指向源码，不能用于直接安装；下载失败也不得改用这些地址。
+4. 导入前核对文件名、`plugin.json` 中的版本及同版 `SHA256SUMS`，并检查 ZIP 根层有 `plugin.json`、`assets/`、`skills/zuihan-kanshu/SKILL.md`、`LICENSE` 和 `NOTICE`。文件名或大小相符不能代替校验。发现不一致时停止导入，重新从正确附件地址取包；不要通过改名、去掉仓库外层目录或重新打包把源码当作正式插件包。若宿主无法下载或核验，如实报告受阻项目，并提供上表插件 ZIP 直链供用户手动下载、核对和上传，不声称已经核验或安装成功。正式包仅包含一个技能，不包含 MCP 服务、App 或 hooks。
+5. 在新建前查明是否已有同名副本及其来源、保存位置和版本。同项目的既有副本走宿主支持的更新流程；来源不明时先向用户确认，避免重复安装或覆盖其他插件。
+6. 把完整、未改写的包交给导入工具。若工具要求本地 archive 路径，先将 ZIP 下载到本地，再传绝对文件路径；不能把下载 URL 当作本地路径。不要只提取一份 `SKILL.md`，也不要将已有插件重新生成为简化提示词。
+7. 依据宿主返回结果区分“文件已下载”“私人副本已保存”“已安装／启用”和“新对话已验证”，报告实际完成阶段、插件名称、版本和来源。安装不包括公开发布或向他人分享副本。
 
 ### 更新已有副本
 
-GitHub 发布与已经导入的私人副本**不会自动同步**。需要更新时，从本仓库 [Releases](https://github.com/adjoint-functor/zuihan-kanshu/releases) 取得新版插件 ZIP，确认是同一来源和目标副本后，通过宿主的插件更新功能更新原副本。自己修改过的内容应先比较差异，再决定如何保留。更新后重新完成宿主要求的启用与新对话验证。
+GitHub 发布与已经导入的私人副本**不会自动同步**。需要更新时，使用本指南顶部“插件 ZIP / Plugin ZIP”的下载直链（**不要选 Source code**）。若在本仓库 [Releases](https://github.com/adjoint-functor/zuihan-kanshu/releases) 查找其他版本，选择该版明确列出的 `zuihan-kanshu-v<版本号>.zip` 附件，并使用同版校验文件。确认是同一来源和目标副本后，通过宿主的插件更新功能更新原副本；让 GPT 协助时，同样遵守上一节的附件选择与核验步骤。自己修改过的内容应先比较差异，再决定如何保留。更新后重新完成宿主要求的启用与新对话验证。
 
 ### 桌面环境的本地安装（技术参考）
 
@@ -100,7 +103,9 @@ python tools/build_release.py --format skill --output-dir dist
 
 #### First installation (recommended: upload the complete ZIP)
 
-1. [Download the release plugin ZIP](https://github.com/adjoint-functor/zuihan-kanshu/releases/download/v8.7.0/zuihan-kanshu-v8.7.0.zip) and keep the complete `.zip` without extracting it.
+We recommend checking that **Plugin Creator is installed and enabled**, so GPT can help with installation or updates when needed. If available, you can select it with `@` in a new conversation; you can also send the prompt below directly, which authorizes installing and enabling it.
+
+1. [Download zuihan-kanshu-v8.7.0.zip](https://github.com/adjoint-functor/zuihan-kanshu/releases/download/v8.7.0/zuihan-kanshu-v8.7.0.zip) (**do not choose Source code or Code → Download ZIP**) and keep the complete `.zip` without extracting it.
 2. Open ChatGPT's **Plugins** page, choose **Add → Upload plugin archive**, upload this ZIP, and follow the page's prompts to import/save the complete plugin.
 3. **Importing/saving** and **installing/enabling** are separate stages. After saving, complete the host's installation/enabling prompts.
 4. Start a new Work conversation, select **瑞般观珠** with `@`, and ask: “@瑞般观珠 Mathematical Q&A: Prove that there are infinitely many primes.” Check that the plugin can be selected and its skill used; a mathematical answer alone is not proof of installation. Select it and state the task category whenever starting or continuing mathematical work; the labels clarify intent rather than acting as required commands.
@@ -109,9 +114,9 @@ Users have reported successful first-time installation via archive upload. Contr
 
 #### Ask GPT to help install (optional)
 
-This route requires your account or workspace to provide **Plugin Creator** in the interface you use and allow plugin creation and use. Check the actual controls, tools, and permissions.
+This route requires your account or workspace to allow **Plugin Creator** and plugin creation. The prompt below authorizes installing, enabling, and using Plugin Creator. The assistant should first discover the available capabilities and proceed, then explain any actual permission limit or step requiring the user's click. Written authorization does not replace confirmation required by the platform.
 
-1. Start a conversation, type `@`, select **Plugin Creator**, and send the [README installation prompt](README.en.md#install) with the project URL.
+1. Start a Chat or Work conversation and send the [README installation prompt](README.en.md#install) directly. If **Plugin Creator** is available, you can also select it with `@`. The prompt itself includes authorization, this guide's URL, and instructions to select the published plugin asset.
 2. Ask it to download the plugin ZIP listed above and import the **complete package unchanged** as your own private copy. Preserve its name, version, skill, and assets. Do not redesign or rewrite this existing plugin. The host determines whether the copy is saved in your account or current workspace.
 3. If downloading fails, download that ZIP yourself and attach it to the conversation. Continue with the complete-package import. A **conversation attachment** only addresses downloading; it is not a **Plugins page upload** or a completed import.
 4. After the private copy is saved, complete installation/enabling and new-conversation verification as described above.
@@ -123,15 +128,16 @@ Creating a new copy and updating an existing one are separate capabilities; a su
 The guide's URL is <https://github.com/adjoint-functor/zuihan-kanshu/blob/main/INSTALL.md>. Installation does not require the repository maintenance workflow or a full reading of the runtime `SKILL.md`.
 
 1. Follow the user's goal and existing authorization. A bare repository URL, without an installation request, is not authorization to install or make persistent changes; ask what the user wants to do.
-2. Use the current host's official tool discovery/loading mechanism to find and load the Plugin Creator creation/import or update tools needed for this task, then check download and installation capabilities. Check creation of a new copy and updates to an existing copy separately; an available update capability does not establish creation capability. Do not treat absence from the initial tool list alone as proof that a tool is unavailable. Prefer a tool supporting complete-package import. If downloading fails, use the conversation attachment steps above. If a needed tool is still unavailable after discovery, or an actual call returns a permission/capability error, state the discovery result or actual error and mark creation or updating through the tool as blocked. For a first-time creation, offer the recommended Plugins page upload steps above, subject to the controls the user can actually see. Preserve any package already obtained; do not repeatedly download it or ask the user to reinstall Plugin Creator when it is already installed and selected. Reading source or remembering a prompt is not installation.
-3. Obtain the release ZIP in the table, check its name and version, and verify SHA-256 when possible. Its root contains `plugin.json`, `assets/`, `skills/zuihan-kanshu/`, `LICENSE`, and `NOTICE`. This is a skills-only plugin with one skill, no MCP server, App, or hooks.
-4. Check for an existing copy with the same name, including its source, location, and version. Update an existing copy from this project through the host's supported update flow. Resolve an unknown source with the user before overwriting or duplicating it.
-5. Import the complete package unchanged. If a tool requires a local archive path, download the ZIP first and pass its absolute local path, not the URL. Do not replace the package with a lone `SKILL.md` or a rewritten prompt.
-6. Report the stage actually reached: downloaded, private copy saved, installed/enabled, or verified in a new conversation. Include the plugin name, version, and source. Installation does not include publishing or sharing a copy.
+2. Use the host's official tool discovery/loading mechanism to find the needed plugin-management and Plugin Creator creation/import or update capabilities. Absence from the initial tool list alone does not prove unavailability. Reuse an available Plugin Creator installation; if it is missing and the user has authorized installation, find, install, and enable it through the host's supported capabilities. If the host only offers an installation card or requires user confirmation, display that entry point and explain the required click; displaying a card does not establish installation. Once ready, continue without asking for authorization already given. Check creation and updating separately; an available update capability does not establish creation capability. Prefer complete-package import tools, using the attachment steps above if downloading fails. If a required capability remains unavailable after discovery or a call returns a permission/capability error, report the specific finding or error and the minimum user action needed. For first-time creation, the Plugins page upload route is another option. Preserve any package obtained and do not repeatedly ask to reinstall an available Plugin Creator. Reading source or remembering a prompt is not installation.
+3. Use only the published asset linked in the table's **Plugin ZIP** row. When using the GitHub Release API, match the table's complete filename exactly against `name` in `assets`, then use that asset's `browser_download_url`. The API's `zipball_url` and `tarball_url`, release **Source code**, and **Code → Download ZIP** are source archives, not directly installable plugin packages. Do not use them as a fallback if downloading fails.
+4. Before importing, verify the filename, the version in `plugin.json`, and the same release's `SHA256SUMS`. Check that the ZIP root contains `plugin.json`, `assets/`, `skills/zuihan-kanshu/SKILL.md`, `LICENSE`, and `NOTICE`. A matching filename or file size is not a substitute for verification. Stop importing if these checks fail, and obtain the correct release asset; do not rename, strip the repository's enclosing directory, or repackage source as the published plugin. If downloading or verification is unavailable, report the blocked checks and provide the table's direct plugin ZIP link for the user to download, check, and upload manually; do not claim verification or installation succeeded. The package contains one skill and no MCP server, App, or hooks.
+5. Check for an existing copy with the same name, including its source, location, and version. Update an existing copy from this project through the host's supported update flow. Resolve an unknown source with the user before overwriting or duplicating it.
+6. Import the complete package unchanged. If a tool requires a local archive path, download the ZIP first and pass its absolute local path, not the URL. Do not replace the package with a lone `SKILL.md` or a rewritten prompt.
+7. Report the stage actually reached: downloaded, private copy saved, installed/enabled, or verified in a new conversation. Include the plugin name, version, and source. Installation does not include publishing or sharing a copy.
 
 ### Updates
 
-Imported private copies **do not automatically sync with GitHub**. To update, get a newer plugin ZIP from [Releases](https://github.com/adjoint-functor/zuihan-kanshu/releases), confirm the source and target copy, and use the host's update feature on that copy. Compare any personal modifications before replacing them. Complete any required enabling and new-conversation verification again.
+Imported private copies **do not automatically sync with GitHub**. To update, use the direct link in this guide's **Plugin ZIP** row (**do not choose Source code**). If selecting another version from [Releases](https://github.com/adjoint-functor/zuihan-kanshu/releases), choose that release's explicitly listed `zuihan-kanshu-v<version>.zip` asset and its matching checksums. Confirm the source and target copy, then use the host's update feature on that copy. GPT-assisted updates follow the same asset selection and verification steps above. Compare any personal modifications before replacing them. Complete any required enabling and new-conversation verification again.
 
 ### Local installation on desktop (technical reference)
 

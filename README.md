@@ -66,11 +66,13 @@
 
 ## 安装
 
-本项目通过 GitHub 提供第三方插件。当前正式版为 **v8.7.0**：[下载插件 ZIP](https://github.com/adjoint-functor/zuihan-kanshu/releases/download/v8.7.0/zuihan-kanshu-v8.7.0.zip) · [SHA256SUMS](https://github.com/adjoint-functor/zuihan-kanshu/releases/download/v8.7.0/SHA256SUMS)。普通使用者无需从源码编译。
+本项目通过 GitHub 提供第三方插件。当前正式版为 **v8.7.0**：[下载 zuihan-kanshu-v8.7.0.zip](https://github.com/adjoint-functor/zuihan-kanshu/releases/download/v8.7.0/zuihan-kanshu-v8.7.0.zip)（**不要选 Source code，也不要用 Code → Download ZIP**）· [SHA256SUMS](https://github.com/adjoint-functor/zuihan-kanshu/releases/download/v8.7.0/SHA256SUMS)。普通使用者无需从源码编译。
+
+建议先确认 **Plugin Creator 已安装并启用**，便于需要时让 GPT 协助安装或更新。若已可用，可在新对话中用 `@` 选中它；也可以直接发送下方包含安装和启用授权的提示词。
 
 ### 首次安装（推荐：上传完整 ZIP）
 
-1. [下载正式插件 ZIP](https://github.com/adjoint-functor/zuihan-kanshu/releases/download/v8.7.0/zuihan-kanshu-v8.7.0.zip)，保留完整 `.zip`，无需解压。
+1. [下载 zuihan-kanshu-v8.7.0.zip](https://github.com/adjoint-functor/zuihan-kanshu/releases/download/v8.7.0/zuihan-kanshu-v8.7.0.zip)（**不要选 Source code**），保留完整 `.zip`，无需解压。
 2. 打开 ChatGPT 的**插件**页面，选择 **添加 → 上传插件压缩包**，上传这个 ZIP，按页面提示完成导入／保存。
 3. 按提示完成**安装／启用**；再新建 Work 对话，用 `@` 选择**瑞般观珠**，例如：“@瑞般观珠 数学问答：请证明素数有无穷多个。”
 
@@ -78,11 +80,15 @@
 
 ### 让 GPT 协助安装（可选）
 
-在提供 **Plugin Creator**、允许创建和使用插件的 ChatGPT Chat 或 Work 中新建对话，输入 `@` 并选择 **Plugin Creator**，发送下面的提示词。保存私人副本后，仍需完成安装／启用与新对话验证。
+在 ChatGPT Chat 或 Work 中新建对话，直接发送下面的提示词；若 **Plugin Creator** 已可用，也可用 `@` 选中它以明确调用目标。提示词已授权准备 Plugin Creator，助手应先检查可用能力；确需用户点击或权限受限时，再说明具体操作。保存私人副本后，仍需完成安装／启用与新对话验证。
 
 ```text
-请帮我安装第三方插件“瑞般观珠”：https://github.com/adjoint-functor/zuihan-kanshu
-请先读根目录 INSTALL.md，使用正式 Release 插件 ZIP，原样导入完整插件并保留名称、版本、技能和资源，保存为我自己的私人副本。不要重新设计或改写插件；按当前宿主能力完成安装／启用，并说明实际完成到哪一步。
+请帮我安装第三方插件“瑞般观珠”。
+我授权你启用并使用 Plugin Creator；若尚未安装，也授权你通过当前宿主支持的方式安装它。请先发现并加载可用的插件管理及 Plugin Creator 工具，已有可用安装则直接复用，并在本次授权范围内继续，不重复询问同一授权。准备 Plugin Creator 时，只有权限不足、所需能力确实不可用或必须由我点击时，再说明具体阻碍和所需操作。
+先读取安装说明：https://github.com/adjoint-functor/zuihan-kanshu/blob/main/INSTALL.md
+只下载该页“插件 ZIP / Plugin ZIP”一栏链接的正式发布附件，文件名必须与表中一致。不要下载 Source code、Code → Download ZIP，或 GitHub API 的 zipball_url / tarball_url；下载失败时也不要改用源码包。
+导入前按安装说明核对版本、SHA-256 和包结构，确认 ZIP 根层有 plugin.json，以及 skills/zuihan-kanshu/SKILL.md。若无法下载或核验，请说明具体问题，并提供安装说明中的正确插件 ZIP 直链供我手动下载。
+核对通过后，原样导入完整插件，保留名称、版本、技能和资源，保存为我自己的私人副本；已有同源副本则更新原副本。不要重新设计或改写插件。按当前宿主能力完成安装／启用，并说明实际完成到哪一步。
 ```
 
 [完整安装说明（含给 GPT 的步骤）](INSTALL.md)提供插件页上传、GPT 工具能力排查、已有副本更新、本地安装技术参考与源码构建方法。GitHub 的 **Code → Download ZIP** 和 Release 的 **Source code** 都是源码包，不能直接当作插件 ZIP。

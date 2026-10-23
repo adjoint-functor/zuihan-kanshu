@@ -61,11 +61,13 @@ In preliminary rough tests, the consumption ratio of GPT-6 Astra to GPT-6.1 Sol 
 
 ## Install
 
-This third-party plugin is distributed through GitHub. The current release is **v8.7.0**: [download the plugin ZIP](https://github.com/adjoint-functor/zuihan-kanshu/releases/download/v8.7.0/zuihan-kanshu-v8.7.0.zip) · [SHA256SUMS](https://github.com/adjoint-functor/zuihan-kanshu/releases/download/v8.7.0/SHA256SUMS). You do not need to build from source.
+This third-party plugin is distributed through GitHub. The current release is **v8.7.0**: [download zuihan-kanshu-v8.7.0.zip](https://github.com/adjoint-functor/zuihan-kanshu/releases/download/v8.7.0/zuihan-kanshu-v8.7.0.zip) (**do not choose Source code or Code → Download ZIP**) · [SHA256SUMS](https://github.com/adjoint-functor/zuihan-kanshu/releases/download/v8.7.0/SHA256SUMS). You do not need to build from source.
+
+We recommend checking that **Plugin Creator is installed and enabled**, so GPT can help with installation or updates when needed. If available, you can select it with `@` in a new conversation; you can also send the prompt below directly, which authorizes installing and enabling it.
 
 ### First installation (recommended: upload the complete ZIP)
 
-1. [Download the release plugin ZIP](https://github.com/adjoint-functor/zuihan-kanshu/releases/download/v8.7.0/zuihan-kanshu-v8.7.0.zip) and keep the complete `.zip` without extracting it.
+1. [Download zuihan-kanshu-v8.7.0.zip](https://github.com/adjoint-functor/zuihan-kanshu/releases/download/v8.7.0/zuihan-kanshu-v8.7.0.zip) (**do not choose Source code**) and keep the complete `.zip` without extracting it.
 2. Open ChatGPT's **Plugins** page, choose **Add → Upload plugin archive**, upload this ZIP, and follow the page's import/save prompts.
 3. Complete **installation/enabling**, then start a new Work conversation, select **瑞般观珠** with `@`, and ask, for example: “@瑞般观珠 Mathematical Q&A: Prove that there are infinitely many primes.”
 
@@ -73,11 +75,15 @@ Users have reported successful first-time installation via archive upload. Contr
 
 ### Ask GPT to help install (optional)
 
-In ChatGPT Chat or Work with **Plugin Creator** and permission to create and use plugins, start a conversation, type `@`, select **Plugin Creator**, and send the prompt below. After the private copy is saved, complete installation/enabling and verify it in a new conversation.
+Start a new ChatGPT Chat or Work conversation and send the prompt below directly. If **Plugin Creator** is available, you can also select it with `@` to make the intended plugin explicit. The prompt authorizes preparing Plugin Creator; the assistant should check available capabilities first and explain any required clicks or permission limits when encountered. After the private copy is saved, complete installation/enabling and verify it in a new conversation.
 
 ```text
-Help me install the third-party plugin Zuihan Kanshu (瑞般观珠): https://github.com/adjoint-functor/zuihan-kanshu
-Read the root INSTALL.md first. Use the published release plugin ZIP and import the complete package unchanged, preserving its name, version, skill, and assets, as my own private copy. Do not redesign or rewrite the plugin. Complete installation/enabling using this host's available capabilities, and report the stage actually reached.
+Help me install the third-party plugin Zuihan Kanshu (瑞般观珠).
+I authorize you to enable and use Plugin Creator and, if it is not installed, to install it through this host's supported capabilities. First discover and load the available plugin-management and Plugin Creator tools. Reuse an available installation and proceed within this authorization without asking for it again. When preparing Plugin Creator, ask me to intervene only if permissions are insufficient, the required capability is unavailable, or a step requires my click; explain the specific blocker and action needed.
+First read the installation guide: https://github.com/adjoint-functor/zuihan-kanshu/blob/main/INSTALL.md
+Download only the published asset linked in the guide's "Plugin ZIP" row, with the exact filename shown there. Do not use Source code, Code → Download ZIP, or the GitHub API's zipball_url / tarball_url, including as a fallback if downloading fails.
+Before importing, follow the guide to verify the version, SHA-256, and archive layout: plugin.json must be at the ZIP root, alongside skills/zuihan-kanshu/SKILL.md. If downloading or verification is unavailable or fails, explain the specific problem and give me the guide's correct plugin ZIP download link for manual use.
+After verification, import the complete package unchanged as my own private copy, preserving its name, version, skill, and assets; update an existing copy from the same source instead of creating a duplicate. Do not redesign or rewrite the plugin. Complete installation/enabling using this host's available capabilities, and report the stage actually reached.
 ```
 
 The [full installation guide, including instructions for GPT](INSTALL.md#english), covers Plugins page upload, GPT tool availability troubleshooting, updates, local installation as a technical reference, and source builds. GitHub's **Code → Download ZIP** and a release's **Source code** archives contain source code, not the installable plugin.
