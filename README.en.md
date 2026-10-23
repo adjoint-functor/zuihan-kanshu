@@ -1,8 +1,14 @@
 # zuihan-kanshu
 
-**Zuihan Kanshu (瑞般观珠)** is a plugin primarily for ChatGPT **Chat and Work**, supporting mathematical questions, sustained research, and mathematical writing.
+**Zuihan Kanshu (瑞般观珠)** is a plugin primarily for ChatGPT **Work**, supporting mathematical questions, sustained research, and mathematical writing.
 
 [中文](README.md) · [Installation](INSTALL.md#english) · [Reproducible example](docs/examples/research-initialization.md) · [Design principles](docs/design-principles.md) · [History and migration](docs/history-and-migration.md)
+
+**Use ChatGPT Work. Take your mathematics with you; leave server maintenance behind.**
+
+Zuihan Kanshu supports mathematical questions, research, and writing in the cloud, without a remote machine or server of your own to maintain. Pick up your mathematics during a break at work, on a business trip, or while travelling.
+
+If Codex seems a little too enthusiastic about working continuously, and you worry that Goal Mode might exhaust your allowance before your conjecture is settled, Work may offer just the right pace. Advance one round at a time, pause at useful points, review the progress, ask questions, and help choose what comes next. Human participation remains part of the specification.
 
 ## Advanced usage guide
 
@@ -14,18 +20,18 @@
 How can I use this plugin more effectively?
 ```
 
-**v8.4.0 includes built-in guide responses.** You can also read the full guide through the link above.
+**Built-in guide responses have been available since v8.4.0.** You can also read the full guide through the link above. The current source and guide include the unreleased v8.5.0 writing workflow; the published download remains v8.4.0.
 
 | Scenario | Suggested approach |
 | --- | --- |
-| Start mathematical research | Upload a Markdown or PDF brief describing your goal, existing results, and reference material. |
+| Start mathematical research | Upload a Markdown or PDF brief describing your goal, existing results, and reference material. Sufficient material lets research begin directly; a broad direction can be discussed first. |
 | Continue research | After reading the progress brief, say: “Following @瑞般观珠's guidelines, use your judgment and continue the next research round.” |
 | Pause and ask | Say: “Pause research rounds. Following @瑞般观珠's guidelines, first answer: …” Ask about details, reassess the direction, or discuss whether the results are ready for a manuscript. |
-| Mathematical writing | Give the full requirements, then say: “Make a plan and discuss it with me first; do not execute it yet.” After agreeing on the plan, you can ask for execution across rounds as appropriate. |
+| Mathematical writing | Give the full requirements. By default, the plugin saves a plan and discusses it with you, then proceeds across rounds after you start execution. |
 
 ## Environment and models
 
-**ChatGPT Work is recommended.** Zuihan Kanshu is designed for conveniently starting, checking, and continuing mathematical work while on the move, so you can do mathematics wherever you are. Compatibility with Codex has not been tested.
+Compatibility with Codex has not been tested.
 
 **Recommended main agent:** choose **GPT-6 Astra with Max** when your budget allows; **GPT-6.1 Sol with Max** is the minimum recommended choice for this plugin. Built-in sub-agent assignments already cover exploration, proof, and verification in the research module. Max is normally sufficient; **Ultra is not recommended by default**.
 
@@ -60,11 +66,11 @@ The [full installation guide, including instructions for GPT](INSTALL.md#english
 | --- | --- | --- |
 | Answer a mathematical question | Derivations, proofs, counterexamples, computational checks, and relevant literature | [Mathematical inquiry](skill/zuihan-kanshu/references/mathematical-inquiry.md) |
 | Continue a research project | Literature, exploration, proof, verification, progress records, and session recovery | [Research workbench](skill/zuihan-kanshu/references/research-workbench.md) |
-| Plan and produce a manuscript | Planning, drafting, review, revision, Chinese translation, Markdown, TeX, and PDF | [Working drafts](skill/zuihan-kanshu/references/working-draft.md) |
+| Mathematical writing | Plan, draft, and revise, with quality as the default priority. | [Working drafts](skill/zuihan-kanshu/references/working-draft.md) |
 
 Built-in **mathematical research mini-agent** guidance covers explorers, proof authors, bounded problem solvers, independent verifiers, and mathematical editors. Actual delegation, model selection, and reasoning settings depend on host capabilities and user authorization; see [research roles](skill/zuihan-kanshu/references/research-roles.md).
 
-Additional modules support [Chinese translation and terminology](skill/zuihan-kanshu/references/chinese-translation.md), [writing style](skill/zuihan-kanshu/references/writing-style.md), and [finished documents](skill/zuihan-kanshu/references/final-output.md). PDF compilation requires an available toolchain; the [build profile](skill/zuihan-kanshu/references/final-pdf-build-profile.md) covers compilation and preflight checks.
+Additional modules support [Chinese writing, translation, and terminology](skill/zuihan-kanshu/references/chinese-translation.md), [writing style](skill/zuihan-kanshu/references/writing-style.md), and [finished documents](skill/zuihan-kanshu/references/final-output.md). PDF compilation requires an available toolchain; the [build profile](skill/zuihan-kanshu/references/final-pdf-build-profile.md) covers compilation and preflight checks.
 
 ## Start a task
 
@@ -82,7 +88,7 @@ The plugin offers these three prompts:
 使用瑞般观珠，根据以下要求制定数学文稿的写作计划，并保存在云端。写作要求：……。
 ```
 
-They request an answer, a cloud-saved research project, or a cloud-saved writing plan, respectively. In hosts with cloud file capabilities, a new task uses the requested folder or creates a topic-named subfolder at the cloud library root without asking only for a folder name. Existing tasks keep their established folder.
+They request an answer, a research project, or a writing plan, respectively. Research records, writing plans, and manuscripts are saved in the cloud Library by default. Specify a folder if you wish; otherwise the plugin creates one by topic. Existing projects keep their folder. Ordinary questions and usage help stay in the conversation by default and do not automatically create file projects.
 
 Other hosts use their available workspace, local storage, or file delivery and report the actual location. Without persistent storage, they should explain the limitation and provide usable content in the conversation. A successful local command does not establish a cloud save. The [workbench](skill/zuihan-kanshu/references/research-workbench.md) describes its five versioned files and persistence protocol.
 
@@ -100,6 +106,8 @@ Full PDF checks need TeX, fonts, and PDF tools. Read skips in the context of the
 ## Acknowledgments
 
 Thanks to [Danus](https://github.com/frenzymath/Danus/tree/6d92e8d415933ca2ef52fd1a4da73fdfcd418f1c), [Rethlas](https://github.com/frenzymath/Rethlas/tree/e7e48a6d30e7f0ddf0ed1909a594a1f0cfe2c2b7), and [Bolzano (problem-solver)](https://github.com/vaclavrozhon/problem-solver/tree/ccc0f7185ef6a72b3b8f519b8efab3f386cf597f) for design references on research collaboration, proof verification, and failure feedback. [Matlas](https://matlas.ai/docs) provides mathematical search services and APIs; [hrjtju/matlas-search](https://github.com/hrjtju/matlas-search) provided references for API use and reading candidate literature.
+
+We thank Terence Tao for his public advice on mathematical writing, especially [“Describe the results accurately”](https://terrytao.wordpress.com/advice-on-writing-papers/describe-the-results-accurately/) and [“Give appropriate amounts of detail”](https://terrytao.wordpress.com/advice-on-writing-papers/give-appropriate-amounts-of-detail/), which informed the guidance on accurate statements of results and appropriate levels of detail.
 
 These acknowledgments identify references, not the inclusion of entire upstream projects or their authors' endorsement. See [NOTICE](NOTICE) for provenance, licenses, and usage boundaries.
 

@@ -59,8 +59,14 @@ https://github.com/notofonts/noto-cjk/blob/Sans2.004/LICENSE
 - Calix LaTeX skills：环境检查、配置分离与可恢复安装的参考。所核读 awesome-latex-skills 的 LICENSE 为 MIT，Copyright (c) 2026 awesome-latex-skills contributors。
   https://github.com/Calix-L/awesome-latex-skills
   https://github.com/Calix-L/awesome-latex-skills/blob/main/LICENSE
+- Terence Tao：公开数学写作建议为准确陈述结果、安排论证详略、组织文章、使用记号和突出导语关键内容提供参考；没有把其文章整体纳入本插件。
+  https://terrytao.wordpress.com/advice-on-writing-papers/describe-the-results-accurately/
+  https://terrytao.wordpress.com/advice-on-writing-papers/give-appropriate-amounts-of-detail/
+  https://terrytao.wordpress.com/advice-on-writing-papers/organise-the-paper/
+  https://terrytao.wordpress.com/advice-on-writing-papers/use-good-notation/
+  https://terrytao.wordpress.com/advice-on-writing-papers/use-the-introduction-to-%E2%80%9Csell%E2%80%9D-the-key-points-of-your-paper/
 
-写作、上下文与 PDF 工程的其他公开依据列于源码仓库 docs/design-principles.md 的“公开参考”。本项目的具体协议和适用范围以本项目文档为准；引用不构成上游作者的背书。
+UW–Madison Writing Center、Bjorn Poonen、Igor Pak 和 Steven Kleiman 等写作参考，以及上下文与 PDF 工程的其他公开依据，列于源码仓库 docs/design-principles.md 的“公开参考”和相应写作模组。写作轮次、主智能体职责和导语体裁默认由本项目定义，不归给参考作者。本项目的具体协议和适用范围以本项目文档为准；引用不构成上游作者的背书。
 
 ## AMSFonts 字体来源声明（原文）
 

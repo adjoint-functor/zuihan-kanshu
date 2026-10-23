@@ -19,6 +19,7 @@ references/chinese-translation.md
 references/document-roles.md
 references/final-output.md
 references/final-pdf-build-profile.md
+references/introduction-writing.md
 references/japanese-names-places-zh.md
 references/literature.md
 references/mathematical-inquiry.md
@@ -27,6 +28,7 @@ references/matlas.md
 references/pdf-environment.md
 references/research-roles.md
 references/research-workbench.md
+references/structure-consistency-review.md
 references/theorem-search.md
 references/translation-glossary-en-zh.md
 references/usage-guide.md

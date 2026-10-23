@@ -2,7 +2,7 @@
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "zuihan-kanshu",
   "version": "@VERSION@",
-  "description": "Answer mathematical questions, conduct sustained research, and plan or write mathematical documents, with Chinese terminology, style, and Markdown, TeX, and PDF support.",
+  "description": "Answer mathematical questions, conduct sustained research, and plan, write, or revise mathematical documents with quality as the default priority, plus Chinese terminology, style, and Markdown, TeX, and PDF support.",
   "author": {
     "name": "Adjoint Functor"
   },
@@ -15,7 +15,7 @@
       "interface": {
         "displayName": "瑞般观珠",
         "shortDescription": "Math Q&A, research & writing",
-        "longDescription": "Zuihan Kanshu (瑞般观珠) supports mathematical questions, sustained research, and mathematical writing. Work through a question with derivations, proofs, and relevant literature; explore a research goal and keep records for continuing it; or plan, draft, review, and revise a mathematical document.\n\nThe bundled mathematical research mini-agents provide task-based collaboration when the host supports delegation. Chinese translation and terminology, prose editing, and Markdown, TeX, and PDF preparation are available as needed. Model choices, delegation, retrieval, compilation, and storage follow the current user's instructions and the host's available tools.\n\nFor a new research or writing task in a host with cloud Library access, specify a destination or simply ask to save in the cloud. If no directory is specified, the skill creates a topic-named subfolder at the Library root. Existing tasks keep their directory. In other environments it uses the available destination and reports where files were actually saved.\n\nThe name comes from the Japanese mathematical term 随伴関手 (ずいはんかんしゅ, adjoint functor), echoed in the characters 瑞般観珠 and written 瑞般观珠 in Chinese.",
+        "longDescription": "Use ChatGPT Work for mathematical questions, sustained research, and mathematical writing in the cloud. Work through questions with derivations, proofs, and relevant literature; explore a research goal and keep records for continuing it; or plan, draft, review, and revise a mathematical document with quality as the default priority.\n\nNew writing batches begin with a saved plan and discussion by default. Writing guidance applies from the start; whole-manuscript structure and consistency, suitable introductions, Chinese expression, and prose receive dedicated review as appropriate. Intermediate rounds save the manuscript and control file, with PDF preparation at the final delivery stage unless requested earlier.\n\nThe bundled mathematical research mini-agents provide task-based collaboration when the host supports delegation. Model choices, delegation, retrieval, compilation, and storage follow the current user's instructions and the host's available tools. Research records, writing plans, and manuscripts are saved in the cloud Library by default when available. Specify a folder or let the skill create one by topic; existing projects keep their folder. Ordinary questions and usage help stay in the conversation by default. Other environments use the available destination and report where files were actually saved.\n\nThe name comes from the Japanese mathematical term 随伴関手 (ずいはんかんしゅ, adjoint functor), echoed in the characters 瑞般観珠 and written 瑞般观珠 in Chinese.",
         "developerName": "Adjoint Functor",
         "category": "Education & Research",
         "websiteURL": "https://github.com/adjoint-functor/zuihan-kanshu",
@@ -39,11 +39,11 @@
       },
       "publication": {
         "countries": [],
-        "release_notes": "v8.4.0 adds an on-demand advanced usage guide with multilingual help, places guide links and examples before installation instructions, and adapts main-agent guidance to the actual selected agent with Astra/Max and Sol/Max recommendations. Existing research roles, proof verification, and approved artwork are retained.",
+        "release_notes": "v8.5.0: This update puts quality first in the default writing workflow and is expected to substantially improve the resulting manuscripts. It adds planning around the manuscript's main line, whole-manuscript structure and consistency review by the actual main agent, suitable introduction writing, and final language reviews. Intermediate rounds save sources without requiring PDF builds. Work guidance, research entry points, and writing references are updated.",
         "translations": {
           "zh-CN": {
             "subtitle": "数学问答、研究与写作",
-            "description": "瑞般观珠支持数学问题解答、持续研究与数学写作。针对具体问题提供解答、推导与必要的文献依据；围绕研究目标梳理文献、探索思路与证明，记录进展并接续已有工作；根据写作要求制定计划，并支持后续的文稿撰写、审阅、修订与成品制作。\n\n内置数学研究迷你智能体、中文翻译与术语支持、文风整理，以及 Markdown、TeX 与 PDF 制作支持，按任务需要调用。模型、委派、检索、编译和保存方式遵循当前用户指示及宿主实际能力。\n\n在支持云端库的环境中新建研究或文稿时，可以指定保存目录；未指定目录或仅要求保存在云端时，将在云端库根目录下自动建立以任务主题命名的子目录。接续已有任务沿用原目录；其他环境按实际可用目的地保存，并如实说明保存位置。\n\n名称取意于数学术语「随伴関手」（ずいはんかんしゅ，Adjoint Functor），以其日语读音谐作「瑞般観珠」，中文写作「瑞般观珠」。"
+            "description": "请在 ChatGPT Work 中使用瑞般观珠，在云端开展数学问题解答、持续研究与数学写作。针对具体问题提供解答、推导与必要文献依据；围绕研究目标梳理文献、探索思路与证明，保存进展并接续已有工作。数学写作支持规划、撰写与修订，默认以质量为先。\n\n新写作批次默认先保存计划并讨论，从开始使用文风和适用的中文指导；全稿结构与一致性、适用的论文式导语和最终语言审读各按流程完成。中间轮保存正文和控制，最终交付时按目标制作 PDF，也可明确要求阶段 PDF。\n\n内置数学研究迷你智能体、中文术语与翻译、文风及 Markdown、TeX、PDF 支持。模型、委派、检索、编译和保存遵循用户指示及宿主实际能力。研究记录、写作计划与文稿默认保存在可用的云端库中，可指定目录；未指定时按主题建立，接续沿用原目录。普通问答和使用帮助默认在对话内完成。其他环境按实际可用位置保存并说明。\n\n名称取意于数学术语「随伴関手」（ずいはんかんしゅ，Adjoint Functor），以其日语读音谐作「瑞般観珠」，中文写作「瑞般观珠」。"
           }
         }
       }

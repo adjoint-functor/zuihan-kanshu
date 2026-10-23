@@ -1,7 +1,7 @@
 interface:
   display_name: "瑞般观珠"
   short_description: "解答数学问题，开展研究，规划与撰写文稿；内置数学研究迷你智能体，支持中文表达、文风整理与排版编译。"
-  default_prompt: "Use $zuihan-kanshu to answer mathematical questions, plan or conduct research, and write or revise mathematical documents with a separate control file and reader-ready Markdown, PDF, and optional TeX."
+  default_prompt: "Use $zuihan-kanshu to answer mathematical questions, conduct research, or plan, write, and revise mathematical documents with quality as the default priority. Save a separate writing control file and deliver Markdown, PDF, and optional TeX as appropriate to the task."
   icon_small: "assets/icon-256.png"
   icon_large: "assets/icon-1024.png"
   brand_color: "#087F79"
