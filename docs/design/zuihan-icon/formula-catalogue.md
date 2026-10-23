@@ -6,7 +6,7 @@
 
 本清单约定：闭流形指紧致且无边界的流形。第 09、10 项的 Fourier 变换统一采用 $`\widehat f(\xi)=\int_{\mathbb R}f(x)e^{-2\pi i x\xi}\,dx`$；第 11 项的热迹采用非负 Laplace 算子。
 
-## 01. 随伴关系
+## 01. 伴随关系
 
 **领域**：范畴论　**状态**：定义／自然双射表述
 
@@ -14,7 +14,7 @@
 \mathop{\mathrm{Hom}}\nolimits_{\mathcal D}(FX,Y)\cong\mathop{\mathrm{Hom}}\nolimits_{\mathcal C}(X,GY)
 ```
 
-**条件与记号**：$`\mathcal C`$、$`\mathcal D`$ 为局部小范畴，$`F:\mathcal C\to\mathcal D`$、$`G:\mathcal D\to\mathcal C`$ 为函子，$`F`$ 是 $`G`$ 的左随伴。所示双射对 $`X\in\mathcal C`$ 和 $`Y\in\mathcal D`$ 都自然；这一自然双射是随伴数据的一部分。
+**条件与记号**：$`\mathcal C`$、$`\mathcal D`$ 为局部小范畴，$`F:\mathcal C\to\mathcal D`$、$`G:\mathcal D\to\mathcal C`$ 为函子，$`F`$ 是 $`G`$ 的左伴随。所示双射对 $`X\in\mathcal C`$ 和 $`Y\in\mathcal D`$ 都自然；这一自然双射是伴随数据的一部分。
 
 **来源**：[Emily Riehl, Category Theory in Context](https://emilyriehl.github.io/files/context.pdf)，作者公开版，Definition 4.1.1 与式 (4.1.2)。
 
