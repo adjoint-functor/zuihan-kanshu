@@ -16,7 +16,7 @@ from pathlib import Path
 from typing import Sequence
 
 
-VERSION = "8.3.1"
+VERSION = "8.4.0"
 PLAN_NAME = "version-revision-plan.json"
 PLAN_STAGING_NAME = "version-revision-plan.next.json"
 PLAN_SCHEMA = "versioned-output-plan/2.0"

@@ -17,6 +17,8 @@
 
 ### 在 ChatGPT 的 Chat 或 Work 中安装
 
+建议在 **Work** 中使用，便于在移动场景下启动、查看和接续数学工作。与 Codex 的适配尚未检验；下方本地安装步骤不等于适配实测。使用方法见[进阶使用指南](skill/zuihan-kanshu/references/usage-guide.md)，内置指南问答自 v8.4.0 提供，当前正式下载仍为上表的 v8.3.1。
+
 #### 首次安装（推荐：上传完整 ZIP）
 
 1. [下载正式插件 ZIP](https://github.com/adjoint-functor/zuihan-kanshu/releases/download/v8.3.1/zuihan-kanshu-v8.3.1.zip)，保留完整 `.zip`，无需解压。
@@ -70,7 +72,7 @@ python tools/build_release.py --format plugin --check
 python tools/build_release.py --format plugin --zip --output-dir dist
 ```
 
-v8.3.1 输出为 `dist/plugin/zuihan-kanshu-v8.3.1/` 和 `dist/plugin/zuihan-kanshu-v8.3.1.zip`。构建只产生文件，之后仍需安装／启用。
+当前 v8.4.0 源码输出为 `dist/plugin/zuihan-kanshu-v8.4.0/` 和 `dist/plugin/zuihan-kanshu-v8.4.0.zip`；这不表示已有对应正式 Release。构建只产生文件，之后仍需安装／启用。
 
 若目标宿主只接受独立技能目录：
 
@@ -78,7 +80,7 @@ v8.3.1 输出为 `dist/plugin/zuihan-kanshu-v8.3.1/` 和 `dist/plugin/zuihan-kan
 python tools/build_release.py --format skill --output-dir dist
 ```
 
-输出为 `dist/skill/zuihan-kanshu-v8.3.1/`，根层有 `SKILL.md`。按宿主技能安装说明，将其内容安装到名为 `zuihan-kanshu` 的目录，去掉构建目录名中的版本后缀。已有输出目录不会被覆盖；重复构建另选空输出目录。
+当前 v8.4.0 源码输出为 `dist/skill/zuihan-kanshu-v8.4.0/`，根层有 `SKILL.md`。按宿主技能安装说明，将其内容安装到名为 `zuihan-kanshu` 的目录，去掉构建目录名中的版本后缀。已有输出目录不会被覆盖；重复构建另选空输出目录。
 
 ### 验证范围与帮助
 
@@ -87,6 +89,8 @@ python tools/build_release.py --format skill --output-dir dist
 ## English
 
 ### Install in ChatGPT Chat or Work
+
+**Work is recommended** for conveniently starting, checking, and continuing mathematical work while on the move. Compatibility with Codex has not been tested; the local installation steps below do not establish tested compatibility. See the [advanced usage guide](skill/zuihan-kanshu/references/usage-guide.md). Built-in guide responses are available from v8.4.0; the current published download remains v8.3.1 as listed above.
 
 #### First installation (recommended: upload the complete ZIP)
 
@@ -141,7 +145,7 @@ python tools/build_release.py --format plugin --check
 python tools/build_release.py --format plugin --zip --output-dir dist
 ```
 
-For v8.3.1 this creates `dist/plugin/zuihan-kanshu-v8.3.1/` and `dist/plugin/zuihan-kanshu-v8.3.1.zip`. Building produces files; installation/enabling is still required.
+The current v8.4.0 source creates `dist/plugin/zuihan-kanshu-v8.4.0/` and `dist/plugin/zuihan-kanshu-v8.4.0.zip`; this does not mean a corresponding release has been published. Building produces files; installation/enabling is still required.
 
 For a host accepting only standalone skill directories:
 
@@ -149,7 +153,7 @@ For a host accepting only standalone skill directories:
 python tools/build_release.py --format skill --output-dir dist
 ```
 
-Install the contents of `dist/skill/zuihan-kanshu-v8.3.1/` into a skill directory named `zuihan-kanshu`, without the version suffix, following that host's instructions. The output contains `SKILL.md` at its root. Existing output directories are not overwritten; use another empty output location when rebuilding.
+For the current v8.4.0 source, install the contents of `dist/skill/zuihan-kanshu-v8.4.0/` into a skill directory named `zuihan-kanshu`, without the version suffix, following that host's instructions. The output contains `SKILL.md` at its root. Existing output directories are not overwritten; use another empty output location when rebuilding.
 
 ### Verification scope and help
 

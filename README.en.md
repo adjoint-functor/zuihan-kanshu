@@ -4,6 +4,33 @@
 
 [中文](README.md) · [Installation](INSTALL.md#english) · [Reproducible example](docs/examples/research-initialization.md) · [Design principles](docs/design-principles.md) · [History and migration](docs/history-and-migration.md)
 
+## Advanced usage guide
+
+**[Read the full advanced usage guide](skill/zuihan-kanshu/references/usage-guide.md)** for starting and continuing research, asking about details, and planning mathematical writing. The guide is written in Chinese; you can ask the plugin to explain it in English.
+
+**Want to use it more effectively?** Type `@` in the conversation input, select **瑞般观珠**, and ask:
+
+```text
+How can I use this plugin more effectively?
+```
+
+Built-in guide responses are available from **v8.4.0**; the current published download is still **v8.3.1**. You can read the guide directly through the link above now.
+
+| Scenario | Suggested approach |
+| --- | --- |
+| Start mathematical research | Upload a Markdown or PDF brief describing your goal, existing results, and reference material. |
+| Continue research | After reading the progress brief, say: “Following @瑞般观珠's guidelines, use your judgment and continue the next research round.” |
+| Pause and ask | Say: “Pause research rounds. Following @瑞般观珠's guidelines, first answer: …” Ask about details, reassess the direction, or discuss whether the results are ready for a manuscript. |
+| Mathematical writing | Give the full requirements, then say: “Make a plan and discuss it with me first; do not execute it yet.” After agreeing on the plan, you can ask for execution across rounds as appropriate. |
+
+## Environment and models
+
+**ChatGPT Work is recommended.** Zuihan Kanshu is designed for conveniently starting, checking, and continuing mathematical work while on the move, so you can do mathematics wherever you are. Compatibility with Codex has not been tested.
+
+**Recommended main agent:** choose **GPT-6 Astra with Max** when your budget allows; **GPT-6.1 Sol with Max** is the minimum recommended choice for this plugin. Built-in sub-agent assignments already cover exploration, proof, and verification in the research module. Max is normally sufficient; **Ultra is not recommended by default**.
+
+In preliminary rough tests, the consumption ratio of GPT-6 Astra to GPT-6.1 Sol was about **4:1**. A simplified conversion assuming roughly five times the unit consumption gives an equivalent usage ratio of about **4:5**, with Sol accounting for more than half. This is a rough reference; task assignments vary. Users have reported that **Chinese, English, and Japanese all work correctly**.
+
 ## Install
 
 This third-party plugin is distributed through GitHub. The current release is **v8.3.1**: [download the plugin ZIP](https://github.com/adjoint-functor/zuihan-kanshu/releases/download/v8.3.1/zuihan-kanshu-v8.3.1.zip). You do not need to build from source.

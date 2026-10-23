@@ -13,7 +13,9 @@ This file guides agents maintaining the repository. The product's runtime entry 
 - `VERSION` owns the version. Keep the skill title, versioned command-line scripts,
   manifest, tests, and release notes consistent when changing it.
 - Keep public documentation, examples, and contributor instructions in the repository,
-  outside the runtime package. Use synthetic or already public examples. Personal
+  outside the runtime package. A built-in guide needed to answer usage questions may
+  live as a runtime reference and be linked directly from the public homepage; maintain
+  one guide source rather than a separate public copy. Use synthetic or already public examples. Personal
   research, private maintenance records, host paths, and conversation identifiers do
   not belong in this public tree.
 - Preserve historical names where they describe a historical fact. Current paths and
