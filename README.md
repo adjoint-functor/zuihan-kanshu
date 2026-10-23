@@ -33,7 +33,7 @@
 
 无论用户简短地说“继续”，还是由 Dot 辅助接续，助手都有可核对的任务状态，并应根据最新进展判断计划是否仍适用。这有助于减少遗忘约定、重复劳动和机械追逐旧待办。**持久化计划是本插件的重要设计之一，也是一种通用方法；本分支围绕 Work 组织的具体执行节奏与 Codex 兼容性需分别看待。** 详见[设计原则](docs/design-principles.md)。
 
-**Chat 也能使用部分功能。** 数学问答、概念讨论、简短文本润色和使用指南问答，也可以在 Chat 中调用本插件。官方确认[插件支持 Chat 和 Work](https://learn.chatgpt.com/docs/plugins)，而[子智能体文档](https://learn.chatgpt.com/docs/agent-configuration/subagents)目前列出的支持模式是 Work 与 Codex。按这一支持范围，普通 Chat 暂不能运行本插件的子智能体分工；持续研究、长篇写作和多智能体核验仍推荐使用 Work。
+**Chat 也能使用部分功能。** 数学问答、概念讨论和简单数学写作任务，也可以在 Chat 中调用本插件。官方确认[插件支持 Chat 和 Work](https://learn.chatgpt.com/docs/plugins)，而[子智能体文档](https://learn.chatgpt.com/docs/agent-configuration/subagents)目前列出的支持模式是 Work 与 Codex。按这一支持范围，普通 Chat 暂不能运行本插件的子智能体分工；持续研究、长篇写作和多智能体核验仍推荐使用 Work。
 
 这里区分的是**当前对话模式**：从 Codex 客户端启动或打开的 Work 仍按 Work 处理。插件在明确识别为 Codex 对话时默认停止任务并提醒用户；客户端名称、模型自称或底层运行时的 Codex 字样都不能单独作为拦截依据。这是技能中的执行约定，不是平台强制禁用开关。
 
@@ -110,7 +110,7 @@ https://github.com/adjoint-functor/zuihan-kanshu/blob/main/INSTALL.md
 
 **[阅读完整进阶指南](skill/zuihan-kanshu/references/usage-guide.md)**，了解怎样开题、接续研究、追问细节、规划写作，以及润色已有文稿。
 
-**想用得更有效率？** 在对话输入框中输入 `@`，选中实际的**瑞般观珠**插件，然后直接问：
+**想用得更有效率？** 可以新开一个 **Chat** 对话，在输入框中输入 `@`，选中实际的**瑞般观珠**插件，然后直接问：
 
 ```text
 @瑞般观珠，告诉我怎么用得更有效率。

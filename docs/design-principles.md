@@ -14,7 +14,7 @@
 
 本分支的智能体分工、轮次和串行审查流程面向 Work。入口在明确识别为真正的 Codex 对话时默认停止并提醒；从 Codex 客户端启动的 Work 仍适用，通用模型身份、工具或路径中的 Codex 字样不足以判断当前模式。不确定但没有 Codex 模式证据时不凭猜测拦截；实际模式信息冲突且影响执行时再针对性澄清。
 
-推荐 Work 不排除 Chat 的轻量用途：问答、概念讨论、简短文本润色和使用指南问答可按实际工具能力进行。官方[插件说明](https://learn.chatgpt.com/docs/plugins)支持 Chat 与 Work，[子智能体说明](https://learn.chatgpt.com/docs/agent-configuration/subagents)目前列出的支持模式则为 Work 与 Codex；据此，普通 Chat 暂不提供本插件所需的子智能体分工。插件不会为宿主添加委派能力，也不把单个助手依次自查说成多个独立子智能体已经完成核验；持续研究与长篇写作仍推荐 Work。
+推荐 Work 不排除 Chat 的轻量用途：数学问答、概念讨论和简单数学写作任务可按实际工具能力进行。官方[插件说明](https://learn.chatgpt.com/docs/plugins)支持 Chat 与 Work，[子智能体说明](https://learn.chatgpt.com/docs/agent-configuration/subagents)目前列出的支持模式则为 Work 与 Codex；据此，普通 Chat 暂不提供本插件所需的子智能体分工。插件不会为宿主添加委派能力，也不把单个助手依次自查说成多个独立子智能体已经完成核验；持续研究与长篇写作仍推荐 Work。
 
 上述 Codex 会话的默认停止属于技能规则，不能假称为平台硬拦截。`agents/openai.yaml` 保留既有 `CHAT`、`CODEX` 产品值与隐式调用，避免在尚未验证 Work 的产品映射时将其一并排除。源码检查和情境试用不等于真实宿主中的模式识别验收；仓库维护也不等于调用本插件执行数学任务。
 
