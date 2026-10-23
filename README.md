@@ -25,10 +25,11 @@
 告诉我怎么用得更有效率。
 ```
 
-**自 v8.4.0 起已内置指南问答**；也可以通过上方链接直接阅读完整指南。当前源码与指南包含待发布的 v8.5.0 写作流程，正式下载仍为 v8.4.0。
+**自 v8.4.0 起已内置指南问答**；也可以通过上方链接直接阅读完整指南。当前源码与指南对应待发布的 v8.6.0，正式下载仍为 v8.4.0。
 
 | 使用场景 | 进阶用法 |
 | --- | --- |
+| 数学问答 | 直接提出疑问，可说明相关基础与想要的深度；默认在对话中给出简洁充分或按需展开的回答。 |
 | 数学科研开题 | 上传 Markdown 或 PDF 说明文件，集中交代目标、已有结果和参考线索；材料充分可直接开始，只有大方向时可先讨论。 |
 | 接续研究 | 看完对话简报后，可以说“依照 @瑞般观珠 的规范，按照你的判断，继续下一轮研究”。 |
 | 暂停与追问 | 先说“暂停研究轮次，依照 @瑞般观珠 的规范，先回答我：……”，再追问细节、研判方向或判断是否适合阶段成文。 |
@@ -69,13 +70,15 @@
 
 | 你要做的事 | 瑞般观珠提供的支持 | 详细入口 |
 | --- | --- | --- |
-| 解答数学问题 | 推导、证明、反例、计算核验与必要的文献依据；普通问答默认在对话中完成 | [数学问答](skill/zuihan-kanshu/references/mathematical-inquiry.md) |
+| 解答数学问题 | 按问题、明确要求和可靠相关背景选择解释深度，保留必要推导、证明、反例与文献依据；默认在对话中完成 | [数学问答](skill/zuihan-kanshu/references/mathematical-inquiry.md) |
 | 开展持续研究 | 梳理文献、探索路线、证明与核验，保存进展并接续已有工作 | [研究工作台](skill/zuihan-kanshu/references/research-workbench.md) |
 | 数学写作 | 支持规划、撰写与修订，默认以质量为先。 | [普通文稿](skill/zuihan-kanshu/references/working-draft.md) |
 
 内置**数学研究迷你智能体**的角色与协作约定，包括探索者、证明者、做题者、独立核验者和数学编辑者，按研究需要启用。模型选择、推理强度与实际委派受宿主提供的能力和用户授权约束；具体职责见[研究角色](skill/zuihan-kanshu/references/research-roles.md)。
 
-中文支持包括[写作、翻译与术语](skill/zuihan-kanshu/references/chinese-translation.md)、[文风整理](skill/zuihan-kanshu/references/writing-style.md)及[成品制作](skill/zuihan-kanshu/references/final-output.md)。PDF 路径包含工具与字体检测、编译和预检；实际编译需要可用的工具链，见 [PDF 构建说明](skill/zuihan-kanshu/references/final-pdf-build-profile.md)。
+实际预期的中文输出从组织时就使用[中文表达与术语指导](skill/zuihan-kanshu/references/chinese-translation.md)，包括日常问答、规划、研究简报和文稿；数学解答与讨论也前置采用[文风指导](skill/zuihan-kanshu/references/writing-style.md)。普通对话自然承接相关上下文，不因此启动文稿控制或全稿审查。文稿继续支持翻译、修订和[成品制作](skill/zuihan-kanshu/references/final-output.md)；实际 PDF 编译需要可用工具链，见 [PDF 构建说明](skill/zuihan-kanshu/references/final-pdf-build-profile.md)。
+
+研究内部推导、检索和核验保持原流程，中文与文风指导在撰写给用户的报告时采用，保留既有简报详略。中文任务另使用全项目共用的[中文参考](skill/zuihan-kanshu/references/shared-chinese-reference.md)，保存已查证补充和明确的个人规则，不替代文章术语表。
 
 ## 从这三句话开始
 
@@ -91,7 +94,7 @@
 使用瑞般观珠，根据以下要求制定数学文稿的写作计划，并保存在云端。写作要求：……。
 ```
 
-研究记录、写作计划与文稿默认保存在云端的库中。可以指定库内目录；未指定时按主题建立目录，接续已有项目沿用原目录。普通数学问答和使用帮助默认在对话中完成，不自动建立文件项目。
+研究记录、写作计划与文稿默认保存在云端 Library 的 `瑞般观珠/` 下：用户明确的项目名优先，否则自主按主题命名，首次保存确认实际目录。指定目的地优先，接续已有项目沿用原目录，不自动迁移。普通问答和使用帮助不自动建立稿件或研究项目；共享中文参考与项目子目录并列，独立维护。
 
 其他宿主按实际可用的本地、工作区或文件交付能力保存，并说明实际保存位置；没有持久保存能力时，说明限制并在对话中提供可用内容。脚本在本地成功不代表已经保存到云端。研究工作台的五文件协议与保存步骤见[研究工作台](skill/zuihan-kanshu/references/research-workbench.md)。
 
@@ -115,11 +118,11 @@ python tools/run_tests.py
 
 ## 致谢
 
-感谢 [Danus](https://github.com/frenzymath/Danus/tree/6d92e8d415933ca2ef52fd1a4da73fdfcd418f1c)、[Rethlas](https://github.com/frenzymath/Rethlas/tree/e7e48a6d30e7f0ddf0ed1909a594a1f0cfe2c2b7) 与 [Bolzano（problem-solver）](https://github.com/vaclavrozhon/problem-solver/tree/ccc0f7185ef6a72b3b8f519b8efab3f386cf597f)，它们为研究协作、证明核验和失败反馈提供了设计参考。[Matlas](https://matlas.ai/docs) 提供数学检索服务与 API；[hrjtju/matlas-search](https://github.com/hrjtju/matlas-search) 为接口使用与候选文献阅读提供了参考。
+感谢 [Danus](https://github.com/frenzymath/Danus/tree/6d92e8d415933ca2ef52fd1a4da73fdfcd418f1c)、[Rethlas](https://github.com/frenzymath/Rethlas/tree/e7e48a6d30e7f0ddf0ed1909a594a1f0cfe2c2b7) 与 [Bolzano（problem-solver）](https://github.com/vaclavrozhon/problem-solver/tree/ccc0f7185ef6a72b3b8f519b8efab3f386cf597f)，它们为研究协作、证明核验和失败反馈提供了设计参考。
 
 感谢 Terence Tao 公开的数学写作建议，尤其是[《Describe the results accurately》](https://terrytao.wordpress.com/advice-on-writing-papers/describe-the-results-accurately/)和[《Give appropriate amounts of detail》](https://terrytao.wordpress.com/advice-on-writing-papers/give-appropriate-amounts-of-detail/)，为本插件关于准确陈述数学结果、合理安排论证详略的写作指导提供了参考。
 
-这些致谢说明参考来源，不表示将上游项目整体纳入本插件，也不表示上游作者为本项目背书。具体来源、许可与使用边界见 [NOTICE](NOTICE)。
+完整的方法、工具服务与术语来源及其用途集中列在 [NOTICE](NOTICE)。这些致谢不表示将上游项目整体纳入本插件，也不表示上游作者为本项目背书；许可与使用边界以该说明为准。
 
 ## 名称与图标
 

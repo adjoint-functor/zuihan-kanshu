@@ -28,6 +28,7 @@ references/matlas.md
 references/pdf-environment.md
 references/research-roles.md
 references/research-workbench.md
+references/shared-chinese-reference.md
 references/structure-consistency-review.md
 references/theorem-search.md
 references/translation-glossary-en-zh.md
