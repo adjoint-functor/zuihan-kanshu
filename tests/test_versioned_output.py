@@ -95,6 +95,35 @@ class VersionedOutputTests(unittest.TestCase):
         self.assertTrue((self.output / "old" / md.name).is_file())
         self.assertTrue((self.output / "old" / pdf.name).is_file())
 
+    def test_intermediate_draft_and_control_can_advance_while_previous_pdf_is_kept(self):
+        self.write_group(self.output, "v1.0.0", "last delivered")
+        old_pdf = self.output / "稿件_v1.0.0.pdf"
+        delivered_pdf = old_pdf.read_bytes()
+
+        current_version = "v1.0.0"
+        for next_version in ("v1.0.1", "v1.0.2"):
+            sources = [
+                f"稿件_{current_version}.md",
+                f"稿件_{current_version}.control.md",
+            ]
+            vo.begin_revision(self.output, sources, next_version)
+            candidate = self.output / "tmp" / f"稿件_{next_version}.md"
+            candidate.write_text(f"# 正文\n{next_version}\n", encoding="utf-8")
+            control = self.output / "tmp" / f"稿件_{next_version}.control.md"
+            control.write_text(
+                f"# 控制稿\n当前正文：{next_version}；最近 PDF：v1.0.0。\n",
+                encoding="utf-8",
+            )
+            self.assertEqual("FINALIZED", vo.finalize_revision(self.output)["status"])
+            self.assertTrue((self.output / f"稿件_{next_version}.md").is_file())
+            self.assertTrue((self.output / f"稿件_{next_version}.control.md").is_file())
+            self.assertFalse((self.output / f"稿件_{next_version}.pdf").exists())
+            self.assertEqual(delivered_pdf, old_pdf.read_bytes())
+            self.assertFalse((self.output / "old" / old_pdf.name).exists())
+            for source in sources:
+                self.assertTrue((self.output / "old" / source).is_file())
+            current_version = next_version
+
     def test_control_markdown_pdf_and_resources_preserve_complete_history(self):
         history = self.write_group(self.output, "v1.0.0", "initial")
         current = "v1.0.0"

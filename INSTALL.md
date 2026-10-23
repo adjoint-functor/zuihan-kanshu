@@ -13,11 +13,13 @@
 | 校验文件 / Checksums | [SHA256SUMS](https://github.com/adjoint-functor/zuihan-kanshu/releases/download/v8.4.0/SHA256SUMS) |
 | ZIP SHA-256 | `1783d7045f4a5b88fdb0392c6dcb07be569604238c59143a52596848a14111bb` |
 
+当前仓库为待发布的 v8.5.0 源码；上表正式下载仍为 v8.4.0。 / The current repository contains unreleased v8.5.0 source; the published download above remains v8.4.0.
+
 ## 中文
 
 ### 在 ChatGPT 的 Chat 或 Work 中安装
 
-建议在 **Work** 中使用，便于在移动场景下启动、查看和接续数学工作。与 Codex 的适配尚未检验；下方本地安装步骤不等于适配实测。使用方法见[进阶使用指南](skill/zuihan-kanshu/references/usage-guide.md)，当前 v8.4.0 已内置指南问答。
+请在 **Work** 中使用，在云端启动、查看和接续数学工作，无需自行准备远程主机或维护服务器。与 Codex 的适配尚未检验；下方本地安装步骤不等于适配实测。使用方法见[进阶使用指南](skill/zuihan-kanshu/references/usage-guide.md)；指南问答自 v8.4.0 提供，当前源码指南包含待发布的写作流程。
 
 #### 首次安装（推荐：上传完整 ZIP）
 
@@ -72,7 +74,7 @@ python tools/build_release.py --format plugin --check
 python tools/build_release.py --format plugin --zip --output-dir dist
 ```
 
-当前 v8.4.0 源码输出为 `dist/plugin/zuihan-kanshu-v8.4.0/` 和 `dist/plugin/zuihan-kanshu-v8.4.0.zip`。自行构建只产生文件，之后仍需安装／启用。
+当前 v8.5.0 源码输出为 `dist/plugin/zuihan-kanshu-v8.5.0/` 和 `dist/plugin/zuihan-kanshu-v8.5.0.zip`。自行构建只产生文件，之后仍需安装／启用。
 
 若目标宿主只接受独立技能目录：
 
@@ -80,7 +82,7 @@ python tools/build_release.py --format plugin --zip --output-dir dist
 python tools/build_release.py --format skill --output-dir dist
 ```
 
-当前 v8.4.0 源码输出为 `dist/skill/zuihan-kanshu-v8.4.0/`，根层有 `SKILL.md`。按宿主技能安装说明，将其内容安装到名为 `zuihan-kanshu` 的目录，去掉构建目录名中的版本后缀。已有输出目录不会被覆盖；重复构建另选空输出目录。
+当前 v8.5.0 源码输出为 `dist/skill/zuihan-kanshu-v8.5.0/`，根层有 `SKILL.md`。按宿主技能安装说明，将其内容安装到名为 `zuihan-kanshu` 的目录，去掉构建目录名中的版本后缀。已有输出目录不会被覆盖；重复构建另选空输出目录。
 
 ### 验证范围与帮助
 
@@ -90,7 +92,7 @@ python tools/build_release.py --format skill --output-dir dist
 
 ### Install in ChatGPT Chat or Work
 
-**Work is recommended** for conveniently starting, checking, and continuing mathematical work while on the move. Compatibility with Codex has not been tested; the local installation steps below do not establish tested compatibility. See the [advanced usage guide](skill/zuihan-kanshu/references/usage-guide.md). The current v8.4.0 release includes built-in guide responses.
+**Use Work** to start, check, and continue mathematics in the cloud without maintaining a remote machine or server of your own. Compatibility with Codex has not been tested; the local installation steps below do not establish tested compatibility. See the [advanced usage guide](skill/zuihan-kanshu/references/usage-guide.md). Built-in guide responses have been available since v8.4.0; the current source guide includes the unreleased writing workflow.
 
 #### First installation (recommended: upload the complete ZIP)
 
@@ -145,7 +147,7 @@ python tools/build_release.py --format plugin --check
 python tools/build_release.py --format plugin --zip --output-dir dist
 ```
 
-The current v8.4.0 source creates `dist/plugin/zuihan-kanshu-v8.4.0/` and `dist/plugin/zuihan-kanshu-v8.4.0.zip`. Building produces files; installation/enabling is still required.
+The current v8.5.0 source creates `dist/plugin/zuihan-kanshu-v8.5.0/` and `dist/plugin/zuihan-kanshu-v8.5.0.zip`. Building produces files; installation/enabling is still required.
 
 For a host accepting only standalone skill directories:
 
@@ -153,7 +155,7 @@ For a host accepting only standalone skill directories:
 python tools/build_release.py --format skill --output-dir dist
 ```
 
-For the current v8.4.0 source, install the contents of `dist/skill/zuihan-kanshu-v8.4.0/` into a skill directory named `zuihan-kanshu`, without the version suffix, following that host's instructions. The output contains `SKILL.md` at its root. Existing output directories are not overwritten; use another empty output location when rebuilding.
+For the current v8.5.0 source, install the contents of `dist/skill/zuihan-kanshu-v8.5.0/` into a skill directory named `zuihan-kanshu`, without the version suffix, following that host's instructions. The output contains `SKILL.md` at its root. Existing output directories are not overwritten; use another empty output location when rebuilding.
 
 ### Verification scope and help
 
