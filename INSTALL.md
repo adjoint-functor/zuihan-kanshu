@@ -38,7 +38,7 @@
 
 这条路线需要当前账户／工作区允许使用 **Plugin Creator** 及创建插件。下方提示词已包含安装、启用和使用 Plugin Creator 的授权；助手应先发现可用能力并推进，遇到实际权限限制或必须由用户点击的步骤时再提示。文字授权不能替代平台要求的确认操作。
 
-1. 新建 Chat 或 Work 对话，直接发送 [README 的安装提示词](README.md#安装)。若 **Plugin Creator** 已可用，也可输入 `@` 并选中它；提示词本身已包含授权、安装说明入口和正式插件附件的选择要求。
+1. 新建 Chat 或 Work 对话，直接发送 [README 的安装提示词](README.md#安装)。若 **Plugin Creator** 已可用，也可输入 `@` 并选中它；提示词已包含授权并指向本安装说明，下载与核验步骤见下文。
 2. 请它下载上表的插件 ZIP，将**完整包原样导入**为你自己的私人副本，保留名称、版本、技能及所有资源；不要让它重新设计或重写已有插件。副本保存到你的账户或当前工作区，具体位置由宿主决定。
 3. 如果它无法下载，手动打开上表的 ZIP 链接，将下载到的 `.zip` 作为附件上传到该对话，并继续要求完整导入。**对话附件**只解决下载问题，不等于在**插件页上传**或已完成导入。
 4. 私人副本保存成功后，继续完成上面的安装／启用与新对话验证步骤。
@@ -116,7 +116,7 @@ Users have reported successful first-time installation via archive upload. Contr
 
 This route requires your account or workspace to allow **Plugin Creator** and plugin creation. The prompt below authorizes installing, enabling, and using Plugin Creator. The assistant should first discover the available capabilities and proceed, then explain any actual permission limit or step requiring the user's click. Written authorization does not replace confirmation required by the platform.
 
-1. Start a Chat or Work conversation and send the [README installation prompt](README.en.md#install) directly. If **Plugin Creator** is available, you can also select it with `@`. The prompt itself includes authorization, this guide's URL, and instructions to select the published plugin asset.
+1. Start a Chat or Work conversation and send the [README installation prompt](README.en.md#install) directly. If **Plugin Creator** is available, you can also select it with `@`. The prompt includes authorization and points to this guide for the download and verification steps below.
 2. Ask it to download the plugin ZIP listed above and import the **complete package unchanged** as your own private copy. Preserve its name, version, skill, and assets. Do not redesign or rewrite this existing plugin. The host determines whether the copy is saved in your account or current workspace.
 3. If downloading fails, download that ZIP yourself and attach it to the conversation. Continue with the complete-package import. A **conversation attachment** only addresses downloading; it is not a **Plugins page upload** or a completed import.
 4. After the private copy is saved, complete installation/enabling and new-conversation verification as described above.

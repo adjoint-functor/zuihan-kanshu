@@ -43,7 +43,7 @@ First confirm that Dot can access and continue the specified task; capabilities 
 @瑞般观珠 Mathematical writing task: Please polish the manuscript “...”. Its readers are ..., and I would like you to focus on ... .
 ```
 
-Requests to polish, refine, organize, or postprocess are interpreted in context. Improving an existing manuscript's presentation can use this workflow; completing a proof, advancing research, or organizing files calls for the corresponding task. Proof gaps or changes needed to a conclusion are reported, without silently turning editing into new research or strengthening claims.
+Manuscript polishing improves structure and expression so existing mathematical content is clearer and easier to follow. You can request mathematical revisions, such as completing a proof or adjusting a conclusion, separately. If such issues arise during polishing, the plugin will discuss them with you first.
 
 ## Environment and models
 
@@ -78,12 +78,10 @@ Users have reported successful first-time installation via archive upload. Contr
 Start a new ChatGPT Chat or Work conversation and send the prompt below directly. If **Plugin Creator** is available, you can also select it with `@` to make the intended plugin explicit. The prompt authorizes preparing Plugin Creator; the assistant should check available capabilities first and explain any required clicks or permission limits when encountered. After the private copy is saved, complete installation/enabling and verify it in a new conversation.
 
 ```text
-Help me install the third-party plugin Zuihan Kanshu (瑞般观珠).
+Help me install the third-party plugin Zuihan Kanshu (瑞般观珠), following the instructions at:
+https://github.com/adjoint-functor/zuihan-kanshu/blob/main/INSTALL.md
+
 I authorize you to enable and use Plugin Creator and, if it is not installed, to install it through this host's supported capabilities. First discover and load the available plugin-management and Plugin Creator tools. Reuse an available installation and proceed within this authorization without asking for it again. When preparing Plugin Creator, ask me to intervene only if permissions are insufficient, the required capability is unavailable, or a step requires my click; explain the specific blocker and action needed.
-First read the installation guide: https://github.com/adjoint-functor/zuihan-kanshu/blob/main/INSTALL.md
-Download only the published asset linked in the guide's "Plugin ZIP" row, with the exact filename shown there. Do not use Source code, Code → Download ZIP, or the GitHub API's zipball_url / tarball_url, including as a fallback if downloading fails.
-Before importing, follow the guide to verify the version, SHA-256, and archive layout: plugin.json must be at the ZIP root, alongside skills/zuihan-kanshu/SKILL.md. If downloading or verification is unavailable or fails, explain the specific problem and give me the guide's correct plugin ZIP download link for manual use.
-After verification, import the complete package unchanged as my own private copy, preserving its name, version, skill, and assets; update an existing copy from the same source instead of creating a duplicate. Do not redesign or rewrite the plugin. Complete installation/enabling using this host's available capabilities, and report the stage actually reached.
 ```
 
 The [full installation guide, including instructions for GPT](INSTALL.md#english), covers Plugins page upload, GPT tool availability troubleshooting, updates, local installation as a technical reference, and source builds. GitHub's **Code → Download ZIP** and a release's **Source code** archives contain source code, not the installable plugin.
