@@ -22,6 +22,7 @@ references/final-pdf-build-profile.md
 references/introduction-writing.md
 references/japanese-names-places-zh.md
 references/literature.md
+references/manuscript-refinement.md
 references/mathematical-inquiry.md
 references/mathematical-judgment.md
 references/matlas.md

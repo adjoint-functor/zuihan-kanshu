@@ -2,29 +2,40 @@
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "zuihan-kanshu",
   "version": "@VERSION@",
-  "description": "Answer mathematical questions, conduct sustained research, and plan, draft, or revise manuscripts with quality as the default priority. Support language and writing, improve Chinese expression, and deliver Markdown, TeX, or PDF documents.",
+  "description": "Answer mathematical questions, conduct sustained research, and plan, write, revise, or refine mathematical manuscripts in ChatGPT Work. Apply language and writing guidance, improve Chinese expression, and prepare Markdown, TeX, or PDF documents.",
   "author": {
     "name": "Adjoint Functor"
   },
   "homepage": "https://github.com/adjoint-functor/zuihan-kanshu",
   "repository": "https://github.com/adjoint-functor/zuihan-kanshu",
   "license": "MIT",
-  "keywords": ["mathematics", "research", "writing", "chinese", "latex", "agent-skills"],
+  "keywords": [
+    "mathematics",
+    "research",
+    "writing",
+    "chinese",
+    "latex",
+    "agent-skills"
+  ],
   "extensions": {
     "com.openai": {
       "interface": {
         "displayName": "瑞般观珠",
         "shortDescription": "Math Q&A, research & writing",
-        "longDescription": "Use ChatGPT Work for mathematical questions, sustained research, and mathematical writing in the cloud. Language and writing guidance applies while composing mathematical conversation, answers, new drafts, and revisions, in the task's language. Answers choose depth from the actual question, explicit requests, and reliable relevant background. Ordinary questions stay in conversation; manuscripts retain quality-first planning, drafting, revision, and final review.\n\nChinese guidance improves Chinese expression. Explicitly adopted Chinese translation preferences are recorded accurately and applied within their scope. During formal research, internal derivation, retrieval, and verification keep their existing workflow; guidance applies when composing the user report, preserving its established level of detail. For details, see the built-in usage guide: https://github.com/adjoint-functor/zuihan-kanshu/blob/main/skill/zuihan-kanshu/references/usage-guide.md\n\nNew writing batches begin with a saved plan and discussion by default. Intermediate rounds save sources without requiring PDF builds; suitable introductions and final language review follow the manuscript workflow. Document preparation and delivery separately provide Markdown, PDF, and optional TeX. Built-in research mini-agents provide task-based collaboration when the host supports delegation. Models, tools, and storage follow the user's instructions and host capabilities.\n\nNew saved tasks without an explicit destination use a project folder under 瑞般观珠/ at the cloud Library root, preferring the user's explicit project name or choosing one by topic, and confirming the actual folder on the first save. Existing projects keep their folder. Other environments use the available destination and report actual save results.\n\nThe name comes from the Japanese mathematical term 随伴関手 (ずいはんかんしゅ, adjoint functor), echoed in 瑞般観珠 and written 瑞般观珠 in Chinese.",
+        "longDescription": "Use ChatGPT Work for mathematical Q&A, sustained research, and mathematical writing in the cloud. For each new or continuing task, select this plugin with @ and state the intent. These labels help clarify your request; natural requests in Chinese, English, or Japanese still work without fixed keywords.\n\nThis branch includes Work-specific agent assignments, rounds, and sequential reviews. It defaults to stopping and warning when the actual conversation is clearly identified as Codex. Work started or opened from a Codex client remains Work; a client name, generic model identity, or runtime label alone does not trigger the stop. This is a skill-level rule, not a platform-enforced block. A dedicated Codex branch is planned.\n\nMathematical writing includes refining existing manuscripts. Identify the text and the improvements you want; requests to polish or organize are interpreted by their actual goal and scope. New whole-manuscript batches first save and discuss a plan for approval. After approval, review structure and mathematical consistency, then any appropriate introduction, Chinese expression where applicable, and style. Rounds adapt to length and difficulty; intermediate rounds do not compile PDFs by default. Report proof gaps or changes needed to conclusions without silently starting research or strengthening claims. Explicit local edits and existing authorization retain their scope.\n\nLanguage and writing guidance supports dialogue and manuscripts from composition. Answers adapt to the actual question, explicit requests, and reliable relevant background. Chinese guidance improves Chinese expression; explicitly adopted translation preferences are recorded accurately within their scope. Formal research reports keep their established level of detail. Markdown, PDF, and optional TeX delivery follows the task. Built-in research mini-agents support exploration, proof, and verification when the host permits delegation.\n\nNew saved tasks without a specified destination use a project folder under 瑞般观珠/ at the cloud Library root; an explicit project name wins, otherwise one is chosen by topic. The first save confirms the folder; existing projects keep theirs. Saving follows actual available capabilities after the entry's mode check.\n\nAsk this plugin how to use it more effectively, or read the built-in guide: https://github.com/adjoint-functor/zuihan-kanshu/blob/main/skill/zuihan-kanshu/references/usage-guide.md\n\nThe name is a phonetic wordplay on 随伴関手 (ずいはんかんしゅ, adjoint functor), rendered 瑞般観珠 and written 瑞般观珠 in Chinese.",
         "developerName": "Adjoint Functor",
         "category": "Education & Research",
         "websiteURL": "https://github.com/adjoint-functor/zuihan-kanshu",
         "supportURL": "https://github.com/adjoint-functor/zuihan-kanshu/issues",
-        "capabilities": ["数学问答", "数学研究", "数学写作"],
+        "capabilities": [
+          "数学问答",
+          "数学研究",
+          "数学写作"
+        ],
         "defaultPrompt": [
-          "使用瑞般观珠解答以下数学问题，并按需要给出推导、证明或文献依据。问题：……。",
-          "使用瑞般观珠，围绕以下目标开展数学研究，将研究记录与阶段成果保存在云端。研究目标：……。",
-          "使用瑞般观珠，根据以下要求制定数学文稿的写作计划，并保存在云端。写作要求：……。"
+          "@瑞般观珠 数学问答：请解答以下问题，并按需要给出推导、证明或文献依据。问题：……。",
+          "@瑞般观珠 数学研究：请围绕以下目标开展研究，将研究记录与阶段成果保存在云端。研究目标：……。",
+          "@瑞般观珠 数学写作任务：请根据以下要求撰写或修订文稿。写作要求：……。"
         ],
         "composerIcon": "./assets/icon-256.png",
         "composerIconDark": "./assets/icon-dark-256.png",
@@ -39,11 +50,11 @@
       },
       "publication": {
         "countries": [],
-        "release_notes": "v8.6.0 brings language and writing guidance to dialogue and manuscripts and improves Chinese expression. Mathematical answers adapt to the question and reliable relevant context; formal research reports retain their established level of detail. Manuscript workflows and separate document delivery remain. New saved tasks default to project folders under 瑞般观珠/ in the Library, with explicit destinations and existing project folders preserved. NOTICE consolidates method, tool, terminology, and standards sources.",
+        "release_notes": "v8.7.0 clarifies intent-based routing and recommends explicit plugin mentions with task labels, without requiring keywords. Existing-manuscript refinement gains a plan-first entry under mathematical writing, preserving mathematical scope and the established review sequence. A conversation-mode check defaults to stopping in clearly identified Codex conversations while allowing Work opened from Codex clients. Product availability settings remain unchanged.",
         "translations": {
           "zh-CN": {
             "subtitle": "数学问答、研究与写作",
-            "description": "请在 ChatGPT Work 中使用瑞般观珠，在云端解答数学问题、开展持续研究与数学写作。通用语言表达与写作指导从组织内容时用于数学对话、问答、文稿新写与修订，适用于各任务语言。数学回答按问题、明确要求和可靠相关背景选择详略；普通问答保留自然对话形式，文稿继续以质量为先规划、撰写、修订和审读。\n\n中文指导改善中文表现；中文翻译习惯会按用户明确需求准确记录，并在相应范围沿用。正式研究的内部推导、检索与核验保持原流程，撰写给用户的报告时才采用相应指导，保留既有简报详略。详细用法见内置指南：https://github.com/adjoint-functor/zuihan-kanshu/blob/main/skill/zuihan-kanshu/references/usage-guide.md\n\n新写作批次默认先保存计划并讨论，主体、整体修订、适用导语及最终语言审读按文稿流程完成；中间轮不要求 PDF。成品制作与交付另提供 Markdown、PDF 和按需 TeX。内置研究迷你智能体按任务采用，模型、工具与保存遵循用户指示和宿主能力。\n\n未指定目的地的新任务默认放在 Library 根目录‘瑞般观珠’下的项目子目录，优先用用户明确的项目名，否则自主按主题命名，首次保存确认实际目录。已有项目沿用原目录。其他环境按实际可用位置保存并说明。\n\n名称取意于数学术语「随伴関手」（ずいはんかんしゅ，Adjoint Functor），以其日语读音谐作「瑞般観珠」，中文写作「瑞般观珠」。"
+            "description": "请在 ChatGPT Work 中使用瑞般观珠，开展数学问答、数学研究和数学写作。建议每次发起或接续任务时，用 @ 选中插件并说明任务类别；插件按完整意图理解中文、英文和日语请求，不要求固定关键词。\n\n本分支包含适配 Work 的智能体分工、轮次和串行审查规则，明确识别为真正的 Codex 对话时默认停止并提醒。从 Codex 客户端启动或打开的 Work 仍按 Work 处理，不凭客户端名称或底层运行时误拦。这是技能约定，不是平台强制禁用开关；未来拟提供 Codex 专用分支。\n\n数学写作包括已有文稿的润色与后处理。指定文件和希望改善的内容，插件按实际需求判断范围，默认先保存并报告修改计划，获准后完成结构与一致性、适用导语、中文和文风审读。轮次按篇幅与难度安排，中间轮默认不编译 PDF。发现证明缺口或需要改变结论时报告，不自动扩大为新研究或暗中改强结论；局部修改和已有授权仍按实际范围处理。\n\n通用语言表达与写作指导用于对话与文稿，中文指导改善中文表现；中文翻译习惯会按明确需求准确记录并在相应范围沿用。问答按问题和可靠背景选择详略，研究报告保留既有简报详略。成品制作提供 Markdown、PDF 和按需 TeX；研究迷你智能体按宿主能力与授权使用。\n\n未指定目的地的新任务默认放在 Library 根目录‘瑞般观珠’下的项目子目录，优先采用明确项目名，否则自主按主题命名，首次保存确认目录；已有项目沿用原目录。保存能力的适配在入口的模式判断之后进行。\n\n可直接询问插件如何使用得更有效率。完整指南：https://github.com/adjoint-functor/zuihan-kanshu/blob/main/skill/zuihan-kanshu/references/usage-guide.md\n\n名称取意于「随伴関手」（ずいはんかんしゅ，Adjoint Functor），以日语读音谐作「瑞般観珠」，中文写作「瑞般观珠」。"
           }
         }
       }

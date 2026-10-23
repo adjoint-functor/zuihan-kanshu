@@ -1,7 +1,7 @@
 interface:
   display_name: "瑞般观珠"
   short_description: "数学问答、研究与写作；提供通用语言表达指导，改善中文表现，支持文稿成品制作。"
-  default_prompt: "Use $zuihan-kanshu to answer mathematical questions in conversation, conduct research, or plan, write, and revise mathematical documents with quality as the default priority. Apply language and writing guidance to mathematical dialogue and manuscripts, including Chinese guidance when composing intended Chinese output. For manuscripts, save a separate control file and deliver Markdown, PDF, and optional TeX as appropriate to the task."
+  default_prompt: "Use $zuihan-kanshu in ChatGPT Work for mathematical Q&A, mathematical research, or mathematical writing, including planning, drafting, revising, and refining existing manuscripts, following my actual intent and scope."
   icon_small: "assets/icon-256.png"
   icon_large: "assets/icon-1024.png"
   brand_color: "#087F79"

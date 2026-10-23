@@ -6,11 +6,13 @@
 
 **Use ChatGPT Work. Take your mathematics with you; leave server maintenance behind.**
 
+**Whenever you start or continue a mathematical task, select 瑞般观珠 with `@` and state the intent: “Mathematical Q&A,” “Mathematical research,” or “Mathematical writing.”** These labels help clarify your goal; the plugin still understands natural requests without fixed keywords, in Chinese, English, or Japanese.
+
 Zuihan Kanshu supports mathematical questions, research, and writing in the cloud, without a remote machine or server of your own to maintain. Pick up your mathematics during a break at work, on a business trip, or while travelling.
 
 If Codex seems a little too enthusiastic about working continuously, and you worry that Goal Mode might exhaust your allowance before your conjecture is settled, Work may offer just the right pace. Advance one round at a time, pause at useful points, review the progress, ask questions, and help choose what comes next. Human participation remains part of the specification.
 
-When you need to step away, put **Dot on the editorial night shift**: whenever it sees that the current round's task is complete, have it send `根据 @瑞般观珠 规范，按指定计划，进行下一轮。` to the specified **Work conversation**, and let Work moonlight as Codex. This requests the next round under the plugin's guidelines and the specified plan. You can also ask Dot to read and follow the plan or limit how many rounds it advances.
+When you need to step away, put **Dot on the editorial night shift**: whenever it sees that the current round's task is complete, have it send `@瑞般观珠 Mathematical writing: Following the plugin's guidelines and the specified plan, proceed with the next round.` to the specified **Work conversation**, and let Work moonlight as Codex. Label a research task “Mathematical research” instead. You can also ask Dot to read and follow the plan or limit how many rounds it advances.
 
 [Official Dot tasks and memory documentation](https://learn.chatgpt.com/docs/dots/tasks-and-memory) · [Controls](https://learn.chatgpt.com/docs/dots/controls)
 
@@ -18,27 +20,40 @@ First confirm that Dot can access and continue the specified task; capabilities 
 
 ## Advanced usage guide
 
-**[Read the full advanced usage guide](skill/zuihan-kanshu/references/usage-guide.md)** for starting and continuing research, asking about details, and planning mathematical writing. The guide is written in Chinese; you can ask the plugin to explain it in English.
+**[Read the full advanced usage guide](skill/zuihan-kanshu/references/usage-guide.md)** for starting and continuing research, asking about details, planning mathematical writing, and refining existing manuscripts. The guide is written in Chinese; you can ask the plugin to explain it in English.
 
 **Want to use it more effectively?** Type `@` in the conversation input, select **瑞般观珠**, and ask:
 
 ```text
-How can I use this plugin more effectively?
+@瑞般观珠 How can I use this plugin more effectively?
 ```
 
-**Built-in guide responses have been available since v8.4.0.** You can also read the full guide through the link above. The current guide corresponds to release **v8.6.0**.
+**Built-in guide responses have been available since v8.4.0.** This page and the guide describe the **unreleased v8.7.0 source**, including its mode check and manuscript-refinement entry. See the installation section for the published download.
 
 | Scenario | Suggested approach |
 | --- | --- |
 | Mathematical questions | Ask directly, adding relevant background and the depth you want if useful. Answers stay in the conversation and can be concise or detailed as needed. |
 | Start mathematical research | Upload a Markdown or PDF brief describing your goal, existing results, and reference material. Sufficient material lets research begin directly; a broad direction can be discussed first. |
-| Continue research | After reading the progress brief, say: “Following @瑞般观珠's guidelines, use your judgment and continue the next research round.” |
-| Pause and ask | Say: “Pause research rounds. Following @瑞般观珠's guidelines, first answer: …” Ask about details, reassess the direction, or discuss whether the results are ready for a manuscript. |
+| Continue research | After reading the progress brief, say: “@瑞般观珠 Mathematical research: Follow the plugin's guidelines, use your judgment, and continue the next research round.” |
+| Pause and ask | Say: “@瑞般观珠 Mathematical Q&A: Pause research rounds and first answer: …” Ask about details, reassess the direction, or discuss whether the results are ready for a manuscript. |
 | Mathematical writing | Give the full requirements. By default, the plugin saves a plan and discusses it with you, then proceeds across rounds after you start execution. |
+| Refine an existing manuscript | Identify the manuscript and the presentation or organization you want improved. The plugin proposes a plan for approval, then reviews the whole text, any appropriate introduction, and the language. This is part of mathematical writing. |
+
+```text
+@瑞般观珠 Mathematical writing task: Please polish the manuscript “...”. Its readers are ..., and I would like you to focus on ... .
+```
+
+Requests to polish, refine, organize, or postprocess are interpreted in context. Improving an existing manuscript's presentation can use this workflow; completing a proof, advancing research, or organizing files calls for the corresponding task. Proof gaps or changes needed to a conclusion are reported, without silently turning editing into new research or strengthening claims.
 
 ## Environment and models
 
-Use in Codex is not currently recommended. A Codex-compatible branch is planned for the future.
+**This branch targets Work; running it in an actual Codex conversation is not currently recommended.** Besides agent assignments, it includes Work-specific rounds and sequential steps: discuss the plan, draft according to dependencies, then complete the whole-manuscript and language reviews. A Codex-compatible branch is planned for the future.
+
+**Save the plan so the next round has a clear starting point.** Codex reads applicable `AGENTS.md` project instructions before beginning work. For ongoing tasks, Zuihan Kanshu maintains changing task records: a separate `.control.md` for writing, and the continuation entry and other workbench files for research. These preserve the goal and main thread, current plan, progress, open decisions, and next steps; the assistant reports important arrangements in the conversation.
+
+Whether you simply say “continue” or use Dot to coordinate further rounds, the assistant has a record to consult and should reassess the plan against current progress. This helps reduce forgotten agreements, duplicated work, and mechanical pursuit of stale tasks. **Persistent planning is an important part of this plugin's design and a general method. This branch's Work-oriented execution rhythm and its Codex compatibility are separate considerations.** See the [design principles](docs/design-principles.md).
+
+The distinction is the **current conversation mode**. A Work conversation started or opened from a Codex client is still Work. The current source defaults to stopping and warning when the conversation is clearly identified as Codex. A client name, a model's generic identity, or a Codex runtime label alone is insufficient. This is a skill-level execution rule, not a platform-enforced disable switch.
 
 **Recommended main agent:** choose **GPT-6 Astra with Max** when your budget allows; **GPT-6.1 Sol with Max** is the minimum recommended choice for this plugin. Built-in sub-agent assignments already cover exploration, proof, and verification in the research module. Max is normally sufficient; **Ultra is not recommended by default**.
 
@@ -52,7 +67,7 @@ This third-party plugin is distributed through GitHub. The current release is **
 
 1. [Download the release plugin ZIP](https://github.com/adjoint-functor/zuihan-kanshu/releases/download/v8.6.0/zuihan-kanshu-v8.6.0.zip) and keep the complete `.zip` without extracting it.
 2. Open ChatGPT's **Plugins** page, choose **Add → Upload plugin archive**, upload this ZIP, and follow the page's import/save prompts.
-3. Complete **installation/enabling**, then start a new conversation, select **瑞般观珠** with `@`, and ask a mathematical question.
+3. Complete **installation/enabling**, then start a new Work conversation, select **瑞般观珠** with `@`, and ask, for example: “@瑞般观珠 Mathematical Q&A: Prove that there are infinitely many primes.”
 
 Users have reported successful first-time installation via archive upload. Controls and permissions may differ by account or client.
 
@@ -65,7 +80,7 @@ Help me install the third-party plugin Zuihan Kanshu (瑞般观珠): https://git
 Read the root INSTALL.md first. Use the published release plugin ZIP and import the complete package unchanged, preserving its name, version, skill, and assets, as my own private copy. Do not redesign or rewrite the plugin. Complete installation/enabling using this host's available capabilities, and report the stage actually reached.
 ```
 
-The [full installation guide, including instructions for GPT](INSTALL.md#english), covers Plugins page upload, GPT tool availability troubleshooting, updates, local Codex installation, and source builds. GitHub's **Code → Download ZIP** and a release's **Source code** archives contain source code, not the installable plugin.
+The [full installation guide, including instructions for GPT](INSTALL.md#english), covers Plugins page upload, GPT tool availability troubleshooting, updates, local installation as a technical reference, and source builds. GitHub's **Code → Download ZIP** and a release's **Source code** archives contain source code, not the installable plugin.
 
 ## Questions → research → writing
 
@@ -73,7 +88,7 @@ The [full installation guide, including instructions for GPT](INSTALL.md#english
 | --- | --- | --- |
 | Answer a mathematical question | Choose depth from the question, explicit requests, and reliable relevant background; retain necessary reasoning, proofs, counterexamples, and sources in the conversation | [Mathematical inquiry](skill/zuihan-kanshu/references/mathematical-inquiry.md) |
 | Continue a research project | Literature, exploration, proof, verification, progress records, and session recovery | [Research workbench](skill/zuihan-kanshu/references/research-workbench.md) |
-| Mathematical writing | Plan, draft, and revise, with quality as the default priority. | [Working drafts](skill/zuihan-kanshu/references/working-draft.md) |
+| Mathematical writing | Plan, draft, revise, and refine existing manuscripts, with quality as the default priority. | [Working drafts](skill/zuihan-kanshu/references/working-draft.md) · [Manuscript refinement](skill/zuihan-kanshu/references/manuscript-refinement.md) |
 
 Built-in **mathematical research mini-agent** guidance covers explorers, proof authors, bounded problem solvers, independent verifiers, and mathematical editors. Actual delegation, model selection, and reasoning settings depend on host capabilities and user authorization; see [research roles](skill/zuihan-kanshu/references/research-roles.md).
 
@@ -85,23 +100,23 @@ Built-in **mathematical research mini-agent** guidance covers explorers, proof a
 
 ## Start a task
 
-The plugin offers these three prompts:
+Use these prompts, or describe the same goals in your own words:
 
 ```text
-使用瑞般观珠解答以下数学问题，并按需要给出推导、证明或文献依据。问题：……。
+@瑞般观珠 Mathematical Q&A: Please answer ..., with derivations, proofs, or references as needed.
 ```
 
 ```text
-使用瑞般观珠，围绕以下目标开展数学研究，将研究记录与阶段成果保存在云端。研究目标：……。
+@瑞般观珠 Mathematical research: Please investigate ..., saving research records and intermediate results in the cloud.
 ```
 
 ```text
-使用瑞般观珠，根据以下要求制定数学文稿的写作计划，并保存在云端。写作要求：……。
+@瑞般观珠 Mathematical writing task: Please write a manuscript with the following requirements: ... .
 ```
 
-They request an answer, a research project, or a writing plan, respectively. New saved tasks default to a project folder under `瑞般观珠/` at the cloud Library root. Your explicit project name takes priority; otherwise the plugin chooses a name by topic and confirms the actual folder on the first save. An explicit destination wins, and existing projects keep their folder without automatic migration. Ordinary questions and usage help do not create manuscripts or research projects by default.
+Writing begins with a saved plan and discussion by default; drafting starts after approval. Here, `@瑞般观珠` means actually selecting the plugin in the composer; pasting its name alone is not the same action. New saved tasks default to a project folder under `瑞般观珠/` at the cloud Library root. Your explicit project name takes priority; otherwise the plugin chooses a name by topic and confirms the actual folder on the first save. An explicit destination wins, and existing projects keep their folder without automatic migration. Ordinary questions and usage help do not create manuscripts or research projects by default.
 
-Other hosts use their available workspace, local storage, or file delivery and report the actual location. Without persistent storage, they should explain the limitation and provide usable content in the conversation. A successful local command does not establish a cloud save. The [workbench](skill/zuihan-kanshu/references/research-workbench.md) describes its five versioned files and persistence protocol.
+Once the entry's mode check permits the task, saving uses the available cloud, local, or workspace capabilities and reports the actual location. A storage fallback does not override the default stop in Codex conversations. A successful local command does not establish a cloud save. The [workbench](skill/zuihan-kanshu/references/research-workbench.md) describes its five versioned files and persistence protocol.
 
 ## Source and checks
 
