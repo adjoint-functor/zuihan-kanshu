@@ -1,6 +1,6 @@
 ---
 name: zuihan-kanshu
-description: 用于回答数学问题、新建或接续数学研究，以及数学文稿的写作规划、撰写与修订。适用于证明、计算核验、文献查证、数学文稿审阅、数学文本的中文翻译与术语处理、文风整理，以及数学文稿的 Markdown、TeX 与 PDF 排版编译。也用于询问瑞般观珠的用法、使用指南或如何更高效地使用本插件，支持中文、英文和日语提问。
+description: 用于回答数学问题、新建或接续数学研究，以及数学文稿的写作规划、撰写与修订。支持证明、计算核验、文献查证和文稿审阅；为对话与文稿提供通用语言表达和写作指导，改善中文表现。另支持 Markdown、TeX、PDF 成品制作。也用于询问瑞般观珠的用法、使用指南或如何更高效地使用本插件，支持中文、英文和日语提问。
 ---
 
 # 瑞般观珠 v8.6.0
@@ -31,10 +31,10 @@ description: 用于回答数学问题、新建或接续数学研究，以及数�
 - 数学问答与普通文稿需要实质执行或委派时，先读 `references/document-roles.md`；正式持续研究的执行分配使用 `references/research-roles.md`。
 - 新论证、核验意见或依赖变化：`references/mathematical-judgment.md`。
 - 新研究方向、准备投入较大证明工作、判断新颖性或使用文献时，读 `references/literature.md` 的相关部分，及时核对已有成果。原生检索、`references/matlas.md` 与 `references/theorem-search.md` 三种能力按需互补，普通问答也可使用；下载命名仍见文献模组。
-- 数学问答、数学讨论、研究简报，以及数学文稿的新写、修订和一次成稿：组织回答或开始写作前加载并使用 `references/writing-style.md`。问答详略与先备按其共享指导判断；研究轮次报告沿用既有简报安排，文稿规划和后期审读仍按 `references/working-draft.md`。
+- 数学问答、数学讨论、研究简报，以及数学文稿的新写、修订和一次成稿：组织回答或开始写作前加载并使用 `references/writing-style.md` 的通用语言表达与写作指导。问答详略与先备按其共享指导判断；研究轮次报告沿用既有简报安排，文稿规划和后期审读仍按 `references/working-draft.md`。
 - 任何任务有实际预期的中文输出，包括帮助、规划、问答、研究简报和文稿，组织该部分前加载并使用 `references/chinese-translation.md`。从用户明确的输出语言、当前交流语言和可靠有效上下文判断；明确要求其他语言时服从该要求，模组说明、引文或来源中的中文及中日文名称本身不等于要用中文回答。没有中文输出意图时不强制加载或追问语言；混合／双语输出只对中文部分采用中文指导。
 - 正式研究的内部推导、检索和核验阶段不加载中文模组；每轮收束真正撰写给用户的中文报告时才加载使用。若本轮已经加载，不据中文润色规则干预内部研究判断或过程，在报告阶段采用；不声称能卸载已读规则。明确另做翻译稿时按该翻译任务处理，不改变内部研究流程。
-- 中文模组适用时，同时读取 `references/shared-chinese-reference.md`，按其约定使用全项目共享的个人中文参考；它的读取、缺失初始化和合格增量独立于稿件管理。
+- 中文模组适用时，同时读取 `references/shared-chinese-reference.md`，按其约定使用全项目共享的个人中文参考，记录已查证补充及用户明确采用的翻译习惯、用词和保留词规则，并尊重实际作用域；它的读取、缺失初始化和合格增量独立于稿件管理。
 - 需要英文术语的准确中译时读 `references/translation-glossary-en-zh.md`；涉及具体日本实体或相应人名术语时读 `references/japanese-names-places-zh.md`。两表按义项使用；临时对话用词不自动覆盖内置表。
 - 全稿结构与数学表达的一致性审查：`references/structure-consistency-review.md`；适用的论文式导语：`references/introduction-writing.md`，由普通文稿流程衔接。
 - 完整成品或 PDF：`references/final-output.md`；生成或重建 PDF、交付 TeX 时再读 `references/final-pdf-build-profile.md`。

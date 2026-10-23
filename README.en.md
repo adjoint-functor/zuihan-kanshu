@@ -71,9 +71,11 @@ The [full installation guide, including instructions for GPT](INSTALL.md#english
 
 Built-in **mathematical research mini-agent** guidance covers explorers, proof authors, bounded problem solvers, independent verifiers, and mathematical editors. Actual delegation, model selection, and reasoning settings depend on host capabilities and user authorization; see [research roles](skill/zuihan-kanshu/references/research-roles.md).
 
-[Chinese expression and terminology guidance](skill/zuihan-kanshu/references/chinese-translation.md) applies while composing intended Chinese output, including questions, planning, research briefs, and manuscripts. Mathematical answers and discussions also use [style guidance](skill/zuihan-kanshu/references/writing-style.md) from the start. Conversation can naturally use relevant context without starting a manuscript control or review workflow. Manuscripts retain translation, revision, and [finished-document support](skill/zuihan-kanshu/references/final-output.md); PDF compilation requires the toolchain described in the [build profile](skill/zuihan-kanshu/references/final-pdf-build-profile.md).
+[Language and writing guidance](skill/zuihan-kanshu/references/writing-style.md) supports clear, accurate mathematical conversation, answers, new drafts, and revisions from composition, in the task's language. Conversation naturally uses relevant context, manuscripts retain applicable planning and independent reviews, and research reports keep their established level of detail.
 
-Internal research derivation, retrieval, and verification keep their existing workflow. Chinese and style guidance apply when composing the user report, preserving its established level of detail. Chinese tasks also use a [shared personal reference](skill/zuihan-kanshu/references/shared-chinese-reference.md) for verified additions and explicit user rules across projects; it does not replace manuscript terminology tables.
+[Chinese guidance](skill/zuihan-kanshu/references/chinese-translation.md) improves Chinese expression. Explicitly adopted Chinese translation preferences are recorded accurately and applied within their scope; see the [usage guide](skill/zuihan-kanshu/references/usage-guide.md) for details.
+
+[Document preparation and delivery](skill/zuihan-kanshu/references/final-output.md) separately provides Markdown, PDF, and optional TeX. Actual compilation and checks need the toolchain described in the [build profile](skill/zuihan-kanshu/references/final-pdf-build-profile.md).
 
 ## Start a task
 
@@ -91,7 +93,7 @@ The plugin offers these three prompts:
 使用瑞般观珠，根据以下要求制定数学文稿的写作计划，并保存在云端。写作要求：……。
 ```
 
-They request an answer, a research project, or a writing plan, respectively. New saved tasks default to a project folder under `瑞般观珠/` at the cloud Library root. Your explicit project name takes priority; otherwise the plugin chooses a name by topic and confirms the actual folder on the first save. An explicit destination wins, and existing projects keep their folder without automatic migration. Ordinary questions and usage help do not create manuscripts or research projects by default; the shared Chinese reference is maintained separately alongside project folders.
+They request an answer, a research project, or a writing plan, respectively. New saved tasks default to a project folder under `瑞般观珠/` at the cloud Library root. Your explicit project name takes priority; otherwise the plugin chooses a name by topic and confirms the actual folder on the first save. An explicit destination wins, and existing projects keep their folder without automatic migration. Ordinary questions and usage help do not create manuscripts or research projects by default.
 
 Other hosts use their available workspace, local storage, or file delivery and report the actual location. Without persistent storage, they should explain the limitation and provide usable content in the conversation. A successful local command does not establish a cloud save. The [workbench](skill/zuihan-kanshu/references/research-workbench.md) describes its five versioned files and persistence protocol.
 

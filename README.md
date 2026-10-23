@@ -76,9 +76,11 @@
 
 内置**数学研究迷你智能体**的角色与协作约定，包括探索者、证明者、做题者、独立核验者和数学编辑者，按研究需要启用。模型选择、推理强度与实际委派受宿主提供的能力和用户授权约束；具体职责见[研究角色](skill/zuihan-kanshu/references/research-roles.md)。
 
-实际预期的中文输出从组织时就使用[中文表达与术语指导](skill/zuihan-kanshu/references/chinese-translation.md)，包括日常问答、规划、研究简报和文稿；数学解答与讨论也前置采用[文风指导](skill/zuihan-kanshu/references/writing-style.md)。普通对话自然承接相关上下文，不因此启动文稿控制或全稿审查。文稿继续支持翻译、修订和[成品制作](skill/zuihan-kanshu/references/final-output.md)；实际 PDF 编译需要可用工具链，见 [PDF 构建说明](skill/zuihan-kanshu/references/final-pdf-build-profile.md)。
+[语言表达与写作指导](skill/zuihan-kanshu/references/writing-style.md)覆盖数学对话、问答、文稿新写与修订，从组织表达时就帮助把内容说清楚、说准确，适用于各任务语言。普通对话自然承接相关上下文，文稿保留适用的规划与独立审读，研究报告沿用既有简报详略。
 
-研究内部推导、检索和核验保持原流程，中文与文风指导在撰写给用户的报告时采用，保留既有简报详略。中文任务另使用全项目共用的[中文参考](skill/zuihan-kanshu/references/shared-chinese-reference.md)，保存已查证补充和明确的个人规则，不替代文章术语表。
+中文输出另用[中文指导](skill/zuihan-kanshu/references/chinese-translation.md)改善中文表现；中文翻译习惯会按你的明确需求准确记录，并在相应范围沿用。具体用法见[进阶使用指南](skill/zuihan-kanshu/references/usage-guide.md)。
+
+[成品制作与交付](skill/zuihan-kanshu/references/final-output.md)另提供 Markdown、PDF 和按需 TeX；实际编译与检查需要可用工具链，见 [PDF 构建说明](skill/zuihan-kanshu/references/final-pdf-build-profile.md)。
 
 ## 从这三句话开始
 
@@ -94,7 +96,7 @@
 使用瑞般观珠，根据以下要求制定数学文稿的写作计划，并保存在云端。写作要求：……。
 ```
 
-研究记录、写作计划与文稿默认保存在云端 Library 的 `瑞般观珠/` 下：用户明确的项目名优先，否则自主按主题命名，首次保存确认实际目录。指定目的地优先，接续已有项目沿用原目录，不自动迁移。普通问答和使用帮助不自动建立稿件或研究项目；共享中文参考与项目子目录并列，独立维护。
+研究记录、写作计划与文稿默认保存在云端 Library 的 `瑞般观珠/` 下：用户明确的项目名优先，否则自主按主题命名，首次保存确认实际目录。指定目的地优先，接续已有项目沿用原目录，不自动迁移。普通问答和使用帮助不自动建立稿件或研究项目。
 
 其他宿主按实际可用的本地、工作区或文件交付能力保存，并说明实际保存位置；没有持久保存能力时，说明限制并在对话中提供可用内容。脚本在本地成功不代表已经保存到云端。研究工作台的五文件协议与保存步骤见[研究工作台](skill/zuihan-kanshu/references/research-workbench.md)。
 

@@ -1,6 +1,6 @@
 # 读者版 Markdown 与成品 PDF
 
-只有用户明确要求成品、最终稿、可交付文稿或 PDF 时加载本模组。普通文稿同时遵守 `working-draft.md`；PDF 构建必须再读取 `final-pdf-build-profile.md`。
+本模组负责文稿成品的制作与交付。只有用户明确要求成品、最终稿、可交付文稿或 PDF 时加载；普通文稿同时遵守 `working-draft.md`，PDF 构建必须再读取 `final-pdf-build-profile.md`。
 
 ## 目录
 
