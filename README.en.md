@@ -14,7 +14,7 @@
 How can I use this plugin more effectively?
 ```
 
-Built-in guide responses are available from **v8.4.0**; the current published download is still **v8.3.1**. You can read the guide directly through the link above now.
+**v8.4.0 includes built-in guide responses.** You can also read the full guide through the link above.
 
 | Scenario | Suggested approach |
 | --- | --- |
@@ -33,11 +33,11 @@ In preliminary rough tests, the consumption ratio of GPT-6 Astra to GPT-6.1 Sol 
 
 ## Install
 
-This third-party plugin is distributed through GitHub. The current release is **v8.3.1**: [download the plugin ZIP](https://github.com/adjoint-functor/zuihan-kanshu/releases/download/v8.3.1/zuihan-kanshu-v8.3.1.zip). You do not need to build from source.
+This third-party plugin is distributed through GitHub. The current release is **v8.4.0**: [download the plugin ZIP](https://github.com/adjoint-functor/zuihan-kanshu/releases/download/v8.4.0/zuihan-kanshu-v8.4.0.zip). You do not need to build from source.
 
 ### First installation (recommended: upload the complete ZIP)
 
-1. [Download the release plugin ZIP](https://github.com/adjoint-functor/zuihan-kanshu/releases/download/v8.3.1/zuihan-kanshu-v8.3.1.zip) and keep the complete `.zip` without extracting it.
+1. [Download the release plugin ZIP](https://github.com/adjoint-functor/zuihan-kanshu/releases/download/v8.4.0/zuihan-kanshu-v8.4.0.zip) and keep the complete `.zip` without extracting it.
 2. Open ChatGPT's **Plugins** page, choose **Add → Upload plugin archive**, upload this ZIP, and follow the page's import/save prompts.
 3. Complete **installation/enabling**, then start a new conversation, select **瑞般观珠** with `@`, and ask a mathematical question.
 

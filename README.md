@@ -19,7 +19,7 @@
 告诉我怎么用得更有效率。
 ```
 
-内置指南问答自 **v8.4.0** 提供；当前正式下载仍为 **v8.3.1**。你现在就可以通过上方链接直接阅读指南。
+**v8.4.0 已内置指南问答**；也可以通过上方链接直接阅读完整指南。
 
 | 使用场景 | 进阶用法 |
 | --- | --- |
@@ -38,11 +38,11 @@
 
 ## 安装
 
-本项目通过 GitHub 提供第三方插件。当前正式版为 **v8.3.1**：[下载插件 ZIP](https://github.com/adjoint-functor/zuihan-kanshu/releases/download/v8.3.1/zuihan-kanshu-v8.3.1.zip)，普通使用者无需从源码编译。
+本项目通过 GitHub 提供第三方插件。当前正式版为 **v8.4.0**：[下载插件 ZIP](https://github.com/adjoint-functor/zuihan-kanshu/releases/download/v8.4.0/zuihan-kanshu-v8.4.0.zip)，普通使用者无需从源码编译。
 
 ### 首次安装（推荐：上传完整 ZIP）
 
-1. [下载正式插件 ZIP](https://github.com/adjoint-functor/zuihan-kanshu/releases/download/v8.3.1/zuihan-kanshu-v8.3.1.zip)，保留完整 `.zip`，无需解压。
+1. [下载正式插件 ZIP](https://github.com/adjoint-functor/zuihan-kanshu/releases/download/v8.4.0/zuihan-kanshu-v8.4.0.zip)，保留完整 `.zip`，无需解压。
 2. 打开 ChatGPT 的**插件**页面，选择 **添加 → 上传插件压缩包**，上传这个 ZIP，按页面提示完成导入／保存。
 3. 按提示完成**安装／启用**；再新建对话，用 `@` 选择**瑞般观珠**并提出一个数学问题。
 
