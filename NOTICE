@@ -117,6 +117,9 @@ https://github.com/notofonts/noto-cjk/blob/Sans2.004/LICENSE
   https://quarto.org/docs/output-formats/pdf-basics.html#latex-output
 - TinyTeX FAQ：按需准备及恢复可扩展 TeX 环境的参考。
   https://yihui.org/tinytex/faq/
+- tlmgr 手册与 TinyTeX 安装脚本：包管理器自更新及 CI 仓库选择的实现参考。
+  https://www.tug.org/texlive/doc/tlmgr.html
+  https://github.com/rstudio/tinytex/blob/main/R/install.R
 - C2PA 2.4 §§11.1.4.2、A.4 与 ISO/IEC 19566-5 的 JUMBF 容器框架：PDF 预检中内容凭证容器分类的依据，不表示验证签名真实性、资产绑定或信任。ISO 链接为 19566-5:2023 官方目录页，不表示已阅读全文。
   https://spec.c2pa.org/specifications/specifications/2.4/specs/C2PA_Specification.html
   https://www.iso.org/standard/84635.html

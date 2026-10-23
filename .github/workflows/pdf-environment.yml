@@ -70,6 +70,10 @@ jobs:
             ${{ runner.temp }}/math-pdf-env/check.json
             ${{ runner.temp }}/math-pdf-env/environment.json
             ${{ runner.temp }}/math-pdf-env/tex-packages.txt
+            ${{ runner.temp }}/math-pdf-env/tex-repository-probes.txt
+            ${{ runner.temp }}/math-pdf-env/tex-update.txt
+            ${{ runner.temp }}/math-pdf-env/tex-install.txt
+            ${{ runner.temp }}/math-pdf-env/tex-self-update.txt
             ${{ runner.temp }}/math-pdf-env/failure.txt
 
   linux-host-tex:
