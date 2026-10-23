@@ -2,7 +2,9 @@
 
 **Zuihan Kanshu (瑞般观珠)** is a plugin primarily for ChatGPT **Work**, supporting mathematical questions, sustained research, and mathematical writing.
 
-[中文](README.md) · [Installation](INSTALL.md#english) · [Reproducible example](docs/examples/research-initialization.md) · [Design principles](docs/design-principles.md) · [History and migration](docs/history-and-migration.md)
+**[中文](README.md)**
+
+**On this page:** [Environment and models](#environment-and-models) · [Install](#install) · [Questions → research → writing](#workflow) · [Start a task](#start-a-task) · [Advanced usage guide](#advanced-usage-guide)
 
 **Use ChatGPT Work. Take your mathematics with you; leave server maintenance behind.**
 
@@ -18,32 +20,7 @@ When you need to step away, put **Dot on the editorial night shift**: whenever i
 
 First confirm that Dot can access and continue the specified task; capabilities depend on the official documentation and what is actually available. A user reports completing a **200-page set of lecture notes** by starting the work in one step and letting it advance through the plan this way. **Continuous work can still exhaust your allowance, especially on open-ended research; agree on a round limit and stopping conditions first.**
 
-## Advanced usage guide
-
-**[Read the full advanced usage guide](skill/zuihan-kanshu/references/usage-guide.md)** for starting and continuing research, asking about details, planning mathematical writing, and refining existing manuscripts. The guide is written in Chinese; you can ask the plugin to explain it in English.
-
-**Want to use it more effectively?** Type `@` in the conversation input, select **瑞般观珠**, and ask:
-
-```text
-@瑞般观珠 How can I use this plugin more effectively?
-```
-
-**Built-in guide responses have been available since v8.4.0.** The current release, **v8.7.0**, includes the conversation-mode check and manuscript-refinement entry. See the installation section for the download.
-
-| Scenario | Suggested approach |
-| --- | --- |
-| Mathematical questions | Ask directly, adding relevant background and the depth you want if useful. Answers stay in the conversation and can be concise or detailed as needed. |
-| Start mathematical research | Upload a Markdown or PDF brief describing your goal, existing results, and reference material. Sufficient material lets research begin directly; a broad direction can be discussed first. |
-| Continue research | After reading the progress brief, say: “@瑞般观珠 Mathematical research: Follow the plugin's guidelines, use your judgment, and continue the next research round.” |
-| Pause and ask | Say: “@瑞般观珠 Mathematical Q&A: Pause research rounds and first answer: …” Ask about details, reassess the direction, or discuss whether the results are ready for a manuscript. |
-| Mathematical writing | Give the full requirements. By default, the plugin saves a plan and discusses it with you, then proceeds across rounds after you start execution. |
-| Refine an existing manuscript | Identify the manuscript and the presentation or organization you want improved. The plugin proposes a plan for approval, then reviews the whole text, any appropriate introduction, and the language. This is part of mathematical writing. |
-
-```text
-@瑞般观珠 Mathematical writing task: Please polish the manuscript “...”. Its readers are ..., and I would like you to focus on ... .
-```
-
-Manuscript polishing improves structure and expression so existing mathematical content is clearer and easier to follow. You can request mathematical revisions, such as completing a proof or adjusting a conclusion, separately. If such issues arise during polishing, the plugin will discuss them with you first.
+**Related documentation:** [Installation](INSTALL.md#english) · [Reproducible example](docs/examples/research-initialization.md) · [Design principles](docs/design-principles.md) · [History and migration](docs/history-and-migration.md) · [Changelog](CHANGELOG.md) · [Help and feedback](SUPPORT.md)
 
 ## Environment and models
 
@@ -86,6 +63,8 @@ I authorize you to enable and use Plugin Creator and, if it is not installed, to
 
 The [full installation guide, including instructions for GPT](INSTALL.md#english), covers Plugins page upload, GPT tool availability troubleshooting, updates, local installation as a technical reference, and source builds. GitHub's **Code → Download ZIP** and a release's **Source code** archives contain source code, not the installable plugin.
 
+<a id="workflow"></a>
+
 ## Questions → research → writing
 
 | Goal | Support | Entry point |
@@ -121,6 +100,33 @@ Use these prompts, or describe the same goals in your own words:
 Writing begins with a saved plan and discussion by default; drafting starts after approval. Here, `@瑞般观珠` means actually selecting the plugin in the composer; pasting its name alone is not the same action. New saved tasks default to a project folder under `瑞般观珠/` at the cloud Library root. Your explicit project name takes priority; otherwise the plugin chooses a name by topic and confirms the actual folder on the first save. An explicit destination wins, and existing projects keep their folder without automatic migration. Ordinary questions and usage help do not create manuscripts or research projects by default.
 
 Once the entry's mode check permits the task, saving uses the available cloud, local, or workspace capabilities and reports the actual location. A storage fallback does not override the default stop in Codex conversations. A successful local command does not establish a cloud save. The [workbench](skill/zuihan-kanshu/references/research-workbench.md) describes its five versioned files and persistence protocol.
+
+## Advanced usage guide
+
+**[Read the full advanced usage guide](skill/zuihan-kanshu/references/usage-guide.md)** for starting and continuing research, asking about details, planning mathematical writing, and refining existing manuscripts. The guide is written in Chinese; you can ask the plugin to explain it in English.
+
+**Want to use it more effectively?** Type `@` in the conversation input, select **瑞般观珠**, and ask:
+
+```text
+@瑞般观珠 How can I use this plugin more effectively?
+```
+
+**Built-in guide responses have been available since v8.4.0.** The current release, **v8.7.0**, includes the conversation-mode check and manuscript-refinement entry. See [Install](#install) for the download.
+
+| Scenario | Suggested approach |
+| --- | --- |
+| Mathematical questions | Ask directly, adding relevant background and the depth you want if useful. Answers stay in the conversation and can be concise or detailed as needed. |
+| Start mathematical research | Upload a Markdown or PDF brief describing your goal, existing results, and reference material. Sufficient material lets research begin directly; a broad direction can be discussed first. |
+| Continue research | After reading the progress brief, say: “@瑞般观珠 Mathematical research: Follow the plugin's guidelines, use your judgment, and continue the next research round.” |
+| Pause and ask | Say: “@瑞般观珠 Mathematical Q&A: Pause research rounds and first answer: …” Ask about details, reassess the direction, or discuss whether the results are ready for a manuscript. |
+| Mathematical writing | Give the full requirements. By default, the plugin saves a plan and discusses it with you, then proceeds across rounds after you start execution. |
+| Refine an existing manuscript | Identify the manuscript and the presentation or organization you want improved. The plugin proposes a plan for approval, then reviews the whole text, any appropriate introduction, and the language. This is part of mathematical writing. |
+
+```text
+@瑞般观珠 Mathematical writing task: Please polish the manuscript “...”. Its readers are ..., and I would like you to focus on ... .
+```
+
+Manuscript polishing improves structure and expression so existing mathematical content is clearer and easier to follow. You can request mathematical revisions, such as completing a proof or adjusting a conclusion, separately. If such issues arise during polishing, the plugin will discuss them with you first.
 
 ## Source and checks
 
