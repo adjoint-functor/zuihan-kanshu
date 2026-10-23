@@ -7,7 +7,7 @@
 
 **瑞般观珠**是主要面向 ChatGPT **Work** 的数学问题解答、持续研究与写作插件。
 
-**页内导航：** [使用环境与模型](#使用环境与模型) · [安装](#安装) · [问题 → 研究 → 写作](#workflow) · [从这三句话开始](#从这三句话开始) · [进阶使用指南](#进阶使用指南)
+**页内导航：** [使用环境与模型](#使用环境与模型) · [安装](#安装) · [问题 → 研究 → 写作](#workflow) · [从这三句话开始](#从这三句话开始) · [进阶使用指南](#进阶使用指南) · [致谢](#致谢) · [名称与图标](#名称与图标) · [仓库与检查](#仓库与检查)
 
 **相关页面：** **[English](README.en.md)** · [安装说明](INSTALL.md) · [可复现示例](docs/examples/research-initialization.md) · [设计原则](docs/design-principles.md) · [版本与迁移](docs/history-and-migration.md) · [更新记录](CHANGELOG.md) · [使用帮助与反馈](SUPPORT.md)
 
@@ -133,24 +133,6 @@ https://github.com/adjoint-functor/zuihan-kanshu/blob/main/INSTALL.md
 
 润色侧重改善文章结构和语言表达，让已有的数学内容更清楚、更连贯。补全证明、调整结论等数学修改可另行提出；润色时若发现这类问题，也会先与你讨论。
 
-## 仓库与检查
-
-运行时由可按需加载的技能说明、参考模组和 Python 脚本组成。
-
-| 路径 | 用途 |
-| --- | --- |
-| [`skill/zuihan-kanshu/`](skill/zuihan-kanshu/) | 唯一运行时源码，包含技能、参考、脚本与资源 |
-| [`tools/runtime-files.txt`](tools/runtime-files.txt) | 精确的运行时文件清单 |
-| [`tools/`](tools/) 与 [`tests/`](tests/) | 源码检查、打包与测试 |
-| [`docs/`](docs/) | 公开设计说明、迁移记录与可复现示例 |
-
-```sh
-python tools/validate_repo.py
-python tools/run_tests.py
-```
-
-涉及 PDF 的完整验收需要 TeX、字体及 PDF 工具。测试报告中的跳过项应按实际环境理解；结构检查通过不等于数学证明正确。贡献时按改动范围选择验证，见 [CONTRIBUTING.md](CONTRIBUTING.md)。
-
 ## 致谢
 
 感谢 [Danus](https://github.com/frenzymath/Danus/tree/6d92e8d415933ca2ef52fd1a4da73fdfcd418f1c)、[Rethlas](https://github.com/frenzymath/Rethlas/tree/e7e48a6d30e7f0ddf0ed1909a594a1f0cfe2c2b7) 与 [Bolzano（problem-solver）](https://github.com/vaclavrozhon/problem-solver/tree/ccc0f7185ef6a72b3b8f519b8efab3f386cf597f)，它们为研究协作、证明核验和失败反馈提供了设计参考。
@@ -169,6 +151,24 @@ python tools/run_tests.py
 | --- | --- | --- |
 | 256 × 256 | [icon-256.png](skill/zuihan-kanshu/assets/icon-256.png) | [icon-dark-256.png](skill/zuihan-kanshu/assets/icon-dark-256.png) |
 | 1024 × 1024 | [icon-1024.png](skill/zuihan-kanshu/assets/icon-1024.png) | [icon-dark-1024.png](skill/zuihan-kanshu/assets/icon-dark-1024.png) |
+
+## 仓库与检查
+
+运行时由可按需加载的技能说明、参考模组和 Python 脚本组成。
+
+| 路径 | 用途 |
+| --- | --- |
+| [`skill/zuihan-kanshu/`](skill/zuihan-kanshu/) | 唯一运行时源码，包含技能、参考、脚本与资源 |
+| [`tools/runtime-files.txt`](tools/runtime-files.txt) | 精确的运行时文件清单 |
+| [`tools/`](tools/) 与 [`tests/`](tests/) | 源码检查、打包与测试 |
+| [`docs/`](docs/) | 公开设计说明、迁移记录与可复现示例 |
+
+```sh
+python tools/validate_repo.py
+python tools/run_tests.py
+```
+
+涉及 PDF 的完整验收需要 TeX、字体及 PDF 工具。测试报告中的跳过项应按实际环境理解；结构检查通过不等于数学证明正确。贡献时按改动范围选择验证，见 [CONTRIBUTING.md](CONTRIBUTING.md)。
 
 许可与来源说明见 [LICENSE](LICENSE) 和 [NOTICE](NOTICE)。使用问题与建议见 [SUPPORT.md](SUPPORT.md)，安全与外部数据交互说明见 [SECURITY.md](SECURITY.md)。
 

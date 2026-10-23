@@ -2,7 +2,7 @@
 
 **Zuihan Kanshu (瑞般观珠)** is a plugin primarily for ChatGPT **Work**, supporting mathematical questions, sustained research, and mathematical writing.
 
-**On this page:** [Environment and models](#environment-and-models) · [Install](#install) · [Questions → research → writing](#workflow) · [Start a task](#start-a-task) · [Advanced usage guide](#advanced-usage-guide)
+**On this page:** [Environment and models](#environment-and-models) · [Install](#install) · [Questions → research → writing](#workflow) · [Start a task](#start-a-task) · [Advanced usage guide](#advanced-usage-guide) · [Acknowledgments](#acknowledgments) · [Name and icons](#name-and-icons) · [Source and checks](#source-and-checks)
 
 **Related pages:** **[中文](README.md)** · [Installation](INSTALL.md#english) · [Reproducible example](docs/examples/research-initialization.md) · [Design principles](docs/design-principles.md) · [History and migration](docs/history-and-migration.md) · [Changelog](CHANGELOG.md) · [Help and feedback](SUPPORT.md)
 
@@ -128,6 +128,20 @@ Once the entry's mode check permits the task, saving uses the available cloud, l
 
 Manuscript polishing improves structure and expression so existing mathematical content is clearer and easier to follow. You can request mathematical revisions, such as completing a proof or adjusting a conclusion, separately. If such issues arise during polishing, the plugin will discuss them with you first.
 
+## Acknowledgments
+
+Thanks to [Danus](https://github.com/frenzymath/Danus/tree/6d92e8d415933ca2ef52fd1a4da73fdfcd418f1c), [Rethlas](https://github.com/frenzymath/Rethlas/tree/e7e48a6d30e7f0ddf0ed1909a594a1f0cfe2c2b7), and [Bolzano (problem-solver)](https://github.com/vaclavrozhon/problem-solver/tree/ccc0f7185ef6a72b3b8f519b8efab3f386cf597f) for design references on research collaboration, proof verification, and failure feedback.
+
+We thank Terence Tao for his public advice on mathematical writing, especially [“Describe the results accurately”](https://terrytao.wordpress.com/advice-on-writing-papers/describe-the-results-accurately/) and [“Give appropriate amounts of detail”](https://terrytao.wordpress.com/advice-on-writing-papers/give-appropriate-amounts-of-detail/), which informed the guidance on accurate statements of results and appropriate levels of detail.
+
+The complete sources for methods, tools, services, and terminology, with their roles, are collected in [NOTICE](NOTICE). These acknowledgments do not imply inclusion of entire upstream projects or their authors' endorsement; see that file for licenses and usage boundaries.
+
+## Name and icons
+
+The name is a phonetic wordplay on Japanese 「随伴関手」 (ずいはんかんしゅ, “adjoint functor”), rendered 「瑞般観珠」 and written 「瑞般观珠」 in Chinese. The technical identifier is `zuihan-kanshu`.
+
+The [icon catalogue](docs/design/zuihan-icon/formula-catalogue.md) records the exact **22 formulas**, their conditions, sources, and mathematical status. See the [design notes](docs/design/zuihan-icon/README.md) for reproducible exports. Transparent PNGs: [light 256](skill/zuihan-kanshu/assets/icon-256.png), [dark 256](skill/zuihan-kanshu/assets/icon-dark-256.png), [light 1024](skill/zuihan-kanshu/assets/icon-1024.png), [dark 1024](skill/zuihan-kanshu/assets/icon-dark-1024.png).
+
 ## Source and checks
 
 The runtime consists of on-demand skill instructions, reference modules, and Python utilities in `skill/zuihan-kanshu/`. `tools/runtime-files.txt` is its explicit file manifest. Repository checks and packaging live in `tools/`, tests in `tests/`, and public explanations and examples in `docs/`.
@@ -138,20 +152,6 @@ python tools/run_tests.py
 ```
 
 Full PDF checks need TeX, fonts, and PDF tools. Read skips in the context of the available environment; structural validation does not prove mathematical correctness. See [contributing](CONTRIBUTING.md) for change-specific verification.
-
-## Acknowledgments
-
-Thanks to [Danus](https://github.com/frenzymath/Danus/tree/6d92e8d415933ca2ef52fd1a4da73fdfcd418f1c), [Rethlas](https://github.com/frenzymath/Rethlas/tree/e7e48a6d30e7f0ddf0ed1909a594a1f0cfe2c2b7), and [Bolzano (problem-solver)](https://github.com/vaclavrozhon/problem-solver/tree/ccc0f7185ef6a72b3b8f519b8efab3f386cf597f) for design references on research collaboration, proof verification, and failure feedback.
-
-We thank Terence Tao for his public advice on mathematical writing, especially [“Describe the results accurately”](https://terrytao.wordpress.com/advice-on-writing-papers/describe-the-results-accurately/) and [“Give appropriate amounts of detail”](https://terrytao.wordpress.com/advice-on-writing-papers/give-appropriate-amounts-of-detail/), which informed the guidance on accurate statements of results and appropriate levels of detail.
-
-The complete sources for methods, tools, services, and terminology, with their roles, are collected in [NOTICE](NOTICE). These acknowledgments do not imply inclusion of entire upstream projects or their authors' endorsement; see that file for licenses and usage boundaries.
-
-## Name, icons, and help
-
-The name is a phonetic wordplay on Japanese 「随伴関手」 (ずいはんかんしゅ, “adjoint functor”), rendered 「瑞般観珠」 and written 「瑞般观珠」 in Chinese. The technical identifier is `zuihan-kanshu`.
-
-The [icon catalogue](docs/design/zuihan-icon/formula-catalogue.md) records the exact **22 formulas**, their conditions, sources, and mathematical status. See the [design notes](docs/design/zuihan-icon/README.md) for reproducible exports. Transparent PNGs: [light 256](skill/zuihan-kanshu/assets/icon-256.png), [dark 256](skill/zuihan-kanshu/assets/icon-dark-256.png), [light 1024](skill/zuihan-kanshu/assets/icon-1024.png), [dark 1024](skill/zuihan-kanshu/assets/icon-dark-1024.png).
 
 See [LICENSE](LICENSE), [NOTICE](NOTICE), [support](SUPPORT.md), and [security and external data interactions](SECURITY.md).
 
