@@ -7,9 +7,9 @@
 
 **瑞般观珠**是主要面向 ChatGPT **Work** 的数学问题解答、持续研究与写作插件。
 
-**[English](README.en.md)**
+**页内导航：** [使用环境与模型](#使用环境与模型) · [安装](#安装) · [问题 → 研究 → 写作](#workflow) · [从这三句话开始](#从这三句话开始) · [进阶使用指南](#进阶使用指南)
 
-**本页导航：** [使用环境与模型](#使用环境与模型) · [安装](#安装) · [问题 → 研究 → 写作](#workflow) · [从这三句话开始](#从这三句话开始) · [进阶使用指南](#进阶使用指南)
+**相关页面：** **[English](README.en.md)** · [安装说明](INSTALL.md) · [可复现示例](docs/examples/research-initialization.md) · [设计原则](docs/design-principles.md) · [版本与迁移](docs/history-and-migration.md) · [更新记录](CHANGELOG.md) · [使用帮助与反馈](SUPPORT.md)
 
 **请在 ChatGPT Work 中使用。数学可以随身携带，服务器不必。**
 
@@ -24,8 +24,6 @@
 [Dot 官方任务与记忆说明](https://learn.chatgpt.com/docs/dots/tasks-and-memory) · [控制说明](https://learn.chatgpt.com/docs/dots/controls)
 
 先确认 Dot 能访问并续接指定任务，具体能力以官方说明及实际可用范围为准。有用户反馈，以这种方式一键启动、按计划连续推进，完成了 **200 页讲义**的写作。**研究等开放任务连续推进仍可能耗尽额度，可先约定轮数与停止条件。**
-
-**相关文档：** [安装说明](INSTALL.md) · [可复现示例](docs/examples/research-initialization.md) · [设计原则](docs/design-principles.md) · [版本与迁移](docs/history-and-migration.md) · [更新记录](CHANGELOG.md) · [使用帮助与反馈](SUPPORT.md)
 
 ## 使用环境与模型
 

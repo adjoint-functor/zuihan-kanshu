@@ -2,9 +2,9 @@
 
 **Zuihan Kanshu (瑞般观珠)** is a plugin primarily for ChatGPT **Work**, supporting mathematical questions, sustained research, and mathematical writing.
 
-**[中文](README.md)**
-
 **On this page:** [Environment and models](#environment-and-models) · [Install](#install) · [Questions → research → writing](#workflow) · [Start a task](#start-a-task) · [Advanced usage guide](#advanced-usage-guide)
+
+**Related pages:** **[中文](README.md)** · [Installation](INSTALL.md#english) · [Reproducible example](docs/examples/research-initialization.md) · [Design principles](docs/design-principles.md) · [History and migration](docs/history-and-migration.md) · [Changelog](CHANGELOG.md) · [Help and feedback](SUPPORT.md)
 
 **Use ChatGPT Work. Take your mathematics with you; leave server maintenance behind.**
 
@@ -19,8 +19,6 @@ When you need to step away, put **Dot on the editorial night shift**: whenever i
 [Official Dot tasks and memory documentation](https://learn.chatgpt.com/docs/dots/tasks-and-memory) · [Controls](https://learn.chatgpt.com/docs/dots/controls)
 
 First confirm that Dot can access and continue the specified task; capabilities depend on the official documentation and what is actually available. A user reports completing a **200-page set of lecture notes** by starting the work in one step and letting it advance through the plan this way. **Continuous work can still exhaust your allowance, especially on open-ended research; agree on a round limit and stopping conditions first.**
-
-**Related documentation:** [Installation](INSTALL.md#english) · [Reproducible example](docs/examples/research-initialization.md) · [Design principles](docs/design-principles.md) · [History and migration](docs/history-and-migration.md) · [Changelog](CHANGELOG.md) · [Help and feedback](SUPPORT.md)
 
 ## Environment and models
 
