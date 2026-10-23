@@ -10,6 +10,12 @@ Zuihan Kanshu supports mathematical questions, research, and writing in the clou
 
 If Codex seems a little too enthusiastic about working continuously, and you worry that Goal Mode might exhaust your allowance before your conjecture is settled, Work may offer just the right pace. Advance one round at a time, pause at useful points, review the progress, ask questions, and help choose what comes next. Human participation remains part of the specification.
 
+When you need to step away, put **Dot on the editorial night shift**: whenever it sees that the current round's task is complete, have it send `根据 @瑞般观珠 规范，按指定计划，进行下一轮。` to the specified **Work conversation**, and let Work moonlight as Codex. This requests the next round under the plugin's guidelines and the specified plan. You can also ask Dot to read and follow the plan or limit how many rounds it advances.
+
+[Official Dot tasks and memory documentation](https://learn.chatgpt.com/docs/dots/tasks-and-memory) · [Controls](https://learn.chatgpt.com/docs/dots/controls)
+
+First confirm that Dot can access and continue the specified task; capabilities depend on the official documentation and what is actually available. A user reports completing a **200-page set of lecture notes** by starting the work in one step and letting it advance through the plan this way. **Continuous work can still exhaust your allowance, especially on open-ended research; agree on a round limit and stopping conditions first.**
+
 ## Advanced usage guide
 
 **[Read the full advanced usage guide](skill/zuihan-kanshu/references/usage-guide.md)** for starting and continuing research, asking about details, and planning mathematical writing. The guide is written in Chinese; you can ask the plugin to explain it in English.
@@ -20,10 +26,11 @@ If Codex seems a little too enthusiastic about working continuously, and you wor
 How can I use this plugin more effectively?
 ```
 
-**Built-in guide responses have been available since v8.4.0.** You can also read the full guide through the link above. The current source and guide include the unreleased v8.5.0 writing workflow; the published download remains v8.4.0.
+**Built-in guide responses have been available since v8.4.0.** You can also read the full guide through the link above. The current source and guide describe unreleased v8.6.0; the published download remains v8.4.0.
 
 | Scenario | Suggested approach |
 | --- | --- |
+| Mathematical questions | Ask directly, adding relevant background and the depth you want if useful. Answers stay in the conversation and can be concise or detailed as needed. |
 | Start mathematical research | Upload a Markdown or PDF brief describing your goal, existing results, and reference material. Sufficient material lets research begin directly; a broad direction can be discussed first. |
 | Continue research | After reading the progress brief, say: “Following @瑞般观珠's guidelines, use your judgment and continue the next research round.” |
 | Pause and ask | Say: “Pause research rounds. Following @瑞般观珠's guidelines, first answer: …” Ask about details, reassess the direction, or discuss whether the results are ready for a manuscript. |
@@ -31,7 +38,7 @@ How can I use this plugin more effectively?
 
 ## Environment and models
 
-Compatibility with Codex has not been tested.
+Use in Codex is not currently recommended. A Codex-compatible branch is planned for the future.
 
 **Recommended main agent:** choose **GPT-6 Astra with Max** when your budget allows; **GPT-6.1 Sol with Max** is the minimum recommended choice for this plugin. Built-in sub-agent assignments already cover exploration, proof, and verification in the research module. Max is normally sufficient; **Ultra is not recommended by default**.
 
@@ -64,13 +71,17 @@ The [full installation guide, including instructions for GPT](INSTALL.md#english
 
 | Goal | Support | Entry point |
 | --- | --- | --- |
-| Answer a mathematical question | Derivations, proofs, counterexamples, computational checks, and relevant literature | [Mathematical inquiry](skill/zuihan-kanshu/references/mathematical-inquiry.md) |
+| Answer a mathematical question | Choose depth from the question, explicit requests, and reliable relevant background; retain necessary reasoning, proofs, counterexamples, and sources in the conversation | [Mathematical inquiry](skill/zuihan-kanshu/references/mathematical-inquiry.md) |
 | Continue a research project | Literature, exploration, proof, verification, progress records, and session recovery | [Research workbench](skill/zuihan-kanshu/references/research-workbench.md) |
 | Mathematical writing | Plan, draft, and revise, with quality as the default priority. | [Working drafts](skill/zuihan-kanshu/references/working-draft.md) |
 
 Built-in **mathematical research mini-agent** guidance covers explorers, proof authors, bounded problem solvers, independent verifiers, and mathematical editors. Actual delegation, model selection, and reasoning settings depend on host capabilities and user authorization; see [research roles](skill/zuihan-kanshu/references/research-roles.md).
 
-Additional modules support [Chinese writing, translation, and terminology](skill/zuihan-kanshu/references/chinese-translation.md), [writing style](skill/zuihan-kanshu/references/writing-style.md), and [finished documents](skill/zuihan-kanshu/references/final-output.md). PDF compilation requires an available toolchain; the [build profile](skill/zuihan-kanshu/references/final-pdf-build-profile.md) covers compilation and preflight checks.
+[Language and writing guidance](skill/zuihan-kanshu/references/writing-style.md) supports clear, accurate mathematical conversation, answers, new drafts, and revisions from composition, in the task's language. Conversation naturally uses relevant context, manuscripts retain applicable planning and independent reviews, and research reports keep their established level of detail.
+
+[Chinese guidance](skill/zuihan-kanshu/references/chinese-translation.md) improves Chinese expression. Explicitly adopted Chinese translation preferences are recorded accurately and applied within their scope; see the [usage guide](skill/zuihan-kanshu/references/usage-guide.md) for details.
+
+[Document preparation and delivery](skill/zuihan-kanshu/references/final-output.md) separately provides Markdown, PDF, and optional TeX. Actual compilation and checks need the toolchain described in the [build profile](skill/zuihan-kanshu/references/final-pdf-build-profile.md).
 
 ## Start a task
 
@@ -88,7 +99,7 @@ The plugin offers these three prompts:
 使用瑞般观珠，根据以下要求制定数学文稿的写作计划，并保存在云端。写作要求：……。
 ```
 
-They request an answer, a research project, or a writing plan, respectively. Research records, writing plans, and manuscripts are saved in the cloud Library by default. Specify a folder if you wish; otherwise the plugin creates one by topic. Existing projects keep their folder. Ordinary questions and usage help stay in the conversation by default and do not automatically create file projects.
+They request an answer, a research project, or a writing plan, respectively. New saved tasks default to a project folder under `瑞般观珠/` at the cloud Library root. Your explicit project name takes priority; otherwise the plugin chooses a name by topic and confirms the actual folder on the first save. An explicit destination wins, and existing projects keep their folder without automatic migration. Ordinary questions and usage help do not create manuscripts or research projects by default.
 
 Other hosts use their available workspace, local storage, or file delivery and report the actual location. Without persistent storage, they should explain the limitation and provide usable content in the conversation. A successful local command does not establish a cloud save. The [workbench](skill/zuihan-kanshu/references/research-workbench.md) describes its five versioned files and persistence protocol.
 
@@ -105,11 +116,11 @@ Full PDF checks need TeX, fonts, and PDF tools. Read skips in the context of the
 
 ## Acknowledgments
 
-Thanks to [Danus](https://github.com/frenzymath/Danus/tree/6d92e8d415933ca2ef52fd1a4da73fdfcd418f1c), [Rethlas](https://github.com/frenzymath/Rethlas/tree/e7e48a6d30e7f0ddf0ed1909a594a1f0cfe2c2b7), and [Bolzano (problem-solver)](https://github.com/vaclavrozhon/problem-solver/tree/ccc0f7185ef6a72b3b8f519b8efab3f386cf597f) for design references on research collaboration, proof verification, and failure feedback. [Matlas](https://matlas.ai/docs) provides mathematical search services and APIs; [hrjtju/matlas-search](https://github.com/hrjtju/matlas-search) provided references for API use and reading candidate literature.
+Thanks to [Danus](https://github.com/frenzymath/Danus/tree/6d92e8d415933ca2ef52fd1a4da73fdfcd418f1c), [Rethlas](https://github.com/frenzymath/Rethlas/tree/e7e48a6d30e7f0ddf0ed1909a594a1f0cfe2c2b7), and [Bolzano (problem-solver)](https://github.com/vaclavrozhon/problem-solver/tree/ccc0f7185ef6a72b3b8f519b8efab3f386cf597f) for design references on research collaboration, proof verification, and failure feedback.
 
 We thank Terence Tao for his public advice on mathematical writing, especially [“Describe the results accurately”](https://terrytao.wordpress.com/advice-on-writing-papers/describe-the-results-accurately/) and [“Give appropriate amounts of detail”](https://terrytao.wordpress.com/advice-on-writing-papers/give-appropriate-amounts-of-detail/), which informed the guidance on accurate statements of results and appropriate levels of detail.
 
-These acknowledgments identify references, not the inclusion of entire upstream projects or their authors' endorsement. See [NOTICE](NOTICE) for provenance, licenses, and usage boundaries.
+The complete sources for methods, tools, services, and terminology, with their roles, are collected in [NOTICE](NOTICE). These acknowledgments do not imply inclusion of entire upstream projects or their authors' endorsement; see that file for licenses and usage boundaries.
 
 ## Name, icons, and help
 

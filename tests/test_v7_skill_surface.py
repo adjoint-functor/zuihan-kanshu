@@ -36,6 +36,7 @@ CURRENT_REFERENCES = {
     "matlas.md",
     "theorem-search.md",
     "working-draft.md",
+    "shared-chinese-reference.md",
     "structure-consistency-review.md",
     "introduction-writing.md",
     "research-workbench.md",

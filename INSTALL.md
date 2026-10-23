@@ -13,13 +13,15 @@
 | 校验文件 / Checksums | [SHA256SUMS](https://github.com/adjoint-functor/zuihan-kanshu/releases/download/v8.4.0/SHA256SUMS) |
 | ZIP SHA-256 | `1783d7045f4a5b88fdb0392c6dcb07be569604238c59143a52596848a14111bb` |
 
-当前仓库为待发布的 v8.5.0 源码；上表正式下载仍为 v8.4.0。 / The current repository contains unreleased v8.5.0 source; the published download above remains v8.4.0.
+当前仓库为待发布的 v8.6.0 源码；上表正式下载仍为 v8.4.0。 / The current repository contains unreleased v8.6.0 source; the published download above remains v8.4.0.
+
+当前源码中，未指定目的地的新任务默认保存在 Library 根目录 `瑞般观珠/` 下的项目子目录，用户明确项目名优先；首次保存确认实际目录，已有项目不自动迁移。共享中文参考与项目子目录并列。 / In the current source, new saved tasks without an explicit destination use a project folder under `瑞般观珠/` at the Library root, preferring an explicit project name and confirming the actual folder on the first save. Existing projects are not migrated; the shared Chinese reference sits alongside project folders.
 
 ## 中文
 
 ### 在 ChatGPT 的 Chat 或 Work 中安装
 
-请在 **Work** 中使用，在云端启动、查看和接续数学工作，无需自行准备远程主机或维护服务器。与 Codex 的适配尚未检验；下方本地安装步骤不等于适配实测。使用方法见[进阶使用指南](skill/zuihan-kanshu/references/usage-guide.md)；指南问答自 v8.4.0 提供，当前源码指南包含待发布的写作流程。
+请在 **Work** 中使用，在云端启动、查看和接续数学工作，无需自行准备远程主机或维护服务器。目前不推荐在 Codex 中使用，未来拟推出适配 Codex 的分支版本。下方本地安装步骤仅说明技术操作，不构成适配保证。使用方法见[进阶使用指南](skill/zuihan-kanshu/references/usage-guide.md)；指南问答自 v8.4.0 提供，当前源码指南包含待发布的对话与中文参考规则。
 
 #### 首次安装（推荐：上传完整 ZIP）
 
@@ -58,6 +60,8 @@ GitHub 发布与已经导入的私人副本**不会自动同步**。需要更新
 
 ### Codex 本地插件与其他宿主
 
+以下保留本地安装技术步骤；目前不推荐在 Codex 中使用，安装成功不代表适配保证。
+
 支持本地插件 marketplace 的 Codex／ChatGPT 桌面环境，可使用同一份 Release ZIP：将**完整内容**解压到本地插件目录，再按 OpenAI 的[本地插件安装说明](https://developers.openai.com/plugins/build/plugins#install-a-local-plugin-manually)建立 repo 或 personal marketplace，并在宿主中安装／启用。比如插件放在 marketplace 根目录下的 `plugins/zuihan-kanshu/` 时，入口是 `plugins/zuihan-kanshu/plugin.json`，目录条目的 `source.path` 为 `./plugins/zuihan-kanshu`；路径相对于 marketplace 根目录。
 
 本仓库目前是源码仓库，没有可供直接注册的 marketplace 目录，也没有根层已构建的插件。不能直接把本仓库 URL 当作 marketplace 源安装。请按目标宿主的实际文档操作；插件已包含技能，同一宿主不要再重复安装独立技能。
@@ -74,7 +78,7 @@ python tools/build_release.py --format plugin --check
 python tools/build_release.py --format plugin --zip --output-dir dist
 ```
 
-当前 v8.5.0 源码输出为 `dist/plugin/zuihan-kanshu-v8.5.0/` 和 `dist/plugin/zuihan-kanshu-v8.5.0.zip`。自行构建只产生文件，之后仍需安装／启用。
+当前 v8.6.0 源码输出为 `dist/plugin/zuihan-kanshu-v8.6.0/` 和 `dist/plugin/zuihan-kanshu-v8.6.0.zip`。自行构建只产生文件，之后仍需安装／启用。
 
 若目标宿主只接受独立技能目录：
 
@@ -82,7 +86,7 @@ python tools/build_release.py --format plugin --zip --output-dir dist
 python tools/build_release.py --format skill --output-dir dist
 ```
 
-当前 v8.5.0 源码输出为 `dist/skill/zuihan-kanshu-v8.5.0/`，根层有 `SKILL.md`。按宿主技能安装说明，将其内容安装到名为 `zuihan-kanshu` 的目录，去掉构建目录名中的版本后缀。已有输出目录不会被覆盖；重复构建另选空输出目录。
+当前 v8.6.0 源码输出为 `dist/skill/zuihan-kanshu-v8.6.0/`，根层有 `SKILL.md`。按宿主技能安装说明，将其内容安装到名为 `zuihan-kanshu` 的目录，去掉构建目录名中的版本后缀。已有输出目录不会被覆盖；重复构建另选空输出目录。
 
 ### 验证范围与帮助
 
@@ -92,7 +96,7 @@ python tools/build_release.py --format skill --output-dir dist
 
 ### Install in ChatGPT Chat or Work
 
-**Use Work** to start, check, and continue mathematics in the cloud without maintaining a remote machine or server of your own. Compatibility with Codex has not been tested; the local installation steps below do not establish tested compatibility. See the [advanced usage guide](skill/zuihan-kanshu/references/usage-guide.md). Built-in guide responses have been available since v8.4.0; the current source guide includes the unreleased writing workflow.
+**Use Work** to start, check, and continue mathematics in the cloud without maintaining a remote machine or server of your own. Use in Codex is not currently recommended. A Codex-compatible branch is planned for the future. The local installation steps below are technical instructions, not a guarantee of compatibility. See the [advanced usage guide](skill/zuihan-kanshu/references/usage-guide.md). Built-in guide responses have been available since v8.4.0; the current source guide includes the unreleased conversation and shared Chinese reference rules.
 
 #### First installation (recommended: upload the complete ZIP)
 
@@ -131,6 +135,8 @@ Imported private copies **do not automatically sync with GitHub**. To update, ge
 
 ### Local Codex plugins and other hosts
 
+The local steps below remain as technical reference. Codex use is currently not recommended, and installation alone does not establish compatibility.
+
 For Codex or ChatGPT desktop environments supporting local plugin marketplaces, extract the **complete release ZIP** into a plugin directory and follow OpenAI's [local plugin installation instructions](https://developers.openai.com/plugins/build/plugins#install-a-local-plugin-manually). For example, a plugin at `<marketplace-root>/plugins/zuihan-kanshu/` has its manifest at `plugins/zuihan-kanshu/plugin.json` and a catalog `source.path` of `./plugins/zuihan-kanshu`, relative to the marketplace root. Complete installation/enabling in the host.
 
 This source repository does not currently contain a directly registrable marketplace or a built plugin at its root. Do not register its URL as a marketplace source. Follow the target host's documentation. The plugin already contains the skill; avoid a duplicate standalone skill installation in the same host.
@@ -147,7 +153,7 @@ python tools/build_release.py --format plugin --check
 python tools/build_release.py --format plugin --zip --output-dir dist
 ```
 
-The current v8.5.0 source creates `dist/plugin/zuihan-kanshu-v8.5.0/` and `dist/plugin/zuihan-kanshu-v8.5.0.zip`. Building produces files; installation/enabling is still required.
+The current v8.6.0 source creates `dist/plugin/zuihan-kanshu-v8.6.0/` and `dist/plugin/zuihan-kanshu-v8.6.0.zip`. Building produces files; installation/enabling is still required.
 
 For a host accepting only standalone skill directories:
 
@@ -155,7 +161,7 @@ For a host accepting only standalone skill directories:
 python tools/build_release.py --format skill --output-dir dist
 ```
 
-For the current v8.5.0 source, install the contents of `dist/skill/zuihan-kanshu-v8.5.0/` into a skill directory named `zuihan-kanshu`, without the version suffix, following that host's instructions. The output contains `SKILL.md` at its root. Existing output directories are not overwritten; use another empty output location when rebuilding.
+For the current v8.6.0 source, install the contents of `dist/skill/zuihan-kanshu-v8.6.0/` into a skill directory named `zuihan-kanshu`, without the version suffix, following that host's instructions. The output contains `SKILL.md` at its root. Existing output directories are not overwritten; use another empty output location when rebuilding.
 
 ### Verification scope and help
 

@@ -308,6 +308,23 @@ def extend_tex(config, args, prefix, missing):
                      "tree": str(tree), "packages": packages}
 
 
+def install_private_tex_packages(manager, repository, env, prefix, packages):
+    """Recover one explicit self-update request from this private manager only."""
+    command = [*manager, "--repository", repository, "install", *packages]
+    result = run(command, env, timeout=900)
+    install_log = prefix / "tex-install.txt"
+    install_log.write_text(result.stdout + result.stderr, encoding="utf-8")
+    if result.returncode and "tlmgr itself needs to be updated" in (result.stdout + result.stderr).casefold():
+        print("Private tlmgr requested a self-update; updating it before one install retry", flush=True)
+        updated = run([*manager, "--repository", repository, "update", "--self"], env, timeout=900)
+        (prefix / "tex-self-update.txt").write_text(updated.stdout + updated.stderr, encoding="utf-8")
+        require_success(updated, "private TeX manager self-update")
+        result = run(command, env, timeout=900)
+        with install_log.open("a", encoding="utf-8") as stream:
+            stream.write("\n--- install retry after manager self-update ---\n" + result.stdout + result.stderr)
+    require_success(result, "private TeX packages")
+
+
 def platform_key():
     machine = platform.machine().lower()
     arch = {"amd64": "x86_64", "x86_64": "x86_64", "aarch64": "aarch64", "arm64": "aarch64"}.get(machine, machine)
@@ -421,10 +438,11 @@ def restore_new(args, prefix, key):
         tlmgr = tex_bin / ("tlmgr.bat" if os.name == "nt" else "tlmgr")
         repository = tex_repository(args, BASELINE["texlive_year"], [tlmgr], env, prefix, "xecjk")
         config["tex_repository"] = repository
-        require_success(run([tlmgr, "--repository", repository, "update", "--self", "--all"],
-                            env, timeout=900), "private TeX baseline update")
-        require_success(run([tlmgr, "--repository", repository, "install", *BASELINE["tex_packages"], *args.extra_tex_package],
-                            env, timeout=900), "private TeX packages")
+        updated = run([tlmgr, "--repository", repository, "update", "--self", "--all"], env, timeout=900)
+        (prefix / "tex-update.txt").write_text(updated.stdout + updated.stderr, encoding="utf-8")
+        require_success(updated, "private TeX baseline update")
+        install_private_tex_packages([tlmgr], repository, env, prefix,
+                                     [*BASELINE["tex_packages"], *args.extra_tex_package])
         installed = run([tlmgr, "info", "--list", "--only-installed", "--data", "name,localrev"], env)
         require_success(installed, "TeX package inventory")
         (prefix / "tex-packages.txt").write_text(installed.stdout, encoding="utf-8")

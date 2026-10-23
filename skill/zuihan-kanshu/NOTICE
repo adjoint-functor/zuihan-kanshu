@@ -40,9 +40,13 @@ https://github.com/notofonts/noto-cjk/blob/Serif2.003/Serif/LICENSE
 https://github.com/notofonts/noto-cjk/blob/Sans2.004/LICENSE
 这些字体的许可不因下载配方或本项目的 MIT 许可而改变。
 
-## 公开设计参考
+## 方法、工具与术语来源
 
-以下为设计与方法参考，并非随包组件清单。所列上游许可描述的是已核读版本，不表示把上游整个项目纳入本项目，也不改变上游材料的许可。核读日期：2026-10-22。
+以下集中列出本插件实际采用的方法参考、接口依据、术语查询来源与外部工具。参考资料和工具并非随包组件；各自许可不因本项目的 MIT 许可而改变。具体数学任务的文献引用及图标公式出处仍在相应正文与公式清单中保留，不将示例书目冒充方法来源。
+
+### 研究协作
+
+以下研究项目的上游许可描述对应已核读版本，核读日期：2026-10-22。
 
 - Danus：数学研究职责、证明依赖与核验反馈的参考。固定提交 6d92e8d415933ca2ef52fd1a4da73fdfcd418f1c；上游 LICENSE 为 Apache 2.0，Copyright 2026 FrenzyMath。
   https://github.com/frenzymath/Danus/tree/6d92e8d415933ca2ef52fd1a4da73fdfcd418f1c
@@ -52,21 +56,109 @@ https://github.com/notofonts/noto-cjk/blob/Sans2.004/LICENSE
   https://github.com/frenzymath/Rethlas/blob/e7e48a6d30e7f0ddf0ed1909a594a1f0cfe2c2b7/LICENSE
 - Bolzano（problem-solver）：目标整理、失败记录与局部编辑的参考。固定提交 ccc0f7185ef6a72b3b8f519b8efab3f386cf597f 的完整文件树及 README 未发现许可证声明；公开可读不等于获得任意复制授权。
   https://github.com/vaclavrozhon/problem-solver/tree/ccc0f7185ef6a72b3b8f519b8efab3f386cf597f
-- Matlas：官方 API 文档是检索接口的依据；hrjtju/matlas-search 是接口使用与候选阅读的公开参考。该参考技能在所核读文件树与 README 中未发现许可证声明，不将其视为 MIT 或其他开源许可的随包组件。
+
+### 检索服务与文献管理
+
+- Matlas 提供数学检索服务；官方 API 文档是客户端接口依据。hrjtju/matlas-search 为接口使用与候选文献阅读提供参考，其已核读文件树与 README 未发现许可证声明，不将其视为 MIT 或其他开源许可的随包组件。客户端使用 `POST https://matlas.ai/api/search`。
   https://matlas.ai/docs
   https://matlas.ai/openapi.json
   https://github.com/hrjtju/matlas-search
+- TheoremSearch / TheoremGraph：官方文档与 OpenAPI 为数学陈述、图中引用及依赖定位的接口依据，客户端地址为 https://api.theoremsearch.com 。本插件使用非形式化陈述及 arXiv 图定位，不接入形式化库；这不限制服务自身的其他能力。
+  https://www.theoremsearch.com/docs
+  https://api.theoremsearch.com/openapi.json
+  服务可选索引包括 arXiv、Stacks Project、ProofWiki、CRing Project、HoTT Book、Open Logic Project 和 An Infinitely Large Napkin；这些是服务来源筛选项，不是随包语料或逐一实现的直接集成。
+- BibTeX 标准样式及文档、BibLaTeX 手册：alpha-style 姓名缩写、年份和消歧原则的参考；本项目精确文件名与人数分段规则由自身文档定义。
+  https://ctan.org/tex-archive/biblio/bibtex/base
+  https://mirrors.ctan.org/macros/latex/contrib/biblatex/doc/biblatex.pdf
+- JabRef：citation key patterns 为人数分段提供参考，file links 为关联文件管理提供参考；不把软件示例当作统一命名标准。
+  https://docs.jabref.org/setup/citationkeypatterns
+  https://docs.jabref.org/finding-sorting-and-cleaning-entries/filelinks
+
+### 中文术语与个人参考
+
+- 术语在线、国家教育研究院乐词网：中文术语查证的后备来源，使用时核对数学义项、对象类型及区域用法。
+  https://www.termonline.cn/
+  https://terms.naer.edu.tw/
+  内置英中术语表与日本实体表是本项目的义项限定默认，不声称每条均来自这些平台或经过统一审定。权威中文专著、教材和期刊是按任务查证的来源类别；具体作品按实际使用记录，不虚构逐条来源。共享个人中文参考只缓存已落实补充和用户明确规则，不改变这些来源边界。
+
+### 数学写作
+
+- Terence Tao：公开数学写作建议为准确陈述结果、安排论证详略、组织文章、使用记号和突出导语关键内容提供参考。
+  Describe the results accurately: https://terrytao.wordpress.com/advice-on-writing-papers/describe-the-results-accurately/
+  Give appropriate amounts of detail: https://terrytao.wordpress.com/advice-on-writing-papers/give-appropriate-amounts-of-detail/
+  Organise the paper: https://terrytao.wordpress.com/advice-on-writing-papers/organise-the-paper/
+  Use good notation: https://terrytao.wordpress.com/advice-on-writing-papers/use-good-notation/
+  Use the introduction to “sell” the key points of your paper: https://terrytao.wordpress.com/advice-on-writing-papers/use-the-introduction-to-%E2%80%9Csell%E2%80%9D-the-key-points-of-your-paper/
+- UW–Madison Writing Center, Reverse Outlines：从实际成稿反推组织的参考。
+  https://writing.wisc.edu/handbook/processandstructure/reverseoutlines/
+- Bjorn Poonen, Practical suggestions for mathematical writing：尽早到达有意义结果和分层沟通的参考。
+  https://math.mit.edu/~poonen/papers/writing.pdf
+- Igor Pak, How to Write a Clear Math Paper: Some 21st Century Tips：完稿后重写导语、长导语分层的个人建议。
+  https://www.math.ucla.edu/~pak/papers/how-to-write1.pdf
+- Steven Kleiman, Writing a Math Phase Two Paper：全篇与局部背景安置的课程建议。
+  https://web.mit.edu/mathp2/www/piil.html
+
+### 指令与上下文工程
+
+- OpenAI, Rethinking skills and prompts for GPT-6 Astra：简洁入口、按需加载、目标和完成尺度的参考。
+  https://developers.openai.com/blog/rethinking-skills-and-prompts-for-gpt-6-astra
+- OpenAI, Using PLANS.md for multi-hour problem solving：可恢复的计划、进展与重要决定的参考。
+  https://developers.openai.com/cookbook/articles/codex_exec_plans
+- Anthropic, Effective context engineering for AI agents：外部状态保存和相关材料读取的参考。
+  https://www.anthropic.com/research/effective-context-engineering-for-ai-agents
+- OpenAI, Dot: Tasks and memory、Control your dot：使用指南中任务委托、接续、结果核对与停止边界的依据；2026-10-23 核读，不作为任意既有对话均可访问的保证。
+  https://learn.chatgpt.com/docs/dots/tasks-and-memory
+  https://learn.chatgpt.com/docs/dots/controls
+
+### 文稿与 PDF 工程
+
 - Calix LaTeX skills：环境检查、配置分离与可恢复安装的参考。所核读 awesome-latex-skills 的 LICENSE 为 MIT，Copyright (c) 2026 awesome-latex-skills contributors。
   https://github.com/Calix-L/awesome-latex-skills
   https://github.com/Calix-L/awesome-latex-skills/blob/main/LICENSE
-- Terence Tao：公开数学写作建议为准确陈述结果、安排论证详略、组织文章、使用记号和突出导语关键内容提供参考；没有把其文章整体纳入本插件。
-  https://terrytao.wordpress.com/advice-on-writing-papers/describe-the-results-accurately/
-  https://terrytao.wordpress.com/advice-on-writing-papers/give-appropriate-amounts-of-detail/
-  https://terrytao.wordpress.com/advice-on-writing-papers/organise-the-paper/
-  https://terrytao.wordpress.com/advice-on-writing-papers/use-good-notation/
-  https://terrytao.wordpress.com/advice-on-writing-papers/use-the-introduction-to-%E2%80%9Csell%E2%80%9D-the-key-points-of-your-paper/
+- Pandoc 手册、Quarto 的 LaTeX 输出说明：正文、配置、生成 TeX 与实际依赖分离的参考。
+  https://pandoc.org/MANUAL.html
+  https://quarto.org/docs/output-formats/pdf-basics.html#latex-output
+- TinyTeX FAQ：按需准备及恢复可扩展 TeX 环境的参考。
+  https://yihui.org/tinytex/faq/
+- tlmgr 手册与 TinyTeX 安装脚本：包管理器自更新及 CI 仓库选择的实现参考。
+  https://www.tug.org/texlive/doc/tlmgr.html
+  https://github.com/rstudio/tinytex/blob/main/R/install.R
+- C2PA 2.4 §§11.1.4.2、A.4 与 ISO/IEC 19566-5 的 JUMBF 容器框架：PDF 预检中内容凭证容器分类的依据，不表示验证签名真实性、资产绑定或信任。ISO 链接为 19566-5:2023 官方目录页，不表示已阅读全文。
+  https://spec.c2pa.org/specifications/specifications/2.4/specs/C2PA_Specification.html
+  https://www.iso.org/standard/84635.html
 
-UW–Madison Writing Center、Bjorn Poonen、Igor Pak 和 Steven Kleiman 等写作参考，以及上下文与 PDF 工程的其他公开依据，列于源码仓库 docs/design-principles.md 的“公开参考”和相应写作模组。写作轮次、主智能体职责和导语体裁默认由本项目定义，不归给参考作者。本项目的具体协议和适用范围以本项目文档为准；引用不构成上游作者的背书。
+### 外部运行工具、字体与备用配方
+
+- Python、PyYAML、Pillow、pypdf：脚本执行、YAML 配置、图像检查及 PDF 对象检查的外部依赖。
+  https://www.python.org/
+  https://pyyaml.org/wiki/PyYAMLDocumentation
+  https://pillow.readthedocs.io/en/stable/
+  https://pypdf.readthedocs.io/en/stable/
+- Pandoc、XeTeX／XeLaTeX、latexmk、Perl、Fontconfig 和 Poppler：正文转换、编译、字体发现、PDF 信息／文本提取与渲染；TeX 宏包及 Poppler CMap 数据依文稿和环境使用。
+  https://pandoc.org/
+  https://ctan.org/pkg/xetex
+  https://ctan.org/pkg/latexmk
+  https://www.perl.org/
+  https://www.freedesktop.org/software/fontconfig/fontconfig-user.html
+  https://poppler.freedesktop.org/
+  MuPDF 的 mutool 与 Poppler 的 pdfdetach 仅在已有时用于补充诊断，不是新增必需安装项： https://mupdf.com/
+- 备用下载配方来源为 Pandoc、TinyTeX、Poppler for Windows 的项目发行包，以及 CTAN／TeX Live 的当前、备用和按年度历史仓库；这些配方版本不是所有现有工具必须达到的版本。
+  https://github.com/jgm/pandoc/releases/tag/3.12.1
+  https://github.com/rstudio/tinytex-releases/releases/tag/v2026.10
+  https://github.com/oschwartz10612/poppler-windows/releases/tag/v26.09.0-0
+  https://mirror.ctan.org/systems/texlive/tlnet
+  https://ctan.math.illinois.edu/systems/texlive/tlnet
+  https://ftp.math.utah.edu/pub/tex/historic/systems/texlive/
+  https://ftp.tu-chemnitz.de/pub/tug/historic/systems/texlive/
+- Latin Modern Roman／Math 是 PDF 基线字族，Noto CJK 是缺失中文通道的下载来源；Source Han Serif／Sans SC 和 FandolSong／FandolHei 是可复用的已有候选，不是新增下载或分发组件。Noto 及 AMSFonts 的来源、许可和实际分发边界见前文；这些运行时字族与图标原模板是否使用 lmodern 是不同事项。
+  https://ctan.org/pkg/lm
+  https://ctan.org/pkg/lm-math
+  https://github.com/notofonts/noto-cjk
+  https://github.com/adobe-fonts/source-han-serif
+  https://github.com/adobe-fonts/source-han-sans
+  https://ctan.org/pkg/fandol
+
+写作体裁默认、独立轮次、主智能体职责、可选导语页数预算及问答上下文适配由本插件定义，不归给上述作者或当作普遍规范。设计对应关系另见源码仓库 docs/design-principles.md；引用不构成上游作者背书。
 
 ## AMSFonts 字体来源声明（原文）
 
