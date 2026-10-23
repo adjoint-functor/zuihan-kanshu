@@ -15,20 +15,22 @@
 
 当前正式版为 v8.6.0，包含原 v8.5.0 的写作升级；v8.5.0 未独立公开发布。 / The current release is v8.6.0 and includes the writing upgrade developed as v8.5.0, which was not published separately.
 
+当前源码为 **v8.7.0 待发布版本**，新增按实际对话模式判断的默认停止规则和文稿后处理入口。上表仍是已发布包，不包含这些新增规则；源码合并与发布下载是不同步骤。 / The current source is **unreleased v8.7.0**, adding a conversation-mode check and a manuscript-refinement entry. The published package above does not contain these additions; merging source and publishing a download are separate steps.
+
 当前源码中，未指定目的地的新任务默认保存在 Library 根目录 `瑞般观珠/` 下的项目子目录，用户明确项目名优先；首次保存确认实际目录，已有项目不自动迁移。共享中文参考与项目子目录并列。 / In the current source, new saved tasks without an explicit destination use a project folder under `瑞般观珠/` at the Library root, preferring an explicit project name and confirming the actual folder on the first save. Existing projects are not migrated; the shared Chinese reference sits alongside project folders.
 
 ## 中文
 
 ### 在 ChatGPT 的 Chat 或 Work 中安装
 
-请在 **Work** 中使用，在云端启动、查看和接续数学工作，无需自行准备远程主机或维护服务器。目前不推荐在 Codex 中使用，未来拟推出适配 Codex 的分支版本。下方本地安装步骤仅说明技术操作，不构成适配保证。使用方法见[进阶使用指南](skill/zuihan-kanshu/references/usage-guide.md)；指南问答自 v8.4.0 提供，当前指南对应 v8.6.0。
+请在 **Work** 中使用，在云端启动、查看和接续数学工作，无需自行准备远程主机或维护服务器。本分支除了智能体分工，还有适配 Work 的轮次与串行处理规则，目前不推荐在真正的 Codex 对话中运行，未来拟提供专用分支。从 Codex 客户端启动或打开的 Work 仍按 Work 处理。v8.7.0 源码只在明确识别为 Codex 对话时默认停止并提醒，不以客户端名称或底层运行时名称判断。下方本地安装步骤仅说明技术操作。使用方法见[进阶使用指南](skill/zuihan-kanshu/references/usage-guide.md)；指南问答自 v8.4.0 提供，链接指向当前源码的指南。
 
 #### 首次安装（推荐：上传完整 ZIP）
 
 1. [下载正式插件 ZIP](https://github.com/adjoint-functor/zuihan-kanshu/releases/download/v8.6.0/zuihan-kanshu-v8.6.0.zip)，保留完整 `.zip`，无需解压。
 2. 打开 ChatGPT 的**插件**页面，选择 **添加 → 上传插件压缩包**，上传这个 ZIP，按页面提示完成完整插件的导入／保存。
 3. **导入／保存**与**安装／启用**是不同步骤。保存成功后，按宿主实际提供的提示完成安装／启用。
-4. 再新建对话，输入 `@` 并选择**瑞般观珠**，试问：“使用瑞般观珠证明：素数有无穷多个。”确认能选中插件并使用其技能；回答了一道数学题本身不能证明插件已安装。
+4. 再新建 Work 对话，输入 `@` 并选择**瑞般观珠**，试问：“@瑞般观珠 数学问答：请证明素数有无穷多个。”确认能选中插件并使用其技能；回答了一道数学题本身不能证明插件已安装。每次发起或接续数学任务建议选中插件并说明任务类别，关键词辅助表达，不是固定口令。
 
 已有用户反馈首次上传安装成功；具体入口和权限因账户或客户端而异。GitHub 的 **Code → Download ZIP** 和 Release 的 **Source code** 是源码包，不是这里所需的插件包。
 
@@ -58,9 +60,9 @@
 
 GitHub 发布与已经导入的私人副本**不会自动同步**。需要更新时，从本仓库 [Releases](https://github.com/adjoint-functor/zuihan-kanshu/releases) 取得新版插件 ZIP，确认是同一来源和目标副本后，通过宿主的插件更新功能更新原副本。自己修改过的内容应先比较差异，再决定如何保留。更新后重新完成宿主要求的启用与新对话验证。
 
-### Codex 本地插件与其他宿主
+### 桌面环境的本地安装（技术参考）
 
-以下保留本地安装技术步骤；目前不推荐在 Codex 中使用，安装成功不代表适配保证。
+以下说明安装位置，不决定对话模式。本分支面向 Work，客户端即使名为 Codex，也不能据此排除其中的 Work 对话；真正的 Codex 对话则受上述默认停止规则约束。安装成功不代表已适配 Codex，也不绕过运行时的入口判断。
 
 支持本地插件 marketplace 的 Codex／ChatGPT 桌面环境，可使用同一份 Release ZIP：将**完整内容**解压到本地插件目录，再按 OpenAI 的[本地插件安装说明](https://developers.openai.com/plugins/build/plugins#install-a-local-plugin-manually)建立 repo 或 personal marketplace，并在宿主中安装／启用。比如插件放在 marketplace 根目录下的 `plugins/zuihan-kanshu/` 时，入口是 `plugins/zuihan-kanshu/plugin.json`，目录条目的 `source.path` 为 `./plugins/zuihan-kanshu`；路径相对于 marketplace 根目录。
 
@@ -78,7 +80,7 @@ python tools/build_release.py --format plugin --check
 python tools/build_release.py --format plugin --zip --output-dir dist
 ```
 
-当前 v8.6.0 源码输出为 `dist/plugin/zuihan-kanshu-v8.6.0/` 和 `dist/plugin/zuihan-kanshu-v8.6.0.zip`。自行构建只产生文件，之后仍需安装／启用。
+当前 v8.7.0 源码输出为 `dist/plugin/zuihan-kanshu-v8.7.0/` 和 `dist/plugin/zuihan-kanshu-v8.7.0.zip`。自行构建只产生文件，之后仍需安装／启用；它不改变上表正式发布的版本。
 
 若目标宿主只接受独立技能目录：
 
@@ -86,7 +88,7 @@ python tools/build_release.py --format plugin --zip --output-dir dist
 python tools/build_release.py --format skill --output-dir dist
 ```
 
-当前 v8.6.0 源码输出为 `dist/skill/zuihan-kanshu-v8.6.0/`，根层有 `SKILL.md`。按宿主技能安装说明，将其内容安装到名为 `zuihan-kanshu` 的目录，去掉构建目录名中的版本后缀。已有输出目录不会被覆盖；重复构建另选空输出目录。
+当前 v8.7.0 源码输出为 `dist/skill/zuihan-kanshu-v8.7.0/`，根层有 `SKILL.md`。按宿主技能安装说明，将其内容安装到名为 `zuihan-kanshu` 的目录，去掉构建目录名中的版本后缀。独立技能沿用相同的模式与任务范围判断。已有输出目录不会被覆盖；重复构建另选空输出目录。
 
 ### 验证范围与帮助
 
@@ -96,14 +98,14 @@ python tools/build_release.py --format skill --output-dir dist
 
 ### Install in ChatGPT Chat or Work
 
-**Use Work** to start, check, and continue mathematics in the cloud without maintaining a remote machine or server of your own. Use in Codex is not currently recommended. A Codex-compatible branch is planned for the future. The local installation steps below are technical instructions, not a guarantee of compatibility. See the [advanced usage guide](skill/zuihan-kanshu/references/usage-guide.md). Built-in guide responses have been available since v8.4.0; the current guide corresponds to v8.6.0.
+**Use Work** to start, check, and continue mathematics in the cloud without maintaining a remote machine or server of your own. Besides agent assignments, this branch includes rounds and sequential steps designed for Work. Actual Codex conversations are not currently recommended; a dedicated branch is planned. Work started or opened from a Codex client is still Work. The v8.7.0 source defaults to stopping and warning only when the current conversation is clearly identified as Codex, not from a client or runtime name. The local steps below describe installation mechanics. See the [advanced usage guide](skill/zuihan-kanshu/references/usage-guide.md), which follows the current source. Built-in guide responses have been available since v8.4.0.
 
 #### First installation (recommended: upload the complete ZIP)
 
 1. [Download the release plugin ZIP](https://github.com/adjoint-functor/zuihan-kanshu/releases/download/v8.6.0/zuihan-kanshu-v8.6.0.zip) and keep the complete `.zip` without extracting it.
 2. Open ChatGPT's **Plugins** page, choose **Add → Upload plugin archive**, upload this ZIP, and follow the page's prompts to import/save the complete plugin.
 3. **Importing/saving** and **installing/enabling** are separate stages. After saving, complete the host's installation/enabling prompts.
-4. Start a new conversation, select **瑞般观珠** with `@`, and ask: “Use Zuihan Kanshu to prove that there are infinitely many primes.” Check that the plugin can be selected and its skill used; a mathematical answer alone is not proof of installation.
+4. Start a new Work conversation, select **瑞般观珠** with `@`, and ask: “@瑞般观珠 Mathematical Q&A: Prove that there are infinitely many primes.” Check that the plugin can be selected and its skill used; a mathematical answer alone is not proof of installation. Select it and state the task category whenever starting or continuing mathematical work; the labels clarify intent rather than acting as required commands.
 
 Users have reported successful first-time installation via archive upload. Controls and permissions may differ by account or client. GitHub's **Code → Download ZIP** and release **Source code** archives are not the plugin package.
 
@@ -133,9 +135,9 @@ The guide's URL is <https://github.com/adjoint-functor/zuihan-kanshu/blob/main/I
 
 Imported private copies **do not automatically sync with GitHub**. To update, get a newer plugin ZIP from [Releases](https://github.com/adjoint-functor/zuihan-kanshu/releases), confirm the source and target copy, and use the host's update feature on that copy. Compare any personal modifications before replacing them. Complete any required enabling and new-conversation verification again.
 
-### Local Codex plugins and other hosts
+### Local installation on desktop (technical reference)
 
-The local steps below remain as technical reference. Codex use is currently not recommended, and installation alone does not establish compatibility.
+These steps describe an installation location, not the current conversation mode. This branch targets Work, including Work opened from a Codex client. Actual Codex conversations remain subject to the default stop described above. Installation does not establish Codex compatibility or bypass the runtime entry check.
 
 For Codex or ChatGPT desktop environments supporting local plugin marketplaces, extract the **complete release ZIP** into a plugin directory and follow OpenAI's [local plugin installation instructions](https://developers.openai.com/plugins/build/plugins#install-a-local-plugin-manually). For example, a plugin at `<marketplace-root>/plugins/zuihan-kanshu/` has its manifest at `plugins/zuihan-kanshu/plugin.json` and a catalog `source.path` of `./plugins/zuihan-kanshu`, relative to the marketplace root. Complete installation/enabling in the host.
 
@@ -153,7 +155,7 @@ python tools/build_release.py --format plugin --check
 python tools/build_release.py --format plugin --zip --output-dir dist
 ```
 
-The current v8.6.0 source creates `dist/plugin/zuihan-kanshu-v8.6.0/` and `dist/plugin/zuihan-kanshu-v8.6.0.zip`. Building produces files; installation/enabling is still required.
+The current v8.7.0 source creates `dist/plugin/zuihan-kanshu-v8.7.0/` and `dist/plugin/zuihan-kanshu-v8.7.0.zip`. Building produces files; installation/enabling is still required, and the published version in the table remains unchanged.
 
 For a host accepting only standalone skill directories:
 
@@ -161,7 +163,7 @@ For a host accepting only standalone skill directories:
 python tools/build_release.py --format skill --output-dir dist
 ```
 
-For the current v8.6.0 source, install the contents of `dist/skill/zuihan-kanshu-v8.6.0/` into a skill directory named `zuihan-kanshu`, without the version suffix, following that host's instructions. The output contains `SKILL.md` at its root. Existing output directories are not overwritten; use another empty output location when rebuilding.
+For the current v8.7.0 source, install the contents of `dist/skill/zuihan-kanshu-v8.7.0/` into a skill directory named `zuihan-kanshu`, without the version suffix, following that host's instructions. The output contains `SKILL.md` at its root and uses the same mode and task-scope rules. Existing output directories are not overwritten; use another empty output location when rebuilding.
 
 ### Verification scope and help
 
