@@ -7,13 +7,13 @@
 | 项目 / Item | 当前发布 / Current release |
 | --- | --- |
 | 名称 / Name | 瑞般观珠 / Zuihan Kanshu (`zuihan-kanshu`) |
-| 版本 / Version | **v8.4.0** |
-| 插件 ZIP / Plugin ZIP | [zuihan-kanshu-v8.4.0.zip](https://github.com/adjoint-functor/zuihan-kanshu/releases/download/v8.4.0/zuihan-kanshu-v8.4.0.zip) |
-| 发布页 / Release page | [v8.4.0](https://github.com/adjoint-functor/zuihan-kanshu/releases/tag/v8.4.0) |
-| 校验文件 / Checksums | [SHA256SUMS](https://github.com/adjoint-functor/zuihan-kanshu/releases/download/v8.4.0/SHA256SUMS) |
-| ZIP SHA-256 | `1783d7045f4a5b88fdb0392c6dcb07be569604238c59143a52596848a14111bb` |
+| 版本 / Version | **v8.6.0** |
+| 插件 ZIP / Plugin ZIP | [zuihan-kanshu-v8.6.0.zip](https://github.com/adjoint-functor/zuihan-kanshu/releases/download/v8.6.0/zuihan-kanshu-v8.6.0.zip) |
+| 发布页 / Release page | [v8.6.0](https://github.com/adjoint-functor/zuihan-kanshu/releases/tag/v8.6.0) |
+| 校验文件 / Checksums | [SHA256SUMS](https://github.com/adjoint-functor/zuihan-kanshu/releases/download/v8.6.0/SHA256SUMS) |
+| ZIP SHA-256 | `9bcb1041a50421698d5fef6334039f5b1fa299bd9c919f03189209839020b7fc` |
 
-当前仓库为待发布的 v8.6.0 源码；上表正式下载仍为 v8.4.0。 / The current repository contains unreleased v8.6.0 source; the published download above remains v8.4.0.
+当前正式版为 v8.6.0，包含原 v8.5.0 的写作升级；v8.5.0 未独立公开发布。 / The current release is v8.6.0 and includes the writing upgrade developed as v8.5.0, which was not published separately.
 
 当前源码中，未指定目的地的新任务默认保存在 Library 根目录 `瑞般观珠/` 下的项目子目录，用户明确项目名优先；首次保存确认实际目录，已有项目不自动迁移。共享中文参考与项目子目录并列。 / In the current source, new saved tasks without an explicit destination use a project folder under `瑞般观珠/` at the Library root, preferring an explicit project name and confirming the actual folder on the first save. Existing projects are not migrated; the shared Chinese reference sits alongside project folders.
 
@@ -21,11 +21,11 @@
 
 ### 在 ChatGPT 的 Chat 或 Work 中安装
 
-请在 **Work** 中使用，在云端启动、查看和接续数学工作，无需自行准备远程主机或维护服务器。目前不推荐在 Codex 中使用，未来拟推出适配 Codex 的分支版本。下方本地安装步骤仅说明技术操作，不构成适配保证。使用方法见[进阶使用指南](skill/zuihan-kanshu/references/usage-guide.md)；指南问答自 v8.4.0 提供，当前源码指南包含待发布的对话与中文参考规则。
+请在 **Work** 中使用，在云端启动、查看和接续数学工作，无需自行准备远程主机或维护服务器。目前不推荐在 Codex 中使用，未来拟推出适配 Codex 的分支版本。下方本地安装步骤仅说明技术操作，不构成适配保证。使用方法见[进阶使用指南](skill/zuihan-kanshu/references/usage-guide.md)；指南问答自 v8.4.0 提供，当前指南对应 v8.6.0。
 
 #### 首次安装（推荐：上传完整 ZIP）
 
-1. [下载正式插件 ZIP](https://github.com/adjoint-functor/zuihan-kanshu/releases/download/v8.4.0/zuihan-kanshu-v8.4.0.zip)，保留完整 `.zip`，无需解压。
+1. [下载正式插件 ZIP](https://github.com/adjoint-functor/zuihan-kanshu/releases/download/v8.6.0/zuihan-kanshu-v8.6.0.zip)，保留完整 `.zip`，无需解压。
 2. 打开 ChatGPT 的**插件**页面，选择 **添加 → 上传插件压缩包**，上传这个 ZIP，按页面提示完成完整插件的导入／保存。
 3. **导入／保存**与**安装／启用**是不同步骤。保存成功后，按宿主实际提供的提示完成安装／启用。
 4. 再新建对话，输入 `@` 并选择**瑞般观珠**，试问：“使用瑞般观珠证明：素数有无穷多个。”确认能选中插件并使用其技能；回答了一道数学题本身不能证明插件已安装。
@@ -96,11 +96,11 @@ python tools/build_release.py --format skill --output-dir dist
 
 ### Install in ChatGPT Chat or Work
 
-**Use Work** to start, check, and continue mathematics in the cloud without maintaining a remote machine or server of your own. Use in Codex is not currently recommended. A Codex-compatible branch is planned for the future. The local installation steps below are technical instructions, not a guarantee of compatibility. See the [advanced usage guide](skill/zuihan-kanshu/references/usage-guide.md). Built-in guide responses have been available since v8.4.0; the current source guide includes the unreleased conversation and shared Chinese reference rules.
+**Use Work** to start, check, and continue mathematics in the cloud without maintaining a remote machine or server of your own. Use in Codex is not currently recommended. A Codex-compatible branch is planned for the future. The local installation steps below are technical instructions, not a guarantee of compatibility. See the [advanced usage guide](skill/zuihan-kanshu/references/usage-guide.md). Built-in guide responses have been available since v8.4.0; the current guide corresponds to v8.6.0.
 
 #### First installation (recommended: upload the complete ZIP)
 
-1. [Download the release plugin ZIP](https://github.com/adjoint-functor/zuihan-kanshu/releases/download/v8.4.0/zuihan-kanshu-v8.4.0.zip) and keep the complete `.zip` without extracting it.
+1. [Download the release plugin ZIP](https://github.com/adjoint-functor/zuihan-kanshu/releases/download/v8.6.0/zuihan-kanshu-v8.6.0.zip) and keep the complete `.zip` without extracting it.
 2. Open ChatGPT's **Plugins** page, choose **Add → Upload plugin archive**, upload this ZIP, and follow the page's prompts to import/save the complete plugin.
 3. **Importing/saving** and **installing/enabling** are separate stages. After saving, complete the host's installation/enabling prompts.
 4. Start a new conversation, select **瑞般观珠** with `@`, and ask: “Use Zuihan Kanshu to prove that there are infinitely many primes.” Check that the plugin can be selected and its skill used; a mathematical answer alone is not proof of installation.

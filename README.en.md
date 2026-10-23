@@ -26,7 +26,7 @@ First confirm that Dot can access and continue the specified task; capabilities 
 How can I use this plugin more effectively?
 ```
 
-**Built-in guide responses have been available since v8.4.0.** You can also read the full guide through the link above. The current source and guide describe unreleased v8.6.0; the published download remains v8.4.0.
+**Built-in guide responses have been available since v8.4.0.** You can also read the full guide through the link above. The current guide corresponds to release **v8.6.0**.
 
 | Scenario | Suggested approach |
 | --- | --- |
@@ -46,11 +46,11 @@ In preliminary rough tests, the consumption ratio of GPT-6 Astra to GPT-6.1 Sol 
 
 ## Install
 
-This third-party plugin is distributed through GitHub. The current release is **v8.4.0**: [download the plugin ZIP](https://github.com/adjoint-functor/zuihan-kanshu/releases/download/v8.4.0/zuihan-kanshu-v8.4.0.zip). You do not need to build from source.
+This third-party plugin is distributed through GitHub. The current release is **v8.6.0**: [download the plugin ZIP](https://github.com/adjoint-functor/zuihan-kanshu/releases/download/v8.6.0/zuihan-kanshu-v8.6.0.zip) · [SHA256SUMS](https://github.com/adjoint-functor/zuihan-kanshu/releases/download/v8.6.0/SHA256SUMS). You do not need to build from source.
 
 ### First installation (recommended: upload the complete ZIP)
 
-1. [Download the release plugin ZIP](https://github.com/adjoint-functor/zuihan-kanshu/releases/download/v8.4.0/zuihan-kanshu-v8.4.0.zip) and keep the complete `.zip` without extracting it.
+1. [Download the release plugin ZIP](https://github.com/adjoint-functor/zuihan-kanshu/releases/download/v8.6.0/zuihan-kanshu-v8.6.0.zip) and keep the complete `.zip` without extracting it.
 2. Open ChatGPT's **Plugins** page, choose **Add → Upload plugin archive**, upload this ZIP, and follow the page's import/save prompts.
 3. Complete **installation/enabling**, then start a new conversation, select **瑞般观珠** with `@`, and ask a mathematical question.
 
